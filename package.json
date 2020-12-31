@@ -1,15 +1,39 @@
 {
-  "name": "homepage",
+  "name": "john-homepage",
   "version": "0.1.0",
   "private": true,
+  "license": "UNLICENSED",
+  "author": {
+    "name": "John Schmidt",
+    "email": "mail@johnschmidt.de"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "@headlessui/react": "^0.2.0",
+    "@tailwindcss/typography": "^0.3.1",
+    "autoprefixer": "^10.1.0",
+    "dracula-prism": "^1.2.1",
+    "focus-visible": "^5.2.0",
     "next": "10.0.4",
+    "next-google-fonts": "^1.2.1",
+    "next-sanity": "^0.1.8",
+    "next-seo": "^4.17.0",
+    "next-themes": "^0.0.10",
+    "number-words": "^1.1.1",
+    "phosphor-react": "^1.1.2",
+    "postcss": "^8.2.1",
+    "postcss-focus-visible": "^5.0.0",
+    "prismjs": "^1.22.0",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "tailwindcss": "^2.0.2"
+  },
+  "devDependencies": {
+    "@sanity/cli": "^2.1.0",
+    "concurrently": "^5.3.0"
   }
 }

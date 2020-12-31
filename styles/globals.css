@@ -1,16 +1,16 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @import 'dracula.css';
+  a {
+    @apply text-indigo-700 hover:underline hover:text-indigo-500 dark:text-indigo-300 dark:hover:text-indigo-100 focus-visible:ring ring-offset-2 ring-current dark:ring-offset-black focus:outline-none;
+  }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+@layer utilities {
+  .blur {
+    backdrop-filter: saturate(180%) blur(20px);
+  }
 }
