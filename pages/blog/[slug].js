@@ -1,8 +1,9 @@
 import { groq } from 'next-sanity'
 import { NextSeo } from 'next-seo'
 
-import BlockCode from 'components/BlockCode'
 import Layout from 'components/Layout'
+import BlockCode from 'components/BlockCode'
+import BlockImage from 'components/BlockImage'
 
 import { getClient, PortableText } from 'lib/sanity'
 
@@ -53,6 +54,7 @@ export default function Post({ data }) {
                   language={props.node.language}
                 />
               ),
+              image: (props) => <BlockImage image={props} />,
             },
           }}
         />

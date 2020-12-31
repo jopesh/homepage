@@ -26,6 +26,17 @@ module.exports = {
               borderRadius: 0,
               backgroundColor: null,
             },
+            strong: {
+              color: 'currentColor',
+            },
+            a: null,
+            blockquote: {
+              color: 'currentColor',
+            },
+            'ol > li::before': {
+              color: 'currentColor',
+            },
+            img: null,
           },
         },
         lg: {
@@ -37,6 +48,7 @@ module.exports = {
               borderRadius: 0,
               backgroundColor: null,
             },
+            img: null,
           },
         },
       }),

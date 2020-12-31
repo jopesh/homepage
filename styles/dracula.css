@@ -257,6 +257,10 @@ pre[class*='language-'] {
   color: var(--pink);
 }
 
+.token.plain-text {
+  color: var(--foreground);
+}
+
 .language-css .token {
   color: var(--pink);
 }
@@ -279,12 +283,34 @@ pre[class*='language-'] {
   color: var(--green);
 }
 
+.token.parameter {
+  color: var(--orange);
+  font-style: italic;
+}
+
+.token.parameter .token.punctuation {
+  color: var(--pink);
+}
+
+.token.token.tag > .token.punctuation {
+  color: var(--foreground);
+}
+
+.token.attr-value > .token.punctuation {
+  color: var(--yellow);
+}
+
+.token .token.attr-value > .token.attr-equals {
+  color: var(--pink);
+}
+
 .language-css .token.atrule {
   color: var(--purple);
 }
 
 .language-html .token.attr-value,
-.language-markup .token.attr-value {
+.language-markup .token.attr-value,
+.language-jsx .token.attr-value {
   color: var(--yellow);
 }
 
