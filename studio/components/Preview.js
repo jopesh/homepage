@@ -4,7 +4,7 @@ export default function ProductsOverviewPreview({ document }) {
   const { displayed } = document
 
   if (!displayed?.slug?.current) {
-    return <div>The product needs a slug before it can be previewed.</div>
+    return <div>The post needs a slug before it can be previewed.</div>
   }
   const category = encodeURIComponent(displayed?.category)
   const slug = encodeURIComponent(displayed?.slug?.current)

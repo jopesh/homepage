@@ -100,6 +100,11 @@ export default {
             layout: 'radio',
           },
         },
+        {
+          name: 'shadow',
+          title: 'Shadow',
+          type: 'boolean',
+        },
       ],
     },
     {
