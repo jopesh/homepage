@@ -13,13 +13,9 @@ module.exports = {
           css: {
             color: 'currentColor',
             h1: {
-              color: 'currentColor',
               marginBottom: 0,
             },
-            h2: {
-              color: 'currentColor',
-            },
-            h3: {
+            'h1, h2, h3, h4, h5, h6': {
               color: 'currentColor',
             },
             pre: {
@@ -32,11 +28,17 @@ module.exports = {
             a: null,
             blockquote: {
               color: 'currentColor',
+              fontWeight: theme('fontWeight.normal'),
+              fontStyle: 'normal',
             },
             'ol > li::before': {
               color: 'currentColor',
             },
             img: null,
+            'figure figcaption': {
+              fontSize: theme('fontSize.sm[0]'),
+              textAlign: 'center',
+            },
           },
         },
         lg: {
@@ -47,8 +49,28 @@ module.exports = {
             pre: {
               borderRadius: 0,
               backgroundColor: null,
+              fontSize: theme('fontSize.base'),
             },
             img: null,
+            'figure figcaption': {
+              fontSize: theme('fontSize.sm[0]'),
+            },
+          },
+        },
+        xl: {
+          css: {
+            h1: {
+              marginBottom: 0,
+            },
+            pre: {
+              borderRadius: 0,
+              backgroundColor: null,
+              fontSize: theme('fontSize.base'),
+            },
+            img: null,
+            'figure figcaption': {
+              fontSize: theme('fontSize.sm[0]'),
+            },
           },
         },
       }),

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  @import 'dracula.css';
+  @import 'prism.css';
   a {
     @apply text-indigo-700 hover:underline hover:text-indigo-500 dark:text-indigo-300 dark:hover:text-indigo-100 focus-visible:ring ring-offset-2 ring-current dark:ring-offset-black focus:outline-none;
   }
