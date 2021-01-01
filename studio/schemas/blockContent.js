@@ -1,3 +1,5 @@
+import { Columns } from 'phosphor-react'
+
 /**
  * This is the schema definition for the rich text fields used for
  * for this blog studio. When you import it in schemas.js it can be
@@ -62,9 +64,93 @@ export default {
     {
       type: 'image',
       options: { hotspot: true },
+      fields: [
+        {
+          name: 'alt',
+          title: 'Alternative text',
+          type: 'string',
+          options: {
+            isHighlighted: true,
+          },
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'caption',
+          title: 'Caption',
+          type: 'string',
+          options: {
+            isHighlighted: true,
+          },
+        },
+        {
+          name: 'layout',
+          title: 'Layout',
+          type: 'string',
+          options: {
+            list: [
+              {
+                title: 'Normal',
+                value: 'normal',
+              },
+              {
+                title: 'Bleed',
+                value: 'bleed',
+              },
+            ],
+            layout: 'radio',
+          },
+        },
+      ],
     },
     {
       type: 'code',
+    },
+    {
+      name: 'meta',
+      title: 'Meta',
+      type: 'object',
+      icon: Columns,
+      fields: [
+        {
+          name: 'type',
+          title: 'Type',
+          type: 'string',
+        },
+        {
+          name: 'tech',
+          title: 'Tech',
+          type: 'array',
+          of: [
+            {
+              type: 'string',
+            },
+          ],
+        },
+        {
+          name: 'live',
+          title: 'Live',
+          type: 'array',
+          of: [
+            {
+              name: 'link',
+              title: 'Link',
+              type: 'object',
+              fields: [
+                {
+                  type: 'string',
+                  name: 'title',
+                  title: 'Title',
+                },
+                {
+                  type: 'url',
+                  name: 'url',
+                  title: 'URL',
+                },
+              ],
+            },
+          ],
+        },
+      ],
     },
   ],
 }

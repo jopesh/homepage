@@ -18,23 +18,51 @@ export default {
       },
     },
     {
+      name: 'publishedAt',
+      title: 'Published at',
+      type: 'date',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'category',
+      title: 'Category',
+      type: 'string',
+      options: {
+        list: [
+          {
+            title: 'Blog',
+            value: 'blog',
+          },
+          {
+            title: 'Project',
+            value: 'project',
+          },
+        ],
+        layout: 'radio',
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
       options: {
         hotspot: true,
       },
-    },
-    {
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
+      fields: [
+        {
+          name: 'alt',
+          title: 'Alternative text',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+      ],
     },
     {
       name: 'summary',
       title: 'Summary',
       type: 'text',
-      rows: 2,
+      rows: 3,
     },
     {
       name: 'body',
@@ -46,14 +74,8 @@ export default {
   preview: {
     select: {
       title: 'title',
-      publishedAt: 'publishedAt',
+      subtitle: 'category',
       media: 'mainImage',
-    },
-    prepare(selection) {
-      const { publishedAt } = selection
-      return Object.assign({}, selection, {
-        subtitle: Intl.DateTimeFormat('en-GB').format(new Date(publishedAt)),
-      })
     },
   },
 }
