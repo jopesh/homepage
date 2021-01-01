@@ -5,7 +5,7 @@ import ThemeSwitch from './ThemeSwitch'
 
 const Header = () => {
   return (
-    <header className='sticky top-0 z-40 bg-white bg-opacity-75 blur dark:bg-black dark:bg-opacity-75'>
+    <header className='fixed inset-x-0 top-0 z-40 bg-white bg-opacity-75 blur dark:bg-black dark:bg-opacity-75'>
       <div className='flex items-center justify-between h-20 max-w-screen-lg px-6 mx-auto'>
         <div>
           <Link href='/'>

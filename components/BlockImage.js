@@ -1,28 +1,27 @@
 import Image from 'next/image'
-import { urlFor } from 'lib/sanity'
-import { getImageDimensions } from '@sanity/asset-utils'
 
-const BlockImage = ({ image, width = 1440 }) => {
-  const { width: srcWidth, height: srcHeight } = getImageDimensions(image.node)
-  const { crop } = image.node
-  const debugCrop = (crop) => {
-    if (crop > 0 && crop < 1) return crop
-    else return 0
-  }
-  const cropX = parseInt(
-    srcWidth * (debugCrop(crop.right) + debugCrop(crop.left))
+import imageHelper from 'lib/imageHelper'
+
+const BlockImage = ({ image }) => {
+  const { width, height, imageUrl } = imageHelper(image.node)
+  const {
+    node: { alt, caption, layout },
+  } = image
+  return (
+    <figure>
+      <div
+        className={`shadow-md ${layout === 'bleed' ? '-mx-6 lg:-mx-12' : ''}`}>
+        <Image
+          src={imageUrl}
+          width={width}
+          height={height}
+          alt={alt}
+          sizes='(min-width: 768px) 732px, (min-width: 1024px) 812px'
+        />
+      </div>
+      {caption && <figcaption>{caption}</figcaption>}
+    </figure>
   )
-  const cropY = parseInt(
-    srcHeight * (debugCrop(crop.top) + debugCrop(crop.bottom))
-  )
-  const croppedDimensions = {
-    width: srcWidth - cropX,
-    height: srcHeight - cropY,
-  }
-  const aspectRatio = croppedDimensions.height / croppedDimensions.width
-  const height = parseInt(width * aspectRatio)
-  const imageUrl = urlFor(image.node).width(width).height(height).url()
-  return <Image src={imageUrl} width={width} height={height} sizes='756px' />
 }
 
 export default BlockImage
