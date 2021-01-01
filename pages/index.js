@@ -9,8 +9,8 @@ import ProjectList from 'components/ProjectList'
 import { getClient } from 'lib/sanity'
 import { NextSeo } from 'next-seo'
 
-export async function getStaticProps(context) {
-  const client = getClient()
+export async function getStaticProps({ preview }) {
+  const client = getClient(preview)
   const author = await client.fetch(groq`*[_type == "author"][0]{ image }`)
   const posts = await client.fetch(
     groq`*[_type == "post" && category == "blog"][0...3] { 

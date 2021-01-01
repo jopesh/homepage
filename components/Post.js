@@ -15,7 +15,7 @@ const Post = ({ data }) => {
     ? [urlFor(mainImage).width(1024).height(768).url()]
     : []
   return (
-    <article className='mx-auto my-6 prose md:prose-lg lg:prose-xl'>
+    <article className='mx-auto my-6 prose md:prose-lg lg:prose-xl dark:prose-dark'>
       <NextSeo
         title={title}
         titleTemplate='%s - John Schmidt'
@@ -44,7 +44,7 @@ const Post = ({ data }) => {
         url={url}
       />
       <h1>{title}</h1>
-      {category === 'Blog' && (
+      {category === 'blog' && (
         <time
           className='inline-block mt-2 text-gray-500 dark:text-gray-400'
           dateTime={publishedAt}>

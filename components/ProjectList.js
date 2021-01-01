@@ -11,7 +11,7 @@ const ProjectList = ({ projects }) => {
   return (
     <section id='work' className='pt-4 md:pl-12'>
       <div className='flex items-center justify-between mb-6'>
-        <Heading>Recent work</Heading>
+        <Heading>Recent project</Heading>
         {/* <a href='/' className='flex items-center py-1 space-x-1'>
           <span>More</span>
           <CaretRight />
@@ -37,7 +37,7 @@ const ProjectList = ({ projects }) => {
             </li>
           )
         })}
-        {projects.length < 3 && <Placeholder name='projects' />}
+        {projects.length < 1 && <Placeholder name='projects' />}
       </ul>
     </section>
   )
