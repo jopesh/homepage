@@ -37,6 +37,7 @@ module.exports = {
             img: null,
             'figure figcaption': {
               fontSize: theme('fontSize.sm[0]'),
+              color: theme('colors.gray.500'),
               textAlign: 'center',
             },
           },
@@ -73,6 +74,13 @@ module.exports = {
             },
           },
         },
+        dark: {
+          css: {
+            figcaption: {
+              color: theme('colors.gray.400'),
+            },
+          },
+        },
       }),
     },
   },
@@ -81,6 +89,8 @@ module.exports = {
       backgroundOpacity: ['dark'],
       translate: ['group-hover'],
       ringWidth: ['focus-visible'],
+      typography: ['dark'],
+      boxShadow: ['dark'],
     },
   },
   plugins: [require('@tailwindcss/typography')],

@@ -13,4 +13,12 @@
   .blur {
     backdrop-filter: saturate(180%) blur(20px);
   }
+
+  @variants dark {
+    .shadow-lg-dark {
+      --tw-ring-shadow: 0 0 #fff;
+      --tw-ring-offset-shadow: 0 0 #fff;
+      --tw-shadow: 0 10px 15px -3px #ffffff36, 0 4px 6px -2px #ffffff18;
+    }
+  }
 }
