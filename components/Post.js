@@ -18,14 +18,14 @@ const Post = ({ data }) => {
           url: urlFor(mainImage).width(1024).height(640).url(),
           width: 1024,
           height: 640,
+          alt: mainImage.alt,
         },
       ]
     : []
   return (
     <article className='mx-auto my-6 prose md:prose-lg lg:prose-xl dark:prose-dark'>
       <NextSeo
-        title={title}
-        titleTemplate='%s - John Schmidt'
+        title={`${title} - John Schmidt`}
         description={summary}
         canonical={url}
         openGraph={{

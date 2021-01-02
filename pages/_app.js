@@ -1,12 +1,30 @@
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 import GoogleFonts from 'next-google-fonts'
 import { DefaultSeo } from 'next-seo'
 import { ThemeProvider } from 'next-themes'
+import * as Fathom from 'fathom-client'
 
 import 'styles/globals.css'
 import 'focus-visible/dist/focus-visible.min.js'
 import Head from 'next/head'
 
 function HomepageApp({ Component, pageProps }) {
+  const router = useRouter()
+  useEffect(() => {
+    Fathom.load(process.env.NEXT_PUBLIC_FATHOM_ID, {
+      includedDomains: ['johnschmidt.de'],
+      url: 'https://shark.johnschmidt.de',
+    })
+    function onRouteChangeComplete() {
+      Fathom.trackPageview()
+    }
+    router.events.on('routeChangeComplete', onRouteChangeComplete)
+    return () => {
+      router.events.off('routeChangeComplete', onRouteChangeComplete)
+    }
+  }, [])
+
   return (
     <ThemeProvider attribute='class'>
       <GoogleFonts href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap' />
@@ -16,18 +34,19 @@ function HomepageApp({ Component, pageProps }) {
         description='Freelance web developer based in Hamburg. Aiming to build fast, simple and accessible experiences for everyone to use and enjoy.'
         openGraph={{
           type: 'website',
-          locale: 'en_GB',
-          url: 'https://www.johnschmidt.de/',
-          site_name: 'JohnSchmidt.de',
-          images: [
-            {
-              url: '/images/default-meta.png',
-              width: 1024,
-              height: 640,
-            },
-          ],
           description:
             'Freelance web developer based in Hamburg. Aiming to build fast, simple and accessible experiences for everyone to use and enjoy.',
+          locale: 'en_GB',
+          url: 'https://www.johnschmidt.de/',
+          site_name: 'John Schmidt',
+          images: [
+            {
+              url: 'https://homepage.jopesch.vercel.app/images/meta.jpg',
+              width: 1024,
+              height: 640,
+              alt: 'John Schmidt',
+            },
+          ],
         }}
         twitter={{
           handle: '@jope_sh',

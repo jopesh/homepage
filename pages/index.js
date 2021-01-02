@@ -7,7 +7,6 @@ import PostList from 'components/BlogList'
 import ProjectList from 'components/ProjectList'
 
 import { getClient } from 'lib/sanity'
-import { NextSeo } from 'next-seo'
 
 export async function getStaticProps({ preview }) {
   const client = getClient(preview)
