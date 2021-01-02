@@ -5,6 +5,11 @@ import { urlFor } from 'lib/sanity'
 
 const Intro = ({ author }) => {
   const imageUrl = urlFor(author.image).width(256).height(256).url()
+  const handleClick = (e) => {
+    e.preventDefault()
+    window.fathom?.trackGoal('CXSQFQPG', 0)
+    window.location.href = 'mailto:mail@johnschmidt.de'
+  }
   return (
     <section id='author'>
       <div className='flex flex-col items-center justify-between space-y-6 text-center sm:space-y-8 lg:space-y-10'>
@@ -28,12 +33,15 @@ const Intro = ({ author }) => {
           I aim to create fast, simple and accessible web experiences for
           everyone to use and enjoy.
         </p>
-        <a
-          href='mailto:mail@johnschmidt.de'
-          className='inline-flex items-center px-6 py-4 space-x-3 text-xl font-medium text-white bg-indigo-700 dark:text-white hover:bg-indigo-600 hover:text-white focus-visible::ring ring-indigo-500 ring-offset-2 hover:no-underline'>
-          <span>Get in touch</span>
-          <ChatCenteredText focusable='false' weight='bold' size='24' />
-        </a>
+        <div>
+          <a
+            onClick={handleClick}
+            href='mailto:mail@johnschmidt.de'
+            className='inline-flex items-center px-6 py-4 space-x-3 text-xl font-medium text-white bg-indigo-700 dark:text-white hover:bg-indigo-600 hover:text-white focus-visible::ring ring-indigo-500 ring-offset-2 hover:no-underline'>
+            <span>Get in touch</span>
+            <ChatCenteredText focusable='false' weight='bold' size='24' />
+          </a>
+        </div>
         <p className='flex flex-col items-center tracking-tight text-center text-gray-500 dark:text-gray-400'>
           <span className='mb-4'>Explore my thoughts &amp; work</span>
           <ArrowDown size='24' />
