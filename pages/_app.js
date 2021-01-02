@@ -8,7 +8,7 @@ import 'focus-visible/dist/focus-visible.min.js'
 
 function HomepageApp({ Component, pageProps }) {
   return (
-    <ThemeProvider attribute='class'>
+    <ThemeProvider attribute='class' defaultTheme='system'>
       <GoogleFonts href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap' />
       <DefaultSeo
         canonical='https://johnschmidt.de/'
