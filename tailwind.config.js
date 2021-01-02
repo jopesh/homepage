@@ -40,6 +40,11 @@ module.exports = {
               color: theme('colors.gray.500'),
               textAlign: 'center',
             },
+            p: {
+              code: {
+                backgroundColor: theme('colors.gray.100'),
+              },
+            },
           },
         },
         lg: {
@@ -78,6 +83,12 @@ module.exports = {
           css: {
             figcaption: {
               color: theme('colors.gray.400'),
+            },
+            p: {
+              code: {
+                color: theme('colors.gray.200'),
+                backgroundColor: theme('colors.gray.900'),
+              },
             },
           },
         },
