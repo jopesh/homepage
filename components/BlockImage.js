@@ -19,7 +19,7 @@ const BlockImage = ({ image }) => {
             width={width}
             height={height}
             alt={alt}
-            quality={85}
+            quality={80}
             sizes='(min-width: 1024px) 812px, (min-width: 768px) 731px'
           />
         </div>
