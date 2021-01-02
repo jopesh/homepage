@@ -10,7 +10,6 @@ import formatDate from 'lib/formatDate'
 const Post = ({ data }) => {
   const { title, publishedAt, body, summary, slug, mainImage, category } = data
   const date = formatDate(publishedAt)
-  console.log(mainImage)
   const url = `https://johnschmidt.de/${category}/${slug.current}`
   const seoImages = mainImage?.asset
     ? [
