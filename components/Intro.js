@@ -1,11 +1,9 @@
 import Image from 'next/image'
-import { usePlausible } from 'next-plausible'
 import { ArrowDown, ChatCenteredText } from 'phosphor-react'
 
 import { urlFor } from 'lib/sanity'
 
 const Intro = ({ author }) => {
-  const plausible = usePlausible()
   const imageUrl = urlFor(author.image).width(256).height(256).url()
   const handleClick = (e) => {
     e.preventDefault()

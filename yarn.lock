@@ -2886,11 +2886,6 @@ next-google-fonts@^1.2.1:
   resolved "https://registry.yarnpkg.com/next-google-fonts/-/next-google-fonts-1.2.1.tgz#0b517cff3f34b8f7836f81eb9427973c8b4ac03e"
   integrity sha512-BhVSldP1oZBTwXeJdMtjmu2qbDT1EkbQO2rG83Oj6APYm6aUsIcMu00Pzkzd8TTkrQW9HyC08Pzr10PY4pE6jA==
 
-next-plausible@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/next-plausible/-/next-plausible-1.2.0.tgz#032aba4ecf3064f6df51fa41e1063f9648eef35d"
-  integrity sha512-e1t2DXr0h+RLz3uy48+1EIHTnsMwGfIoCnQ8QW1/tpS/BUYMGGuS/evRKMw6nZTtUlloVbD1We2FX/DYOd8bNQ==
-
 next-sanity@^0.1.8:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/next-sanity/-/next-sanity-0.1.8.tgz#aa5a32d6452fca835d72d16fbf587e4d5fec5d5d"
