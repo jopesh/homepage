@@ -8,7 +8,7 @@ class HomepageDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang='en'>
         <Head>
           <script
             async

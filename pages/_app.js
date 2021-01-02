@@ -13,16 +13,25 @@ function HomepageApp({ Component, pageProps }) {
       <DefaultSeo
         canonical='https://johnschmidt.de/'
         title='John Schmidt - Web developer'
+        description='Freelance web developer based in Hamburg. Aiming to build fast, simple and accessible experiences for everyone to use and enjoy.'
         openGraph={{
           type: 'website',
           locale: 'en_GB',
           url: 'https://www.johnschmidt.de/',
           site_name: 'JohnSchmidt.de',
-          description: 'Freelance web developer based in Hamburg.',
+          images: [
+            {
+              url: '/images/default-meta.png',
+              width: 1024,
+              height: 640,
+            },
+          ],
+          description:
+            'Freelance web developer based in Hamburg. Aiming to build fast, simple and accessible experiences for everyone to use and enjoy.',
         }}
         twitter={{
           handle: '@jope_sh',
-          // cardType: 'summary_large_image',
+          cardType: 'summary_large_image',
         }}
       />
       <Head>

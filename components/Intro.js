@@ -9,14 +9,15 @@ const Intro = ({ author }) => {
     <section id='author'>
       <div className='flex flex-col items-center justify-between space-y-6 text-center sm:space-y-8 lg:space-y-10'>
         {author.image && (
-          <Image
-            src={imageUrl}
-            width='96'
-            height='96'
-            layout='fixed'
-            className='rounded-full'
-            alt='Portrait photo of John'
-          />
+          <div className='flex overflow-hidden rounded-full'>
+            <Image
+              src={imageUrl}
+              width='96'
+              height='96'
+              layout='fixed'
+              alt='Portrait photo of John'
+            />
+          </div>
         )}
         <h1 className='text-4xl font-black tracking-tighter sm:text-6xl'>
           Hi. I'm John.

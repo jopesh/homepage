@@ -10,9 +10,16 @@ import formatDate from 'lib/formatDate'
 const Post = ({ data }) => {
   const { title, publishedAt, body, summary, slug, mainImage, category } = data
   const date = formatDate(publishedAt)
+  console.log(mainImage)
   const url = `https://johnschmidt.de/${category}/${slug.current}`
-  const seoImages = mainImage
-    ? [urlFor(mainImage).width(1024).height(768).url()]
+  const seoImages = mainImage?.asset
+    ? [
+        {
+          url: urlFor(mainImage).width(1024).height(640).url(),
+          width: 1024,
+          height: 640,
+        },
+      ]
     : []
   return (
     <article className='mx-auto my-6 prose md:prose-lg lg:prose-xl dark:prose-dark'>
@@ -37,8 +44,8 @@ const Post = ({ data }) => {
         dateModified={publishedAt}
         datePublished={publishedAt}
         description={summary}
-        images={seoImages}
-        publisherLogo='/static/android-chrome-192x192.png'
+        images={[seoImages[0]?.url]}
+        publisherLogo='/android-chrome-192x192.png'
         publisherName='John Schmidt'
         title={title}
         url={url}

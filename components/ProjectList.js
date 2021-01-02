@@ -33,7 +33,7 @@ const ProjectList = ({ projects }) => {
               )}
               <h3 className='mt-3 font-bold leading-snug'>{p.title}</h3>
               <p className='block mt-1.5'>{p.summary}</p>
-              <LinkArrow href={`/work/${p.slug.current}`} text='Read more' />
+              <LinkArrow href={`/work/${p.slug.current}`} text='View project' />
             </li>
           )
         })}
