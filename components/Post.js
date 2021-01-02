@@ -72,6 +72,16 @@ const Post = ({ data }) => {
               image: (props) => <BlockImage image={props} width={812} />,
               meta: (props) => <BlockStack node={props.node} />,
             },
+            marks: {
+              link: (props) => (
+                <a
+                  href={props.mark.href}
+                  target='_blank'
+                  rel='noopener noreferrer'>
+                  {props.children}
+                </a>
+              ),
+            },
           }}
         />
       )}
