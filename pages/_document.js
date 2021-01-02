@@ -9,7 +9,20 @@ class HomepageDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <script
+            async
+            defer
+            data-domain='johnschmidt.de'
+            src='https://plausible.flyze.de/js/plausible.js'
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html:
+                'window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }',
+            }}
+          />
+        </Head>
         <body className='antialiased dark:bg-black dark:text-white'>
           <Main />
           <NextScript />
