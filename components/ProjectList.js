@@ -6,6 +6,7 @@ import LinkArrow from './LinkArrow'
 import Placeholder from './Placeholder'
 
 import { urlFor } from 'lib/sanity'
+import Link from 'next/link'
 
 const ProjectList = ({ projects }) => {
   return (
@@ -23,13 +24,17 @@ const ProjectList = ({ projects }) => {
           return (
             <li key={p._id}>
               {p.mainImage && (
-                <Image
-                  src={imageUrl}
-                  width={1440}
-                  height={900}
-                  sizes='(min-width: 640px) 440px'
-                  alt={p.mainImage.alt}
-                />
+                <Link href={`/work/${p.slug.current}`}>
+                  <a>
+                    <Image
+                      src={imageUrl}
+                      width={1440}
+                      height={900}
+                      sizes='(min-width: 640px) 440px'
+                      alt={p.mainImage.alt}
+                    />
+                  </a>
+                </Link>
               )}
               <h3 className='mt-3 font-bold leading-snug'>{p.title}</h3>
               <p className='block mt-1.5'>{p.summary}</p>

@@ -45,7 +45,7 @@ const Post = ({ data }) => {
         datePublished={publishedAt}
         description={summary}
         images={[seoImages[0]?.url]}
-        publisherLogo='/android-chrome-192x192.png'
+        publisherLogo='https://homepage.jopesch.vercel.app/android-chrome-192x192.png'
         publisherName='John Schmidt'
         title={title}
         url={url}
@@ -53,7 +53,7 @@ const Post = ({ data }) => {
       <h1>{title}</h1>
       {category === 'blog' && (
         <time
-          className='inline-block mt-2 text-gray-500 dark:text-gray-400'
+          className='inline-block mt-2 text-gray-500 md:mt-3 dark:text-gray-400'
           dateTime={publishedAt}>
           {date}
         </time>

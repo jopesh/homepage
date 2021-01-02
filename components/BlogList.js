@@ -5,6 +5,7 @@ import LinkArrow from './LinkArrow'
 
 import formatDate from 'lib/formatDate'
 import Placeholder from './Placeholder'
+import Link from 'next/link'
 
 const BlogList = ({ posts }) => {
   return (
@@ -21,7 +22,11 @@ const BlogList = ({ posts }) => {
           const date = formatDate(p.publishedAt)
           return (
             <li key={p._id}>
-              <h3 className='mb-1.5 font-bold leading-snug'>{p.title}</h3>
+              <Link href={`/blog/${p.slug.current}`}>
+                <a className='text-current hover:text-current dark:text-current dark:hover:text-current'>
+                  <h3 className='mb-1.5 font-bold leading-snug'>{p.title}</h3>
+                </a>
+              </Link>
               <time
                 dateTime={p.publishedAt}
                 className='block text-sm text-gray-500 dark:text-gray-400'>

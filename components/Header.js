@@ -9,11 +9,11 @@ const Header = () => {
   const router = useRouter()
   const root = router.asPath === '/'
   return (
-    <header className='fixed inset-x-0 top-0 z-40 bg-white bg-opacity-75 blur dark:bg-black dark:bg-opacity-75'>
-      <div className='flex items-center justify-between h-20 max-w-screen-lg px-6 mx-auto'>
+    <header className='sticky top-0 z-40 bg-white bg-opacity-75 blur dark:bg-black dark:bg-opacity-75'>
+      <div className='flex items-center justify-between max-w-screen-lg px-6 mx-auto'>
         <div>
           <Link href='/'>
-            <a className='flex items-center space-x-6 '>
+            <a className='flex items-center p-4 -ml-4 space-x-6'>
               <svg
                 width={24}
                 height={35}
@@ -27,10 +27,7 @@ const Header = () => {
               </svg>
               <span className='sr-only'>Go to the homepage</span>
               {!root && (
-                <div className='flex items-center pr-3 space-x-2 font-medium'>
-                  <ArrowLeft />
-                  <span className=''>Overview</span>
-                </div>
+                <span className='flex items-center font-bold'>Go back</span>
               )}
             </a>
           </Link>
