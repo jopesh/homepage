@@ -19,14 +19,14 @@ const ProjectList = ({ projects }) => {
       </div>
       <ul className='space-y-6'>
         {projects.map((p) => {
-          const imageUrl = urlFor(p.mainImage).width(1024).height(768).url()
+          const imageUrl = urlFor(p.mainImage).width(1440).height(900).url()
           return (
             <li key={p._id}>
               {p.mainImage && (
                 <Image
                   src={imageUrl}
-                  width={1024}
-                  height={768}
+                  width={1440}
+                  height={900}
                   sizes='(min-width: 640px) 440px'
                   alt={p.mainImage.alt}
                 />
