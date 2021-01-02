@@ -13,20 +13,19 @@ function HomepageApp({ Component, pageProps }) {
       <DefaultSeo
         canonical='https://johnschmidt.de/'
         title='John Schmidt - Web developer'
+        openGraph={{
+          type: 'website',
+          locale: 'en_GB',
+          url: 'https://www.johnschmidt.de/',
+          site_name: 'JohnSchmidt.de',
+          description: 'Freelance web developer based in Hamburg.',
+        }}
+        twitter={{
+          handle: '@jope_sh',
+          // cardType: 'summary_large_image',
+        }}
       />
       <Head>
-        <script
-          async
-          defer
-          data-domain='johnschmidt.de'
-          src='https://plausible.flyze.de/js/plausible.js'
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
-              'window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }',
-          }}
-        />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link
           rel='apple-touch-icon'
