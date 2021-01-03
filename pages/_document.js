@@ -10,22 +10,12 @@ class HomepageDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-          {process.env.VERCEL_ENV === 'production' && (
-            <>
-              <script
-                async
-                defer
-                data-domain='johnschmidt.de'
-                src='https://stats.johnschmidt.cloud/js/plausible.js'
-              />
-              <script
-                dangerouslySetInnerHTML={{
-                  __html:
-                    'window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }',
-                }}
-              />
-            </>
-          )}
+          <script
+            dangerouslySetInnerHTML={{
+              __html:
+                'window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }',
+            }}
+          />
         </Head>
         <body className='antialiased dark:bg-black dark:text-white'>
           <Main />

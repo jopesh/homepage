@@ -36,6 +36,17 @@ function HomepageApp({ Component, pageProps }) {
         }}
       />
       <Head>
+        {typeof window !== 'undefined' &&
+          window.location.hostname === 'johnschmidt.de' && (
+            <>
+              <script
+                async
+                defer
+                data-domain='johnschmidt.de'
+                src='https://stats.johnschmidt.cloud/js/plausible.js'
+              />
+            </>
+          )}
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link
           rel='apple-touch-icon'
