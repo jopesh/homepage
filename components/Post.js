@@ -14,7 +14,7 @@ const Post = ({ data }) => {
   const seoImages = mainImage?.asset
     ? [
         {
-          url: urlFor(mainImage).width(1024).height(640).url(),
+          url: urlFor(mainImage).width(1200).height(628).url(),
           width: 1200,
           height: 628,
           alt: mainImage.alt,
