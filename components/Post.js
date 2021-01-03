@@ -15,8 +15,8 @@ const Post = ({ data }) => {
     ? [
         {
           url: urlFor(mainImage).width(1024).height(640).url(),
-          width: 1024,
-          height: 640,
+          width: 1200,
+          height: 628,
           alt: mainImage.alt,
         },
       ]
