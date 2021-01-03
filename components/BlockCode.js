@@ -1,11 +1,11 @@
-import { getHighlightedCode } from 'lib/syntax'
+import Prism from 'prismjs'
+import 'prismjs/components/prism-jsx'
 
-const BlockCode = ({ code, language }) => {
-  const syntax = code && getHighlightedCode(code, language)
-  const preClass = `language-${language}`
+const BlockCode = ({ code = '', language = 'javascript' }) => {
+  const html = Prism.highlight(code, Prism.languages[language], language)
   return (
-    <pre className={preClass}>
-      <code dangerouslySetInnerHTML={{ __html: syntax }} />
+    <pre className={`language-${language}`}>
+      <code dangerouslySetInnerHTML={{ __html: html }} />
     </pre>
   )
 }
