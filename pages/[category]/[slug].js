@@ -1,11 +1,10 @@
-import { useRouter } from 'next/router'
 import { groq } from 'next-sanity'
 
 import Layout from 'components/Layout'
 import Post from 'components/Post'
+import Error from 'components/Error'
 
 import { getClient, usePreviewSubscription } from 'lib/sanity'
-import Error from 'components/Error'
 
 export async function getStaticPaths() {
   const posts = await getClient().fetch(
@@ -34,20 +33,11 @@ export async function getStaticProps({ params, preview = false }) {
     revalidate: 1,
   }
 }
-
 export default function BlogPost({ initialData, preview }) {
-  const router = useRouter()
-
   const { data } = usePreviewSubscription(query, {
     params: { slug: initialData?.slug?.current },
     initialData: initialData,
     enabled: preview,
   })
-
-  return (
-    <Layout>
-      {data && <Post data={data} />}
-      {!data && <Error />}
-    </Layout>
-  )
+  return <Layout>{data ? <Post data={data} /> : <Error />}</Layout>
 }
