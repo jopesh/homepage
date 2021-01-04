@@ -17,6 +17,7 @@
 
 #studio
 public/studio
+sanity.json
 
 # misc
 .DS_Store
