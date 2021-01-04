@@ -20,7 +20,16 @@ const Post = ({ data }) => {
           alt: mainImage.alt,
         },
       ]
-    : []
+    : [
+        {
+          url: `https://johnschmidt.de/api/metaimg?t=${encodeURIComponent(
+            title
+          )}`,
+          width: 1200,
+          height: 628,
+          alt: summary,
+        },
+      ]
   return (
     <article className='mx-auto my-6 prose md:prose-lg lg:prose-xl dark:prose-dark'>
       <NextSeo

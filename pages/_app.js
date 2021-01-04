@@ -23,7 +23,7 @@ function HomepageApp({ Component, pageProps }) {
           site_name: 'John Schmidt',
           images: [
             {
-              url: 'https://homepage.jopesch.vercel.app/images/meta.jpg',
+              url: 'https://johnschmidt.de/images/meta.jpg',
               width: 1024,
               height: 640,
               alt: 'John Schmidt',
