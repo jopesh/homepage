@@ -1,9 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'prism.css';
 
 @layer base {
-  @import 'prism.css';
   a {
     @apply text-indigo-700 hover:underline hover:text-indigo-500 dark:text-indigo-300 dark:hover:text-indigo-100 focus-visible:ring ring-offset-2 ring-current dark:ring-offset-black focus:outline-none;
   }
@@ -12,13 +12,5 @@
 @layer utilities {
   .blur {
     backdrop-filter: saturate(180%) blur(20px);
-  }
-
-  @variants dark {
-    .shadow-lg-dark {
-      --tw-ring-shadow: 0 0 #fff;
-      --tw-ring-offset-shadow: 0 0 #fff;
-      --tw-shadow: 0 10px 15px -3px #ffffff36, 0 4px 6px -2px #ffffff18;
-    }
   }
 }
