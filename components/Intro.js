@@ -12,7 +12,7 @@ const Intro = ({ author }) => {
   }
   return (
     <section id='author'>
-      <div className='flex flex-col items-center justify-between space-y-6 text-center sm:space-y-8 lg:space-y-10'>
+      <div className='flex flex-col items-center justify-between space-y-8 text-center md:space-y-10'>
         {author.image && (
           <div className='flex overflow-hidden rounded-full'>
             <Image
@@ -24,10 +24,10 @@ const Intro = ({ author }) => {
             />
           </div>
         )}
-        <h1 className='text-4xl font-black tracking-tighter sm:text-6xl'>
+        <h1 className='text-4xl font-black tracking-tight sm:text-5xl sm:text-6xl'>
           Hi. I'm John.
           <br />
-          Web developer.
+          Front-end developer.
         </h1>
         <p className='max-w-2xl text-xl sm:text-2xl'>
           I aim to create fast, simple and accessible web experiences for

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import imageHelper from 'lib/imageHelper'
+import imageHelper from 'utils/imageHelper'
 
 const BlockImage = ({ image }) => {
   if (image?.node?.asset) {
@@ -11,7 +11,7 @@ const BlockImage = ({ image }) => {
     return (
       <figure>
         <div
-          className={`${shadow ? 'shadow-lg dark:shadow-lg-dark' : ''} ${
+          className={`${shadow ? 'shadow-lg' : ''} ${
             layout === 'bleed' ? '-mx-6 lg:-mx-12' : ''
           }`}>
           <Image

@@ -2,7 +2,7 @@ import { Link } from 'phosphor-react'
 
 const BlockStack = ({ node }) => {
   return (
-    <div className='grid gap-6 my-12 sm:grid-cols-3'>
+    <div className='grid gap-6 my-6 sm:my-8 sm:grid-cols-3'>
       <dl>
         <dt className='block mb-3 text-sm font-bold uppercase'>Project type</dt>
         <dd>{node.type}</dd>
