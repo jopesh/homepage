@@ -1,6 +1,6 @@
 {
   "name": "john-homepage",
-  "version": "0.1.0",
+  "version": "login",
   "private": true,
   "license": "MIT",
   "author": {
@@ -29,11 +29,14 @@
     "phosphor-react": "^1.1.2",
     "postcss": "^8.2.1",
     "postcss-focus-visible": "^5.0.0",
+    "preact": "^10.5.9",
     "prismjs": "^1.22.0",
     "puppeteer": "^5.5.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "tailwindcss": "^2.0.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "prettier": "^2.2.1"
+  }
 }
