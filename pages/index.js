@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { groq } from 'next-sanity'
+import { NextSeo } from 'next-seo'
 
 import Layout from 'components/Layout'
 import Intro from 'components/Intro'
@@ -36,6 +37,24 @@ export async function getStaticProps({ preview }) {
 export default function Home({ author, posts, projects }) {
   return (
     <Layout>
+      <NextSeo
+        openGraph={{
+          type: 'website',
+          description:
+            'Self-taught front-end developer. Aiming to build fast, simple and accessible experiences for everyone to use and enjoy.',
+          locale: 'en_GB',
+          url: 'https://www.johnschmidt.de/',
+          site_name: 'John Schmidt',
+          images: [
+            {
+              url: 'https://johnschmidt.de/api/og',
+              width: 1200,
+              height: 628,
+              alt: 'John Schmidt',
+            },
+          ],
+        }}
+      />
       <div className='my-6 space-y-16'>
         <Intro author={author} />
         <div className='space-y-8 divide-gray-400 dark:divide-gray-600 md:divide-x md:grid md:grid-cols-2 md:space-y-0'>

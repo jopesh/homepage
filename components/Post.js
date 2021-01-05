@@ -1,63 +1,15 @@
-import { ArticleJsonLd, NextSeo } from 'next-seo'
-
 import BlockCode from 'components/BlockCode'
 import BlockImage from 'components/BlockImage'
 import BlockStack from 'components/BlockStack'
 
-import { PortableText, urlFor } from 'lib/sanity'
-import formatDate from 'lib/formatDate'
+import { PortableText } from 'lib/sanity'
+import formatDate from 'utils/formatDate'
 
 const Post = ({ data }) => {
   const { title, publishedAt, body, summary, slug, mainImage, category } = data
   const date = formatDate(publishedAt)
-  const url = `https://johnschmidt.de/${category}/${slug.current}`
-  const seoImages = mainImage?.asset
-    ? [
-        {
-          url: urlFor(mainImage).width(1200).height(628).url(),
-          width: 1200,
-          height: 628,
-          alt: mainImage.alt,
-        },
-      ]
-    : [
-        {
-          url: `https://johnschmidt.de/api/metaimg?t=${encodeURIComponent(
-            title
-          )}`,
-          width: 1200,
-          height: 628,
-          alt: summary,
-        },
-      ]
   return (
     <article className='mx-auto my-6 prose md:prose-lg lg:prose-xl dark:prose-dark'>
-      <NextSeo
-        title={`${title} - John Schmidt`}
-        description={summary}
-        canonical={url}
-        openGraph={{
-          type: 'article',
-          article: {
-            publishedTime: publishedAt,
-          },
-          url,
-          title,
-          description: summary,
-          images: seoImages,
-        }}
-      />
-      <ArticleJsonLd
-        authorName='John Schmidt'
-        dateModified={publishedAt}
-        datePublished={publishedAt}
-        description={summary}
-        images={[seoImages[0]?.url]}
-        publisherLogo='https://homepage.jopesch.vercel.app/android-chrome-192x192.png'
-        publisherName='John Schmidt'
-        title={title}
-        url={url}
-      />
       <h1>{title}</h1>
       {category === 'blog' && (
         <time

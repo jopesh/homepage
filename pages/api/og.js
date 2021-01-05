@@ -23,10 +23,9 @@ export default async (req, res) => {
       height: 628,
     })
     await page.goto(
-      `http://${req.headers.host}/o?title=${encodeURIComponent(query.t)}`,
-      {
-        waitUntil: 'load',
-      }
+      query.t
+        ? `http://${req.headers.host}/og?title=${encodeURIComponent(query.t)}`
+        : `http://${req.headers.host}/og`
     )
     const screenshot = await page.screenshot({ encoding: 'binary' })
     res.setHeader('content-type', 'image/png')
