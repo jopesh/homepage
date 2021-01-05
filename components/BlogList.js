@@ -3,7 +3,7 @@ import { CaretRight } from 'phosphor-react'
 import Heading from './Heading'
 import LinkArrow from './LinkArrow'
 
-import formatDate from 'lib/formatDate'
+import formatDate from 'utils/formatDate'
 import Placeholder from './Placeholder'
 import Link from 'next/link'
 
