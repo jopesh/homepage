@@ -11,12 +11,12 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: 'currentColor',
+            color: theme('colors.gray.800'),
             h1: {
               marginBottom: 0,
             },
             'h1, h2, h3, h4, h5, h6': {
-              color: 'currentColor',
+              color: theme('colors.black'),
             },
             pre: {
               borderRadius: 0,
@@ -31,8 +31,8 @@ module.exports = {
               fontWeight: theme('fontWeight.normal'),
               fontStyle: 'normal',
             },
-            'ol > li::before': {
-              color: 'currentColor',
+            'ul > li::before, ol > li::before': {
+              color: theme('colors.gray.500'),
             },
             img: null,
             'figure figcaption': {
@@ -54,23 +54,6 @@ module.exports = {
             },
             pre: {
               borderRadius: 0,
-              backgroundColor: null,
-              fontSize: theme('fontSize.base'),
-            },
-            img: null,
-            'figure figcaption': {
-              fontSize: theme('fontSize.sm[0]'),
-            },
-          },
-        },
-        xl: {
-          css: {
-            h1: {
-              marginBottom: 0,
-            },
-            pre: {
-              borderRadius: 0,
-              backgroundColor: null,
               fontSize: theme('fontSize.base'),
             },
             img: null,
@@ -81,6 +64,13 @@ module.exports = {
         },
         dark: {
           css: {
+            color: theme('colors.gray.200'),
+            'h1, h2, h3, h4, h5, h6': {
+              color: theme('colors.white'),
+            },
+            'ul > li::before, ol > li::before': {
+              color: theme('colors.gray.400'),
+            },
             figcaption: {
               color: theme('colors.gray.400'),
             },
