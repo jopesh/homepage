@@ -3022,7 +3022,6 @@ dataloader@^2.0.0:
 date-fns@^2.16.1:
   version "2.16.1"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.16.1.tgz#05775792c3f3331da812af253e1a935851d3834b"
-  integrity sha512-sAJVKx/FqrLYHAQeN7VpJrPhagZc9R4ImZIWYRFZaaohR3KzmuK88touwsSwSVT8Qcbd4zoDsnGfX4GFB4imyQ==
 
 date-now@1.0.1:
   version "1.0.1"
@@ -5934,7 +5933,6 @@ performance-now@^2.1.0:
 phosphor-react@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/phosphor-react/-/phosphor-react-1.1.2.tgz#b2b8ab079153026f5d7d044e255c8990e2096d1c"
-  integrity sha512-Mxif13TOfdnc8MZFeaN3r2h2LC0EOUg9iYaLz+jLEThFsloVasg10f8LexeYyChJyOjuoxtrQt5Rc6LmGdFMlw==
 
 picomatch@^2.0.4, picomatch@^2.2.1:
   version "2.2.2"
@@ -7358,6 +7356,10 @@ sanity-diff-patch@^1.0.9:
   resolved "https://registry.npmjs.org/sanity-diff-patch/-/sanity-diff-patch-1.0.9.tgz#fb1fa3b52c27d369878af57ba02fee779b3ca8bd"
   dependencies:
     diff-match-patch "^1.0.5"
+
+sanity-plugin-dark-theme-blue@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/sanity-plugin-dark-theme-blue/-/sanity-plugin-dark-theme-blue-1.0.1.tgz#74804676323b49d05df383ec5c6d72458d3e8679"
 
 sax@~1.2.4:
   version "1.2.4"

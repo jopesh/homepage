@@ -75,7 +75,21 @@ export default {
     select: {
       title: 'title',
       subtitle: 'category',
-      media: 'mainImage',
+      mainImage: 'mainImage',
+      publishedAt: 'publishedAt',
+    },
+    prepare({ title, subtitle, publishedAt, mainImage }) {
+      return {
+        title,
+        subtitle:
+          Intl.DateTimeFormat('en-GB').format(new Date(publishedAt)) +
+          ' in ' +
+          subtitle
+            .split('')
+            .map((c, x) => (x === 0 ? c.toUpperCase() : c))
+            .join(''),
+        media: mainImage,
+      }
     },
   },
 }
