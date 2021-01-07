@@ -1,6 +1,7 @@
 import S from '@sanity/desk-tool/structure-builder'
 import { Lightning, Pen, UserCircle } from 'phosphor-react'
 
+import MarkdownExport from './components/MarkdownExport'
 import Preview from './components/Preview'
 
 export default () =>
@@ -51,6 +52,7 @@ export const getDefaultDocumentNode = (props) => {
     return S.document().views([
       S.view.form(),
       S.view.component(Preview).title('Preview'),
+      S.view.component(MarkdownExport).title('Markdown'),
     ])
   }
   return S.document().views([S.view.form()])
