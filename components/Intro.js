@@ -24,7 +24,7 @@ const Intro = ({ author }) => {
             />
           </div>
         )}
-        <h1 className='text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl'>
+        <h1 className='text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl'>
           Hi. I'm John.
           <br />
           Front-end developer.
