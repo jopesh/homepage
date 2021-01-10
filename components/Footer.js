@@ -6,13 +6,13 @@ const Footer = () => {
   const currentYear = convert(new Date().getFullYear())
   return (
     <footer className='max-w-screen-lg px-6 mx-auto my-24'>
-      <div className='flex items-center justify-center mb-4 space-x-3'>
+      <div className='flex items-center mb-4 space-x-3 sm:justify-center'>
         <a
           className='p-2'
           href='https://twitter.com/jope_sh'
           target='_blank'
           rel='noopener noreferrer'>
-          <SiTwitter size='1.5em' />
+          <SiTwitter size='1.5em' aria-label='Twitter' />
           <span className='sr-only'>Twitter profile</span>
         </a>
         <a
@@ -20,7 +20,7 @@ const Footer = () => {
           href='https://github.com/jopesh'
           target='_blank'
           rel='noopener noreferrer'>
-          <SiGithub size='1.5em' />
+          <SiGithub size='1.5em' aria-label='GitHub' />
           <span className='sr-only'>Github profile</span>
         </a>
         <a
@@ -28,7 +28,7 @@ const Footer = () => {
           href='https://dev.to/jopesch'
           target='_blank'
           rel='noopener noreferrer'>
-          <SiDevDotTo size='1.5em' />
+          <SiDevDotTo size='1.5em' aria-label='Dev.to' />
           <span className='sr-only'>Dev.to profile</span>
         </a>
       </div>
