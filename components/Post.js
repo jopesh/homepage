@@ -54,6 +54,8 @@ const Post = ({ data }) => {
                       })}
                     </div>
                   )
+                } else if (props.node.style === 'blockquote') {
+                  return <blockquote>{props.children}</blockquote>
                 } else return <p>{props.children}</p>
               },
               code: (props) => (
