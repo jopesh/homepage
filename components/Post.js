@@ -1,3 +1,7 @@
+import { createElement } from 'react'
+import { HashStraight } from 'phosphor-react'
+import slugify from 'slugify'
+
 import BlockCode from 'components/BlockCode'
 import BlockImage from 'components/BlockImage'
 import BlockStack from 'components/BlockStack'
@@ -24,6 +28,31 @@ const Post = ({ data }) => {
           className='mt-6'
           serializers={{
             types: {
+              block: (props) => {
+                const regex = /h\d$/ms
+                const match = regex.test(props.node.style)
+                const slug = slugify(props.children.toString(), {
+                  lower: true,
+                })
+                if (match) {
+                  return (
+                    <div className='relative'>
+                      <div
+                        id={slug}
+                        className='w-0 h-0 transform -translate-y-20'
+                      />
+                      <a
+                        className='absolute px-1.5 py-2.5 transform -translate-y-1/2 top-1/2 -left-6 focus-visible:ring-inset'
+                        href={`#${slug}`}>
+                        <HashStraight size={14} />
+                      </a>
+                      {createElement(props.node.style, {
+                        children: props.children,
+                      })}
+                    </div>
+                  )
+                } else return <p>{props.children}</p>
+              },
               code: (props) => (
                 <BlockCode
                   code={props.node.code}
