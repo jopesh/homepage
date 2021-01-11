@@ -11,6 +11,12 @@ function HomepageApp({ Component, pageProps }) {
     <ThemeProvider attribute='class' defaultTheme='system'>
       <GoogleFonts href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap' />
       <Head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }',
+          }}
+        />
         {typeof window !== 'undefined' &&
           window.location.hostname === 'johnschmidt.de' && (
             <script
@@ -51,6 +57,14 @@ function HomepageApp({ Component, pageProps }) {
         title='John Schmidt - Front-end developer'
         canonical='https://johnschmidt.de/'
         description='Self-taught front-end developer. Aiming to build fast, simple and accessible experiences for everyone to use and enjoy.'
+        openGraph={{
+          type: 'website',
+          description:
+            'Self-taught front-end developer. Aiming to build fast, simple and accessible experiences for everyone to use and enjoy.',
+          locale: 'en_GB',
+          url: 'https://www.johnschmidt.de/',
+          site_name: 'John Schmidt',
+        }}
         twitter={{
           handle: '@jope_sh',
           cardType: 'summary_large_image',
