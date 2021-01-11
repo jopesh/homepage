@@ -42,9 +42,12 @@ const Post = ({ data }) => {
                         className='w-0 h-0 transform -translate-y-20'
                       />
                       <a
-                        className='absolute px-1.5 py-2.5 transform -translate-y-1/2 top-1/2 -left-6 focus-visible:ring-inset'
+                        className='absolute px-1.5 py-2.5 transform -translate-y-1/2 top-1/2 -left-6 lg:-left-8 focus-visible:ring-inset'
                         href={`#${slug}`}>
                         <HashStraight size={14} />
+                        <span className='sr-only'>
+                          Anchor link for: {props.children.toString()}
+                        </span>
                       </a>
                       {createElement(props.node.style, {
                         children: props.children,
