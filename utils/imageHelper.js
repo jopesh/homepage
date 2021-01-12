@@ -34,7 +34,10 @@ export default function imageHelper(asset, width = 1920) {
   // with the aspect ratio we can get the height to our desired width
   const height = parseInt(width * aspectRatio)
   // fetch the imageUrl from sanity cdn
-  const imageUrl = urlFor(asset).width(width).height(height).url()
+  const imageUrl = urlFor(asset)
+    .width(width * 2)
+    .height(height * 2)
+    .url()
   return {
     width,
     height,

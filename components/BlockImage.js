@@ -19,8 +19,7 @@ const BlockImage = ({ image }) => {
             width={width}
             height={height}
             alt={alt}
-            quality={80}
-            sizes='(min-width: 1024px) 812px, (min-width: 768px) 731px'
+            sizes='(min-width: 768px) 756px, 632px'
           />
         </div>
         {caption && <figcaption>{caption}</figcaption>}
