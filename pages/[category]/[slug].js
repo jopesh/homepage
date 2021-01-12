@@ -35,6 +35,7 @@ export async function getStaticProps({ params, preview = false }) {
     revalidate: 1,
   }
 }
+
 export default function BlogPost({ data }) {
   const router = useRouter()
   if (router.isFallback || !data) {

@@ -8,6 +8,16 @@ import Logo from './Logo'
 
 const Header = () => {
   const router = useRouter()
+  const pageName = router.query.category
+    ? router.query.category
+        .charAt(0)
+        .toUpperCase()
+        .concat(router.query.category.substr(1))
+    : router.asPath
+        .substr(1)
+        .charAt(0)
+        .toUpperCase()
+        .concat(router.asPath.substr(2))
   const root = router.asPath === '/'
   return (
     <header className='sticky top-0 z-40 mt-4 bg-white bg-opacity-75 blur dark:bg-black dark:bg-opacity-75'>
@@ -25,9 +35,7 @@ const Header = () => {
                 <a>John Schmidt</a>
               </Link>
               <span>/</span>
-              <span>
-                {router.asPath.includes('blog') ? 'Blog' : 'Projects'}
-              </span>
+              <span>{pageName}</span>
             </div>
           ) : (
             <span className='font-medium'>John Schmidt</span>

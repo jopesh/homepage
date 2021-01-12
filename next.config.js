@@ -1,7 +1,7 @@
 module.exports = {
   images: {
     domains: ['cdn.sanity.io'],
-    deviceSizes: [412, 524, 632, 731, 812, 1024, 1640, 1920],
+    deviceSizes: [439, 632, 756, 828, 1080, 1512],
   },
   webpack: (config, { dev, isServer }) => {
     if (isServer) {
@@ -18,5 +18,13 @@ module.exports = {
     }
 
     return config
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/plausible.js',
+        destination: 'https://stats.johnschmidt.cloud/js/plausible.js',
+      },
+    ]
   },
 }

@@ -21,6 +21,7 @@ const Intro = ({ author }) => {
               height='96'
               layout='fixed'
               alt='Portrait photo of John'
+              priority
             />
           </div>
         )}

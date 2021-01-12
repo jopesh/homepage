@@ -28,7 +28,7 @@ const ProjectList = ({ projects }) => {
                   src={imageUrl}
                   width={1440}
                   height={900}
-                  sizes='(min-width: 640px) 440px, 592px'
+                  sizes='(min-width: 768px) 439px'
                   alt={p.mainImage.alt}
                 />
               )}
