@@ -2,7 +2,6 @@ import Head from 'next/head'
 import { groq } from 'next-sanity'
 import { NextSeo } from 'next-seo'
 
-import Layout from 'components/Layout'
 import Intro from 'components/Intro'
 import PostList from 'components/BlogList'
 import ProjectList from 'components/ProjectList'
@@ -36,7 +35,7 @@ export async function getStaticProps({ preview }) {
 
 export default function Home({ author, posts, projects }) {
   return (
-    <Layout>
+    <div className='my-6 space-y-16'>
       <NextSeo
         openGraph={{
           type: 'website',
@@ -55,13 +54,12 @@ export default function Home({ author, posts, projects }) {
           ],
         }}
       />
-      <div className='my-6 space-y-16'>
-        <Intro author={author} />
-        <div className='space-y-8 divide-gray-400 dark:divide-gray-600 md:divide-x md:grid md:grid-cols-2 md:space-y-0'>
-          <PostList posts={posts} />
-          <ProjectList projects={projects} />
-        </div>
+
+      <Intro author={author} />
+      <div className='space-y-8 divide-gray-400 dark:divide-gray-600 md:divide-x md:grid md:grid-cols-2 md:space-y-0'>
+        <PostList posts={posts} />
+        <ProjectList projects={projects} />
       </div>
-    </Layout>
+    </div>
   )
 }
