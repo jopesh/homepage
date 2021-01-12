@@ -23,20 +23,16 @@ const BlogList = ({ posts }) => {
           return (
             <li key={p._id}>
               <Link href={`/blog/${p.slug.current}`}>
-                <a className='block group hover:no-underline'>
-                  <h3 className='mb-1.5 font-bold leading-snug group-hover:underline'>
-                    {p.title}
-                  </h3>
-                  <time
-                    dateTime={p.publishedAt}
-                    className='block text-sm text-gray-500 dark:text-gray-400'>
-                    {date}
-                  </time>
-                  <p className='block mt-1.5 text-black dark:text-white'>
-                    {p.summary}
-                  </p>
+                <a className='block pb-1.5'>
+                  <h3 className='font-bold leading-snug'>{p.title}</h3>
                 </a>
               </Link>
+              <time
+                dateTime={p.publishedAt}
+                className='block text-sm text-gray-500 dark:text-gray-400'>
+                {date}
+              </time>
+              <p className='block mt-1.5'>{p.summary}</p>
             </li>
           )
         })}

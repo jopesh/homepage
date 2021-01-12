@@ -23,25 +23,21 @@ const ProjectList = ({ projects }) => {
           const imageUrl = urlFor(p.mainImage).width(1440).height(900).url()
           return (
             <li key={p._id}>
+              {p.mainImage && (
+                <Image
+                  src={imageUrl}
+                  width={1440}
+                  height={900}
+                  sizes='(min-width: 640px) 440px, 592px'
+                  alt={p.mainImage.alt}
+                />
+              )}
               <Link href={`/work/${p.slug.current}`}>
-                <a className='block group hover:no-underline'>
-                  {p.mainImage && (
-                    <Image
-                      src={imageUrl}
-                      width={1440}
-                      height={900}
-                      sizes='(min-width: 640px) 440px, 592px'
-                      alt={p.mainImage.alt}
-                    />
-                  )}
-                  <h3 className='mt-3 font-bold leading-snug group-hover:underline'>
-                    {p.title}
-                  </h3>
-                  <p className='block mt-1.5 text-black dark:text-white'>
-                    {p.summary}
-                  </p>
+                <a className='pt-3 pb-1.5 block'>
+                  <h3 className='font-bold leading-snug'>{p.title}</h3>
                 </a>
               </Link>
+              <p className='block'>{p.summary}</p>
             </li>
           )
         })}
