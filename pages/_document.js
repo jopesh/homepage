@@ -9,18 +9,18 @@ class HomepageDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-          <link
-            rel='preload'
-            href='/fonts/inter-var.woff2'
-            as='font'
-            type='font/woff2'
-            crossOrigin='anonymous'
-          />
           <script
             dangerouslySetInnerHTML={{
               __html:
                 'window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }',
             }}
+          />
+          <link
+            rel='preload'
+            href='/fonts/inter-var-latin.woff2'
+            as='font'
+            type='font/woff2'
+            crossOrigin='anonymous'
           />
           <link
             rel='apple-touch-icon'

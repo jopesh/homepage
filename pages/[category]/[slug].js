@@ -1,5 +1,6 @@
 import { groq } from 'next-sanity'
 
+import Layout from 'components/Layout'
 import Post from 'components/Post'
 import Error from 'components/Error'
 import PostSeo from 'components/PostSeo'
@@ -41,10 +42,10 @@ export default function BlogPost({ data }) {
     return <Error />
   } else {
     return (
-      <>
+      <Layout>
         <PostSeo data={data} />
         <Post data={data} />
-      </>
+      </Layout>
     )
   }
 }

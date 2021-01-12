@@ -28,9 +28,7 @@ function HomepageApp({ Component, pageProps }) {
           cardType: 'summary_large_image',
         }}
       />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <Component {...pageProps} />
     </ThemeProvider>
   )
 }
