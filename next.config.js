@@ -2,7 +2,6 @@ module.exports = {
   images: {
     domains: ['cdn.sanity.io'],
     deviceSizes: [439, 632, 756, 828, 1080, 1512],
-    imageSizes: [],
   },
   webpack: (config, { dev, isServer }) => {
     if (isServer) {
