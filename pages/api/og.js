@@ -1,4 +1,4 @@
-import puppeteer from 'puppeteer'
+import puppeteer from 'puppeteer-core'
 import chromium from 'chrome-aws-lambda'
 
 const isDev = process.env.NODE_ENV === 'development'

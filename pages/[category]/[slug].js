@@ -1,6 +1,5 @@
 import { groq } from 'next-sanity'
 
-import Layout from 'components/Layout'
 import Post from 'components/Post'
 import Error from 'components/Error'
 import PostSeo from 'components/PostSeo'
@@ -35,16 +34,17 @@ export async function getStaticProps({ params, preview = false }) {
     revalidate: 1,
   }
 }
+
 export default function BlogPost({ data }) {
   const router = useRouter()
   if (router.isFallback || !data) {
     return <Error />
   } else {
     return (
-      <Layout>
+      <>
         <PostSeo data={data} />
         <Post data={data} />
-      </Layout>
+      </>
     )
   }
 }
