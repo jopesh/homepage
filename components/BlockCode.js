@@ -1,11 +1,11 @@
 import Highlight, { defaultProps } from 'prism-react-renderer'
-import dracula from 'prism-react-renderer/themes/dracula'
+import prismTheme from 'lib/prismTheme'
 
 const BlockCode = ({ code = '', language = 'javascript' }) => {
   return (
     <Highlight
       {...defaultProps}
-      theme={dracula}
+      theme={prismTheme}
       language={language}
       code={code}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
