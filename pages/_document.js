@@ -9,18 +9,23 @@ class HomepageDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-          <script
-            dangerouslySetInnerHTML={{
-              __html:
-                'window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }',
-            }}
-          />
           <link
             rel='preload'
             href='/fonts/inter-var-latin.woff2'
             as='font'
             type='font/woff2'
-            crossOrigin='anonymous'
+            crossOrigin=''
+          />
+          <link
+            rel='preconnect'
+            href='https://stats.johnschmidt.cloud'
+            crossOrigin=''
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html:
+                'window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }',
+            }}
           />
           <link
             rel='apple-touch-icon'
