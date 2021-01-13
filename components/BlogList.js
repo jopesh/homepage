@@ -17,13 +17,13 @@ const BlogList = ({ posts }) => {
           <CaretRight />
         </a> */}
       </div>
-      <ul className='space-y-6'>
+      <ul className='-mt-1 space-y-6'>
         {posts.map((p) => {
           const date = formatDate(p.publishedAt)
           return (
             <li key={p._id}>
               <Link href={`/blog/${p.slug.current}`}>
-                <a className='block pb-1.5'>
+                <a className='block py-1'>
                   <h3 className='font-bold leading-snug'>{p.title}</h3>
                 </a>
               </Link>

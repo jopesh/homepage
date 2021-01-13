@@ -8,11 +8,11 @@ import Placeholder from './Placeholder'
 import { urlFor } from 'lib/sanity'
 import Link from 'next/link'
 
-const ProjectList = ({ projects }) => {
+const WorkList = ({ projects }) => {
   return (
     <section id='work' className='pt-4 md:pl-12'>
       <div className='flex items-center justify-between mb-6'>
-        <Heading>Recent project</Heading>
+        <Heading>Recent work</Heading>
         {/* <a href='/' className='flex items-center py-1 space-x-1'>
           <span>More</span>
           <CaretRight />
@@ -33,7 +33,7 @@ const ProjectList = ({ projects }) => {
                 />
               )}
               <Link href={`/work/${p.slug.current}`}>
-                <a className='pt-3 pb-1.5 block'>
+                <a className='block py-1 mt-2 mb-0.5'>
                   <h3 className='font-bold leading-snug'>{p.title}</h3>
                 </a>
               </Link>
@@ -47,4 +47,4 @@ const ProjectList = ({ projects }) => {
   )
 }
 
-export default ProjectList
+export default WorkList

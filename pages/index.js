@@ -4,7 +4,7 @@ import { NextSeo } from 'next-seo'
 
 import Intro from 'components/Intro'
 import PostList from 'components/BlogList'
-import ProjectList from 'components/ProjectList'
+import WorkList from 'components/WorkList'
 
 import { getClient } from 'lib/sanity'
 import Layout from 'components/Layout'
@@ -60,7 +60,7 @@ export default function Home({ author, posts, projects }) {
         <Intro author={author} />
         <div className='space-y-8 divide-gray-400 dark:divide-gray-600 md:divide-x md:grid md:grid-cols-2 md:space-y-0'>
           <PostList posts={posts} />
-          <ProjectList projects={projects} />
+          <WorkList projects={projects} />
         </div>
       </div>
     </Layout>
