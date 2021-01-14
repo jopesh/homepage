@@ -22,16 +22,20 @@ const BlockContent = ({ ...args }) => (
             return (
               <div className='relative'>
                 <div id={slug} className='w-0 h-0 transform -translate-y-20' />
-                <a
-                  className='absolute px-1.5 py-2.5 transform -translate-y-1/2 top-1/2 -left-6 lg:-left-8 focus-visible:ring-inset'
-                  href={`#${slug}`}>
-                  <Hash size={15} />
-                  <span className='sr-only'>
-                    Anchor link for: {props.children.toString()}
-                  </span>
-                </a>
                 {createElement(props.node.style, {
-                  children: props.children,
+                  children: [
+                    props.children,
+                    <div key='spacer' className='inline-block w-0.5 h-0' />,
+                    <a
+                      className='inline-flex items-center justify-center p-1.5'
+                      href={`#${slug}`}
+                      key='anchor'>
+                      <span className='sr-only'>
+                        Anchor link for: {props.children.toString()}
+                      </span>
+                      <Hash size={14} weight='bold' />
+                    </a>,
+                  ],
                 })}
               </div>
             )
