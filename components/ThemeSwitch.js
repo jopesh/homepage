@@ -4,7 +4,7 @@ import { useTheme } from 'next-themes'
 import { Moon, Sun } from 'phosphor-react'
 
 const ThemeSwitch = () => {
-  const { theme, resolvedTheme, setTheme } = useTheme()
+  const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
   useEffect(() => setMounted(true), [])
   if (!mounted) return null
@@ -18,7 +18,7 @@ const ThemeSwitch = () => {
         </span>
         <div
           className={`right-0 p-3 top-0 absolute transform transition duration-300 ease-in-out ${
-            resolvedTheme === 'dark'
+            theme === 'dark'
               ? 'translate-x-0'
               : 'opacity-0 -translate-x-12 group-hover:-translate-x-9 group-hover:opacity-50'
           }`}>
@@ -26,7 +26,7 @@ const ThemeSwitch = () => {
         </div>
         <div
           className={`top-0 p-3 right-0 absolute transform transition duration-300 ease-in-out ${
-            resolvedTheme === 'light'
+            theme === 'light'
               ? 'translate-x-0'
               : 'opacity-0 -translate-x-12 group-hover:-translate-x-9 group-hover:opacity-50'
           }`}>

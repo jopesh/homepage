@@ -7,7 +7,7 @@ import Layout from 'components/Layout'
 
 function HomepageApp({ Component, pageProps }) {
   return (
-    <ThemeProvider attribute='class' defaultTheme='system'>
+    <ThemeProvider attribute='class' defaultTheme='light' enableSystem={false}>
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
