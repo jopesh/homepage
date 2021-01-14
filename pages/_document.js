@@ -59,7 +59,7 @@ class HomepageDocument extends Document {
             src='/plausible.js'
           />
         </Head>
-        <body className='antialiased font-medium text-black bg-white dark:bg-black dark:text-white'>
+        <body className='antialiased text-black bg-white dark:bg-black dark:text-white'>
           <Main />
           <NextScript />
         </body>

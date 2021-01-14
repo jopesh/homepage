@@ -11,7 +11,7 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.800'),
+            color: theme('colors.gray.900'),
             h1: {
               marginBottom: 0,
             },
@@ -40,11 +40,7 @@ module.exports = {
               color: theme('colors.gray.500'),
               textAlign: 'center',
             },
-            p: {
-              code: {
-                backgroundColor: theme('colors.gray.100'),
-              },
-            },
+            p: {},
           },
         },
         lg: {
@@ -64,7 +60,7 @@ module.exports = {
         },
         dark: {
           css: {
-            color: theme('colors.gray.200'),
+            color: theme('colors.gray.100'),
             'h1, h2, h3, h4, h5, h6': {
               color: theme('colors.white'),
             },
@@ -76,8 +72,7 @@ module.exports = {
             },
             p: {
               code: {
-                color: theme('colors.gray.200'),
-                backgroundColor: theme('colors.gray.900'),
+                color: "theme('colors.gray.200')",
               },
             },
           },
