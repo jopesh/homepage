@@ -882,9 +882,9 @@
   version "1.1.2"
   resolved "https://registry.npmjs.org/@sanity/asset-utils/-/asset-utils-1.1.2.tgz#d6b4b875bee4189cb56f274a7fb5494174463cb2"
 
-"@sanity/base@2.1.5", "@sanity/base@^2.1.5":
-  version "2.1.5"
-  resolved "https://registry.npmjs.org/@sanity/base/-/base-2.1.5.tgz#b5ee642466856585e74da8aedd01dc94e9124f78"
+"@sanity/base@2.1.6", "@sanity/base@^2.1.6":
+  version "2.1.6"
+  resolved "https://registry.npmjs.org/@sanity/base/-/base-2.1.6.tgz#0cacdb33c0aa41f26abc25c4be28b4acc654dc0c"
   dependencies:
     "@popperjs/core" "^2.5.4"
     "@reach/auto-id" "^0.10.5"
@@ -1086,11 +1086,11 @@
     "@sanity/generate-help-url" "2.1.4"
     lodash "^4.17.15"
 
-"@sanity/default-layout@^2.1.5":
-  version "2.1.5"
-  resolved "https://registry.npmjs.org/@sanity/default-layout/-/default-layout-2.1.5.tgz#3aa50e3adadead08db95a32fa1052a058d35dea5"
+"@sanity/default-layout@^2.1.6":
+  version "2.1.6"
+  resolved "https://registry.npmjs.org/@sanity/default-layout/-/default-layout-2.1.6.tgz#139d032493d50df030f75257a2827faa436a25d3"
   dependencies:
-    "@sanity/base" "2.1.5"
+    "@sanity/base" "2.1.6"
     "@sanity/generate-help-url" "2.1.4"
     "@sanity/util" "2.1.4"
     classnames "^2.2.5"
@@ -1108,17 +1108,17 @@
     prop-types "^15.6.0"
     rxjs "^6.5.3"
 
-"@sanity/desk-tool@^2.1.5":
-  version "2.1.5"
-  resolved "https://registry.npmjs.org/@sanity/desk-tool/-/desk-tool-2.1.5.tgz#27c36bf2ab6a6eb318902e770b324b95338ddaac"
+"@sanity/desk-tool@^2.1.6":
+  version "2.1.6"
+  resolved "https://registry.npmjs.org/@sanity/desk-tool/-/desk-tool-2.1.6.tgz#249c02d41078d92f6af50d004133ff830a875456"
   dependencies:
     "@popperjs/core" "^2.5.4"
     "@reach/auto-id" "^0.10.5"
-    "@sanity/base" "2.1.5"
+    "@sanity/base" "2.1.6"
     "@sanity/data-aspects" "2.1.4"
     "@sanity/diff" "2.1.4"
-    "@sanity/field" "2.1.5"
-    "@sanity/form-builder" "2.1.5"
+    "@sanity/field" "2.1.6"
+    "@sanity/form-builder" "2.1.6"
     "@sanity/generate-help-url" "2.1.4"
     "@sanity/mutator" "2.1.4"
     "@sanity/react-hooks" "2.1.4"
@@ -1180,12 +1180,12 @@
     simple-get "^4.0.0"
     split2 "^3.2.2"
 
-"@sanity/field@2.1.5":
-  version "2.1.5"
-  resolved "https://registry.npmjs.org/@sanity/field/-/field-2.1.5.tgz#3b51537522913e7d95234bb15bc584d93b94dc31"
+"@sanity/field@2.1.6":
+  version "2.1.6"
+  resolved "https://registry.npmjs.org/@sanity/field/-/field-2.1.6.tgz#f80fafacacf59588aa99b2e489f880b05db773df"
   dependencies:
     "@sanity/asset-utils" "^1.1.2"
-    "@sanity/base" "2.1.5"
+    "@sanity/base" "2.1.6"
     "@sanity/diff" "2.1.4"
     "@sanity/react-hooks" "2.1.4"
     "@sanity/types" "2.1.4"
@@ -1193,11 +1193,11 @@
     date-fns "^2.16.1"
     sanity-diff-patch "^1.0.9"
 
-"@sanity/form-builder@2.1.5":
-  version "2.1.5"
-  resolved "https://registry.npmjs.org/@sanity/form-builder/-/form-builder-2.1.5.tgz#4e3b524fa98783cca1c644ccbddca8fbc18bd8f8"
+"@sanity/form-builder@2.1.6":
+  version "2.1.6"
+  resolved "https://registry.npmjs.org/@sanity/form-builder/-/form-builder-2.1.6.tgz#0ac23798a527ee01fdc7d6b731ed6542e8f8075f"
   dependencies:
-    "@sanity/base" "2.1.5"
+    "@sanity/base" "2.1.6"
     "@sanity/block-tools" "2.1.4"
     "@sanity/generate-help-url" "2.1.4"
     "@sanity/icons" "^1.0.0"
@@ -7372,10 +7372,6 @@ sanity-diff-patch@^1.0.9:
   resolved "https://registry.npmjs.org/sanity-diff-patch/-/sanity-diff-patch-1.0.9.tgz#fb1fa3b52c27d369878af57ba02fee779b3ca8bd"
   dependencies:
     diff-match-patch "^1.0.5"
-
-sanity-plugin-dark-theme-blue@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/sanity-plugin-dark-theme-blue/-/sanity-plugin-dark-theme-blue-1.0.1.tgz#74804676323b49d05df383ec5c6d72458d3e8679"
 
 sax@~1.2.4:
   version "1.2.4"
