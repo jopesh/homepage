@@ -65,6 +65,15 @@ export default {
       rows: 3,
     },
     {
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      of: [{ type: 'string', name: 'tag' }],
+      options: {
+        layout: 'tags',
+      },
+    },
+    {
       name: 'body',
       title: 'Body',
       type: 'blockContent',
