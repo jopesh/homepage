@@ -19,4 +19,13 @@ module.exports = {
 
     return config
   },
+  async redirects() {
+    return [
+      {
+        source: '/project/:slug',
+        destination: '/work/:slug',
+        permanent: true,
+      },
+    ]
+  },
 }

@@ -22,7 +22,7 @@ export async function getStaticProps({ preview }) {
     } | order(publishedAt desc)`
   )
   const projects = await client.fetch(
-    groq`*[_type == "post" && category == "project"][0..0]`
+    groq`*[_type == "post" && category == "work"][0..0]`
   )
   return {
     props: {

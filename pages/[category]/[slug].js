@@ -24,11 +24,12 @@ export async function getStaticPaths() {
   }
 }
 
-const query = groq`*[_type == "post" && slug.current == $slug][0]`
+const query = groq`*[_type == "post" && slug.current == $slug && category == $category][0]`
 
 export async function getStaticProps({ params, preview = false }) {
   const data = await getClient(preview).fetch(query, {
     slug: params.slug,
+    category: params.category,
   })
   return {
     props: { data },

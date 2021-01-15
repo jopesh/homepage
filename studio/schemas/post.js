@@ -35,7 +35,7 @@ export default {
           },
           {
             title: 'Project',
-            value: 'project',
+            value: 'work',
           },
         ],
         layout: 'radio',
