@@ -19,12 +19,4 @@ module.exports = {
 
     return config
   },
-  async rewrites() {
-    return [
-      {
-        source: '/plausible.js',
-        destination: 'https://stats.johnschmidt.cloud/js/plausible.js',
-      },
-    ]
-  },
 }

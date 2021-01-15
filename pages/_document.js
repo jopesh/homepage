@@ -56,7 +56,7 @@ class HomepageDocument extends Document {
             async
             defer
             data-domain='johnschmidt.de'
-            src='/plausible.js'
+            src='https://stats.johnschmidt.cloud/js/plausible.js'
           />
         </Head>
         <body className='antialiased text-black bg-white dark:bg-black dark:text-white'>
