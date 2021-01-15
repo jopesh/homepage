@@ -52,12 +52,6 @@ class HomepageDocument extends Document {
           />
           <meta name='msapplication-TileColor' content='#8c22d0' />
           <meta name='theme-color' content='#ffffff' />
-          <script
-            async
-            defer
-            data-domain='johnschmidt.de'
-            src='https://stats.johnschmidt.cloud/js/plausible.js'
-          />
         </Head>
         <body className='antialiased text-black bg-white dark:bg-black dark:text-white'>
           <Main />
