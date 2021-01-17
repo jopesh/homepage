@@ -11,15 +11,6 @@ function HomepageApp({ Component, pageProps }) {
     <ThemeProvider attribute='class' defaultTheme='light' enableSystem={false}>
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        {typeof window !== 'undefined' &&
-          window.location.hostname === 'johnschmidt.de' && (
-            <script
-              async
-              defer
-              data-domain='johnschmidt.de'
-              src='https://stats.johnschmidt.cloud/js/plausible.js'
-            />
-          )}
       </Head>
       <DefaultSeo
         title='John Schmidt - Front-end developer'
