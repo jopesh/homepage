@@ -11,7 +11,7 @@ export default function ProductsOverviewPreview({ document }) {
   const secret = encodeURIComponent(process.env.SANITY_STUDIO_PREVIEW_SECRET)
   const host =
     process.env.NODE_ENV === 'production'
-      ? 'https://homepage.jopesch.vercel.app'
+      ? 'https://homepage.johnschmidt.vercel.app'
       : 'http://localhost:3000'
 
   const url = `${host}/api/preview?category=${category}&slug=${slug}&secret=${secret}`
