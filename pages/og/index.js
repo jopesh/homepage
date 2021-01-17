@@ -1,11 +1,12 @@
 import { useRouter } from 'next/router'
-import Image from 'next/image'
-
-import { getClient, urlFor } from 'lib/sanity'
+import { NextSeo } from 'next-seo'
 import { groq } from 'next-sanity'
+import Image from 'next/image'
 import Head from 'next/head'
 
-export const getStaticProps = async (ctx) => {
+import { getClient, urlFor } from 'lib/sanity'
+
+export async function getStaticProps() {
   const author = await getClient().fetch(groq`*[_type=="author"][0]`)
   return {
     props: {
@@ -20,9 +21,7 @@ export default function OgImageTemplate({ author }) {
   const { query } = router
   return (
     <div className='relative w-full h-screen bg-gradient-to-br to-indigo-500 from-purple-900'>
-      <Head>
-        <meta name='robots' content='noindex, nofollow' />
-      </Head>
+      <NextSeo nofollow noindex />
       <div className='absolute inset-0'>
         <Image
           src='/images/meta-bg.png'
@@ -35,7 +34,12 @@ export default function OgImageTemplate({ author }) {
       {query.title ? (
         <>
           <div className='absolute z-50 top-12 left-12 right-12'>
-            <h1 className='font-black text-white text-8xl'>{query.title}</h1>
+            <h1
+              className={`font-black text-white tracking-tight ${
+                query.title.length > 25 ? 'text-8xl' : 'text-9xl'
+              }`}>
+              {query.title}
+            </h1>
           </div>
           <div className='absolute z-50 flex items-center bottom-12 left-12'>
             <div className='flex overflow-hidden rounded-full ring-4 ring-white border-6'>
