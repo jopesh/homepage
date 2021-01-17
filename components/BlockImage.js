@@ -2,8 +2,8 @@ import Image from 'next/image'
 
 import imageHelper from 'utils/imageHelper'
 
-const BlockImage = ({ image }) => {
-  if (image?.node?.asset) {
+const BlockImage = ({ image = null }) => {
+  if (image.node?.asset) {
     const { width, height, imageUrl } = imageHelper(image.node)
     const {
       node: { alt, caption, layout, shadow },
