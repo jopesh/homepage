@@ -14,7 +14,7 @@ const Intro = ({ author }) => {
     <section id='author'>
       <div className='flex flex-col items-center justify-between space-y-8 text-center md:space-y-10'>
         {author.image && (
-          <div className='flex overflow-hidden rounded-full'>
+          <div className='flex overflow-hidden rounded-full shadow'>
             <Image
               src={imageUrl}
               width='96'
@@ -38,7 +38,7 @@ const Intro = ({ author }) => {
           <a
             onClick={handleClick}
             href='mailto:mail@johnschmidt.de'
-            className='inline-flex items-center px-6 py-4 space-x-3 text-xl font-semibold text-white bg-indigo-700 dark:text-white hover:bg-indigo-600 hover:text-white ring-indigo-700 dark:ring-indigo-300 ring-offset-2 hover:no-underline'>
+            className='inline-flex items-center px-6 py-4 space-x-3 text-xl font-semibold text-white bg-indigo-700 shadow dark:text-white hover:bg-indigo-600 hover:text-white ring-indigo-700 dark:ring-indigo-300 ring-offset-2 hover:no-underline'>
             <span>Get in touch</span>
             <ChatCenteredText focusable='false' weight='bold' size='24' />
           </a>
