@@ -9,7 +9,7 @@ import Link from 'next/link'
 
 const BlogList = ({ posts }) => {
   return (
-    <section id='posts' className='pt-4 md:pr-12'>
+    <section id='posts' className='pt-4 md:pr-8'>
       <div className='flex items-center justify-between mb-6'>
         <Heading>Thoughts</Heading>
         {/* <a href='#' className='flex items-center py-1 space-x-1'>

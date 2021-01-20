@@ -10,7 +10,7 @@ import Link from 'next/link'
 
 const WorkList = ({ projects }) => {
   return (
-    <section id='work' className='pt-4 md:pl-12'>
+    <section id='work' className='pt-4 md:pl-8'>
       <div className='flex items-center justify-between mb-6'>
         <Heading>Recent work</Heading>
         {/* <a href='/' className='flex items-center py-1 space-x-1'>
@@ -24,13 +24,15 @@ const WorkList = ({ projects }) => {
           return (
             <li key={p._id}>
               {p.mainImage && (
-                <Image
-                  src={imageUrl}
-                  width={1440}
-                  height={900}
-                  sizes='(min-width: 768px) 439px'
-                  alt={p.mainImage.alt}
-                />
+                <div className='shadow'>
+                  <Image
+                    src={imageUrl}
+                    width={1440}
+                    height={900}
+                    sizes='(min-width: 768px) 455px'
+                    alt={p.mainImage.alt}
+                  />
+                </div>
               )}
               <Link href={`/work/${p.slug.current}`}>
                 <a className='block py-1 mt-2 mb-0.5'>
