@@ -19,26 +19,25 @@ const BlockContent = ({ ...args }) => (
             lower: true,
           })
           if (match) {
-            return (
-              <div className='relative'>
-                <div id={slug} className='w-0 h-0 transform -translate-y-20' />
-                {createElement(props.node.style, {
-                  children: [
-                    props.children,
-                    <div key='spacer' className='inline-block w-0.5 h-0' />,
-                    <a
-                      className='inline-flex items-center justify-center p-1.5'
-                      href={`#${slug}`}
-                      key='anchor'>
-                      <span className='sr-only'>
-                        Anchor link for: {props.children.toString()}
-                      </span>
-                      <Hash size={14} weight='bold' />
-                    </a>,
-                  ],
-                })}
-              </div>
-            )
+            return createElement(props.node.style, {
+              id: slug,
+              style: {
+                scrollMarginTop: '6rem',
+              },
+              children: [
+                props.children,
+                <div key='spacer' className='inline-block w-0.5 h-0' />,
+                <a
+                  className='inline-flex items-center justify-center p-1.5'
+                  href={`#${slug}`}
+                  key='anchor'>
+                  <span className='sr-only'>
+                    Anchor link for: {props.children.toString()}
+                  </span>
+                  <Hash className='w-3 h-3 md:w-4 md:h-4' weight='bold' />
+                </a>,
+              ],
+            })
           } else if (props.node.style === 'blockquote') {
             return <blockquote>{props.children}</blockquote>
           } else return <p>{props.children}</p>
