@@ -27,7 +27,7 @@
     "phosphor-react": "^1.1.2",
     "postcss": "^8.2.4",
     "postcss-focus-visible": "^5.0.0",
-    "preact": "^10.5.11",
+    "preact": "^10.5.12",
     "prism-react-renderer": "^1.1.1",
     "puppeteer-core": "^5.5.0",
     "react": "17.0.1",
