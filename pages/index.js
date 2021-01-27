@@ -11,7 +11,6 @@ import Layout from 'components/Layout'
 
 export async function getStaticProps({ preview }) {
   const client = getClient(preview)
-  const author = await client.fetch(groq`*[_type == "author"][0]{ image }`)
   const posts = await client.fetch(
     groq`*[_type == "post" && category == "blog"][0...3] { 
       _id, 
@@ -26,7 +25,6 @@ export async function getStaticProps({ preview }) {
   )
   return {
     props: {
-      author,
       posts,
       projects,
     },
@@ -34,7 +32,7 @@ export async function getStaticProps({ preview }) {
   }
 }
 
-export default function Home({ author, posts, projects }) {
+export default function Home({ posts, projects }) {
   return (
     <Layout>
       <div className='my-6 space-y-16'>
@@ -57,7 +55,7 @@ export default function Home({ author, posts, projects }) {
           }}
         />
 
-        <Intro author={author} />
+        <Intro />
         <div className='space-y-8 divide-gray-400 dark:divide-gray-600 md:divide-x md:grid md:grid-cols-2 md:space-y-0'>
           <PostList posts={posts} />
           <WorkList projects={projects} />

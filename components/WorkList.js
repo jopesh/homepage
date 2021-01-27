@@ -24,7 +24,7 @@ const WorkList = ({ projects }) => {
           return (
             <li key={p._id}>
               {p.mainImage && (
-                <div className='shadow'>
+                <div>
                   <Image
                     src={imageUrl}
                     width={1440}
