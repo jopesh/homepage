@@ -4737,6 +4737,11 @@ use-deep-compare-effect@^1.4.0:
     "@types/react" "^17.0.0"
     dequal "^2.0.2"
 
+use-reading-time@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/use-reading-time/-/use-reading-time-0.2.0.tgz#4a0134e079eb6696fe072b007a05fd06466b3489"
+  integrity sha512-zOsfzN1BanIYUcavnTrOPuCJpliAdX8zRkW3TH4gpHrWVxZy9zX5JszZhea631mv9QnmJxy7dB6FOvDjE9kLFQ==
+
 use-subscription@1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/use-subscription/-/use-subscription-1.5.1.tgz#73501107f02fad84c6dd57965beb0b75c68c42d1"

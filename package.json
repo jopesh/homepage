@@ -34,7 +34,8 @@
     "react-dom": "17.0.1",
     "react-icons": "^4.1.0",
     "slugify": "^1.4.6",
-    "tailwindcss": "^2.0.2"
+    "tailwindcss": "^2.0.2",
+    "use-reading-time": "^0.2.0"
   },
   "devDependencies": {
     "prettier": "^2.2.1"
