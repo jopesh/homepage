@@ -1,7 +1,7 @@
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import prismTheme from 'lib/prismTheme'
 
-const BlockCode = ({ code = '', language = 'javascript' }) => {
+const BlockCode = ({ code = '', language = 'javascript', filename }) => {
   return (
     <Highlight
       {...defaultProps}
@@ -9,15 +9,22 @@ const BlockCode = ({ code = '', language = 'javascript' }) => {
       language={language}
       code={code}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className + ' shadow-lg'} style={style}>
-          {tokens.map((line, i) => (
-            <div {...getLineProps({ line, key: i })}>
-              {line.map((token, key) => (
-                <span {...getTokenProps({ token, key })} />
-              ))}
-            </div>
-          ))}
-        </pre>
+        <>
+          <pre className={className} style={style}>
+            {tokens.map((line, i) => (
+              <div {...getLineProps({ line, key: i })}>
+                {line.map((token, key) => (
+                  <span {...getTokenProps({ token, key })} />
+                ))}
+              </div>
+            ))}
+          </pre>
+          {filename && (
+            <span className='block -mt-4 font-mono text-sm font-semibold text-center md:-mt-6'>
+              `{filename}`
+            </span>
+          )}
+        </>
       )}
     </Highlight>
   )

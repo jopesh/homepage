@@ -43,7 +43,11 @@ const BlockContent = ({ ...args }) => (
           } else return <p>{props.children}</p>
         },
         code: (props) => (
-          <BlockCode code={props.node.code} language={props.node.language} />
+          <BlockCode
+            code={props.node.code}
+            language={props.node.language}
+            filename={props.node.filename}
+          />
         ),
         image: (props) => <BlockImage image={props} width={812} />,
         meta: (props) => <BlockStack node={props.node} />,
