@@ -8,10 +8,10 @@ export default () =>
   S.list()
     .title('Content')
     .items([
-      ...S.documentTypeListItems().filter((item) => item.getId() !== 'author'),
+      ...S.documentTypeListItems(),
       S.divider(),
       S.listItem()
-        .title('Blog')
+        .title('Blog posts')
         .icon(Lightning)
         .child(
           S.documentList()
@@ -21,7 +21,7 @@ export default () =>
             .menuItems([...S.documentTypeList('post').getMenuItems()])
         ),
       S.listItem()
-        .title('Projects')
+        .title('Project posts')
         .icon(Pen)
         .child(
           S.documentList()
@@ -30,13 +30,7 @@ export default () =>
             .filter('category == "project"')
             .menuItems([...S.documentTypeList('post').getMenuItems()])
         ),
-      // Add a visual divider (optional)
-      S.divider(),
-      S.listItem()
-        .title('Author')
-        .icon(UserCircle)
-        .child(S.editor().schemaType('author').documentId('author')),
-      // // List out the rest of the document types, but filter out the config type
+      // List out the rest of the document types, but filter out the config type
     ])
 
 export const getDefaultDocumentNode = (props) => {

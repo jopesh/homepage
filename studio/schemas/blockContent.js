@@ -81,6 +81,10 @@ export default {
     },
     {
       type: 'code',
+      options: {
+        withFilename: true,
+        theme: 'monokai',
+      },
     },
     {
       name: 'meta',
