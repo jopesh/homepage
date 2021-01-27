@@ -87,6 +87,8 @@ module.exports = {
       ringWidth: ['focus-visible'],
       typography: ['dark'],
       boxShadow: ['dark'],
+      opacity: ['focus-visible'],
+      zIndex: ['focus-visible'],
     },
   },
   plugins: [require('@tailwindcss/typography')],
