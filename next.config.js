@@ -1,4 +1,7 @@
 module.exports = {
+  future: {
+    webpack5: true,
+  },
   images: {
     domains: ['cdn.sanity.io'],
     deviceSizes: [439, 632, 756, 828, 1080, 1512],
