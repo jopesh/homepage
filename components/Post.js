@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import Image from 'next/image'
 import useReadingTime from 'use-reading-time'
+
 import formatDate from 'utils/formatDate'
 import BlockContent from './BlockContent'
 
@@ -25,7 +26,7 @@ const Post = ({ data }) => {
           />
         </div>
         <div className='flex flex-col flex-grow sm:flex-row sm:justify-between'>
-          <span className='font-medium'>by John Schmidt</span>
+          <span>John Schmidt</span>
           <div>
             <span>{readingTime} min read</span>
             <span className='mx-2'>–</span>

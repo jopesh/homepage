@@ -9,8 +9,8 @@ const Intro = () => {
   }
   return (
     <section id='author'>
-      <div className='flex flex-col items-center justify-between space-y-8 text-center md:space-y-10'>
-        <div className='flex overflow-hidden rounded-full shadow'>
+      <div className='flex flex-col items-center justify-between space-y-6 text-center sm:space-y-8 md:space-y-10'>
+        <div className='flex overflow-hidden rounded-full'>
           <Image
             src='/images/portrait.jpg'
             width='96'
@@ -20,12 +20,12 @@ const Intro = () => {
             priority
           />
         </div>
-        <h1 className='text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl'>
+        <h1 className='text-3xl font-black tracking-tight sm:text-5xl md:text-6xl'>
           Hi. I'm John.
           <br />
           Front-end developer.
         </h1>
-        <p className='max-w-xl text-lg lg:max-w-2xl md:text-xl lg:text-2xl'>
+        <p className='max-w-xl sm:text-lg lg:max-w-2xl md:text-xl lg:text-2xl'>
           I aim to create fast, simple and accessible web experiences for
           everyone to use and enjoy.
         </p>
