@@ -7,10 +7,11 @@ const BlockCode = ({ code = '', language = 'javascript', filename }) => {
       {...defaultProps}
       theme={prismTheme}
       language={language}
-      code={code}>
+      code={code}
+    >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <>
-          <pre className={className} style={style}>
+          <pre className={className + ' whitespace-pre-wrap'} style={style}>
             {tokens.map((line, i) => (
               <div {...getLineProps({ line, key: i })}>
                 {line.map((token, key) => (
