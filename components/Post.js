@@ -12,8 +12,9 @@ const Post = ({ data }) => {
   const date = formatDate(publishedAt)
   return (
     <article
-      className='mx-auto my-6 prose lg:my-8 md:prose-lg dark:prose-dark'
-      ref={text}>
+      className='mx-auto my-6 prose md:prose-lg lg:my-8 dark:prose-dark'
+      ref={text}
+    >
       <h1>{title}</h1>
       <div className='flex items-center my-8 space-x-3 text-sm'>
         <div className='flex flex-grow-0 flex-shrink-0 overflow-hidden rounded-full'>
