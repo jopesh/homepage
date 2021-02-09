@@ -12,7 +12,7 @@ const Post = ({ data }) => {
   const date = formatDate(publishedAt)
   return (
     <article
-      className='mx-auto my-6 prose md:prose-lg lg:my-8 dark:prose-dark'
+      className='mx-auto my-6 prose xl:prose-lg lg:my-8 dark:prose-dark'
       ref={text}
     >
       <h1>{title}</h1>
@@ -20,13 +20,13 @@ const Post = ({ data }) => {
         <div className='flex flex-grow-0 flex-shrink-0 overflow-hidden rounded-full'>
           <Image
             src='/images/portrait.jpg'
-            height='36'
-            width='36'
+            height='32'
+            width='32'
             layout='fixed'
             alt='Portrait of John'
           />
         </div>
-        <div className='flex flex-col flex-grow sm:flex-row sm:justify-between'>
+        <div className='flex flex-col flex-grow font-medium sm:flex-row sm:justify-between'>
           <span>John Schmidt</span>
           <div>
             <span>{readingTime} min read</span>
