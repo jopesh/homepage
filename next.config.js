@@ -1,10 +1,7 @@
 module.exports = {
-  future: {
-    webpack5: true,
-  },
   images: {
     domains: ['cdn.sanity.io'],
-    deviceSizes: [439, 632, 756, 828, 1080, 1512],
+    deviceSizes: [439, 632, 756, 828, 1080, 1512]
   },
   webpack: (config, { dev, isServer }) => {
     if (isServer) {
@@ -16,19 +13,19 @@ module.exports = {
       Object.assign(config.resolve.alias, {
         react: 'preact/compat',
         'react-dom/test-utils': 'preact/test-utils',
-        'react-dom': 'preact/compat',
+        'react-dom': 'preact/compat'
       })
     }
 
     return config
   },
-  async redirects() {
+  async redirects () {
     return [
       {
         source: '/project/:slug',
         destination: '/work/:slug',
-        permanent: true,
-      },
+        permanent: true
+      }
     ]
-  },
+  }
 }
