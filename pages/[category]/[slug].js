@@ -8,36 +8,36 @@ import PostSeo from 'components/PostSeo'
 import { getClient } from 'lib/sanity'
 import { useRouter } from 'next/router'
 
-export async function getStaticPaths() {
+export async function getStaticPaths () {
   const posts = await getClient().fetch(
     groq`*[_type == "post"]{slug, category}`
   )
-  const paths = posts?.map((p) => ({
+  const paths = posts?.map(p => ({
     params: {
       slug: p.slug.current,
-      category: p.category,
-    },
+      category: p.category
+    }
   }))
   return {
     paths,
-    fallback: true,
+    fallback: true
   }
 }
 
 const query = groq`*[_type == "post" && slug.current == $slug && category == $category][0]`
 
-export async function getStaticProps({ params, preview = false }) {
+export async function getStaticProps ({ params, preview = false }) {
   const data = await getClient(preview).fetch(query, {
     slug: params.slug,
-    category: params.category,
+    category: params.category
   })
   return {
     props: { data },
-    revalidate: 1,
+    revalidate: 1
   }
 }
 
-export default function BlogPost({ data }) {
+export default function BlogPost ({ data }) {
   const router = useRouter()
   if (router.isFallback || !data) {
     return <Error />
