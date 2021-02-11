@@ -1,17 +1,28 @@
 import React from 'react'
 import toMarkdown from '@sanity/block-content-to-markdown'
 
-import { Code, Card, Button, Box } from '@sanity/ui'
+import { Code, Card, Button, Box, TextArea } from '@sanity/ui'
+import imageUrlBuilder from '@sanity/image-url'
 import { Clipboard } from 'phosphor-react'
+
+const builder = imageUrlBuilder({
+  projectId: process.env.SANITY_STUDIO_API_PROJECT_ID,
+  dataset: process.env.SANITY_STUDIO_API_DATASET
+})
 
 const serializers = {
   types: {
-    code: (props) =>
+    code: props =>
       '```' + props.node.language + '\n' + props.node.code + '\n```',
-  },
+    image: props => {
+      console.log(props)
+      return `![${props.node.alt}](${builder.image(props.node.asset).url()})`
+    },
+    meta: props => ''
+  }
 }
 
-export default function MarkdownExport({ document }) {
+export default function MarkdownExport ({ document }) {
   const { displayed } = document
   if (displayed?.category === 'project') return null
   const input = toMarkdown(displayed.body, { serializers })
@@ -21,7 +32,12 @@ export default function MarkdownExport({ document }) {
       <Box paddingBottom='4'>
         <Button text='Copy' icon={Clipboard} tone='primary' onClick={copy} />
       </Box>
-      <Code style={{ whiteSpace: 'pre-wrap' }}>{input}</Code>
+      <TextArea
+        contentEditable='false'
+        style={{ whiteSpace: 'pre-wrap', height: '75vh' }}
+      >
+        {input}
+      </TextArea>
     </Card>
   )
 }
