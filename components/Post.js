@@ -1,13 +1,12 @@
 import { useRef } from 'react'
 import Image from 'next/image'
-import useReadingTime from 'use-reading-time'
 
 import formatDate from 'utils/formatDate'
 import BlockContent from './BlockContent'
+import ReadingTime from './ReadingTime'
 
 const Post = ({ data }) => {
   const text = useRef()
-  const { readingTime } = useReadingTime(text)
   const { title, publishedAt, body, summary, slug, mainImage, category } = data
   const date = formatDate(publishedAt)
   return (
@@ -23,13 +22,14 @@ const Post = ({ data }) => {
             height='32'
             width='32'
             layout='fixed'
+            priority
             alt='Portrait of John'
           />
         </div>
         <div className='flex flex-col flex-grow font-medium sm:flex-row sm:justify-between'>
           <span>John Schmidt</span>
           <div>
-            <span>{readingTime} min read</span>
+            <ReadingTime text={text} />
             <span className='mx-2'>–</span>
             <time dateTime={publishedAt}>{date}</time>
           </div>
