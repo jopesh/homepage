@@ -27,7 +27,7 @@ const BlockContent = ({ ...args }) => (
               children: [
                 <div className='flex items-start'>
                   <a
-                    className='px-1 py-2.5 -ml-5 xl:py-3.5 md:px-2 md:-ml-7'
+                    className='px-1 py-2.5 -ml-5 xl:py-3 md:px-2 md:-ml-7'
                     href={`#${slug}`}
                     key='anchor'
                   >
