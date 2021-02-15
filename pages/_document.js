@@ -1,11 +1,11 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 class HomepageDocument extends Document {
-  static async getInitialProps(ctx) {
+  static async getInitialProps (ctx) {
     const initialProps = await Document.getInitialProps(ctx)
     return { ...initialProps }
   }
-  render() {
+  render () {
     return (
       <Html lang='en'>
         <Head>
@@ -30,7 +30,7 @@ class HomepageDocument extends Document {
           <script
             dangerouslySetInnerHTML={{
               __html:
-                'window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }',
+                'window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }'
             }}
           />
           <link
@@ -59,7 +59,7 @@ class HomepageDocument extends Document {
           <meta name='msapplication-TileColor' content='#8c22d0' />
           <meta name='theme-color' content='#ffffff' />
         </Head>
-        <body className='antialiased text-black bg-white dark:bg-black dark:text-white'>
+        <body className='antialiased text-black bg-gray-50 dark:bg-black dark:text-white'>
           <Main />
           <NextScript />
         </body>
