@@ -59,7 +59,7 @@ class HomepageDocument extends Document {
           <meta name='msapplication-TileColor' content='#8c22d0' />
           <meta name='theme-color' content='#ffffff' />
         </Head>
-        <body className='antialiased text-black bg-gray-50 dark:bg-black dark:text-white'>
+        <body className='antialiased text-black bg-white dark:bg-black dark:text-white'>
           <Main />
           <NextScript />
         </body>
