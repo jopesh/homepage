@@ -1,35 +1,34 @@
-import S from '@sanity/desk-tool/structure-builder'
-import { Lightning, Pen, UserCircle } from 'phosphor-react'
+import S from "@sanity/desk-tool/structure-builder"
 
-import MarkdownExport from './components/MarkdownExport'
-import Preview from './components/Preview'
+import MarkdownExport from "./components/MarkdownExport"
+import Preview from "./components/Preview"
 
 export default () =>
   S.list()
-    .title('Content')
+    .title("Content")
     .items([
       ...S.documentTypeListItems(),
-      S.divider(),
-      S.listItem()
-        .title('Blog posts')
-        .icon(Lightning)
-        .child(
-          S.documentList()
-            .schemaType('post')
-            .title('Blog posts')
-            .filter('category == "blog"')
-            .menuItems([...S.documentTypeList('post').getMenuItems()])
-        ),
-      S.listItem()
-        .title('Project posts')
-        .icon(Pen)
-        .child(
-          S.documentList()
-            .schemaType('post')
-            .title('Project posts')
-            .filter('category == "project"')
-            .menuItems([...S.documentTypeList('post').getMenuItems()])
-        ),
+      // S.divider(),
+      // S.listItem()
+      //   .title("Blog posts")
+      //   .icon(Lightning)
+      //   .child(
+      //     S.documentList()
+      //       .schemaType("post")
+      //       .title("Blog posts")
+      //       .filter('category == "blog"')
+      //       .menuItems([...S.documentTypeList("post").getMenuItems()])
+      //   ),
+      // S.listItem()
+      //   .title("Project posts")
+      //   .icon(Pen)
+      //   .child(
+      //     S.documentList()
+      //       .schemaType("post")
+      //       .title("Project posts")
+      //       .filter('category == "project"')
+      //       .menuItems([...S.documentTypeList("post").getMenuItems()])
+      //   ),
       // List out the rest of the document types, but filter out the config type
     ])
 
@@ -42,11 +41,11 @@ export const getDefaultDocumentNode = (props) => {
    * https://www.sanity.io/docs/structure-builder-reference#getdefaultdocumentnode-97e44ce262c9
    */
   const { schemaType } = props
-  if (schemaType === 'post') {
+  if (schemaType === "post") {
     return S.document().views([
       S.view.form(),
-      S.view.component(Preview).title('Preview'),
-      S.view.component(MarkdownExport).title('Markdown'),
+      S.view.component(Preview).title("Preview"),
+      S.view.component(MarkdownExport).title("Markdown"),
     ])
   }
   return S.document().views([S.view.form()])
