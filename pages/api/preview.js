@@ -1,6 +1,3 @@
-import { getClient } from 'lib/sanity'
-import { groq } from 'next-sanity'
-
 export default async (req, res) => {
   // Check the secret and next parameters
   // This secret should only be known to this API route and the CMS
@@ -8,7 +5,7 @@ export default async (req, res) => {
     req.query.secret !== process.env.SANITY_PREVIEW_SECRET ||
     !req.query.slug
   ) {
-    return res.status(401).send('Unauthorized')
+    return res.status(401).send("Unauthorized")
   } else {
     res.setPreviewData({})
     res.redirect(`/${req.query.category}/${req.query.slug}`)

@@ -1,7 +1,7 @@
-import puppeteer from 'puppeteer-core'
-import chromium from 'chrome-aws-lambda'
+import puppeteer from "puppeteer-core"
+import chromium from "chrome-aws-lambda"
 
-const isDev = process.env.NODE_ENV === 'development'
+const isDev = process.env.NODE_ENV === "development"
 
 export default async (req, res) => {
   const { query } = req
@@ -27,9 +27,9 @@ export default async (req, res) => {
         ? `http://${req.headers.host}/og?title=${encodeURIComponent(query.t)}`
         : `http://${req.headers.host}/og`
     )
-    const screenshot = await page.screenshot({ encoding: 'binary' })
-    res.setHeader('content-type', 'image/png')
-    res.setHeader('cache-control', 'public, max-age=604800')
+    const screenshot = await page.screenshot({ encoding: "binary" })
+    res.setHeader("content-type", "image/png")
+    res.setHeader("cache-control", "public, max-age=604800")
     res.status(200).send(screenshot)
   } catch (error) {
     console.log(error)

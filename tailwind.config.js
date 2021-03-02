@@ -1,96 +1,97 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require("tailwindcss/defaultTheme")
 
 module.exports = {
-  purge: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'class',
+  purge: ["./components/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans]
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
       },
-      typography: theme => ({
+      typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.900'),
+            color: theme("colors.gray.900"),
             h1: {
               marginBottom: 0,
-              fontWeight: 900
+              fontWeight: 900,
             },
-            'h1, h2, h3, h4, h5, h6': {
-              color: theme('colors.black')
-            },
-            pre: {
-              borderRadius: 0,
-              backgroundColor: null
-            },
-            strong: {
-              color: 'currentColor'
+            "h1, h2, h3, h4, h5, h6": {
+              color: theme("colors.black"),
             },
             a: null,
-            blockquote: {
-              color: 'currentColor',
-              fontWeight: theme('fontWeight.normal'),
-              fontStyle: 'normal'
+            pre: {
+              borderRadius: 0,
+              backgroundColor: null,
             },
-            'ul > li::before, ol > li::before': {
-              color: theme('colors.gray.500')
+            strong: {
+              color: "currentColor",
+            },
+            blockquote: {
+              color: "currentColor",
+              fontWeight: theme("fontWeight.normal"),
+              fontStyle: "normal",
+            },
+            "ul > li::before, ol > li::before": {
+              color: theme("colors.gray.500"),
             },
             img: null,
-            'figure figcaption': {
-              fontSize: theme('fontSize.sm[0]'),
-              color: theme('colors.gray.500'),
-              textAlign: 'center'
+            "figure figcaption": {
+              fontSize: theme("fontSize.sm[0]"),
+              color: theme("colors.gray.500"),
+              textAlign: "center",
             },
-            p: {}
-          }
+            p: {},
+          },
         },
         lg: {
           css: {
             h1: {
-              marginBottom: 0
+              marginBottom: 0,
             },
             pre: {
               borderRadius: 0,
-              fontSize: theme('fontSize.sm[0]')
+              fontSize: theme("fontSize.sm[0]"),
             },
             img: null,
-            'figure figcaption': {
-              fontSize: theme('fontSize.sm[0]')
-            }
-          }
+            "figure figcaption": {
+              fontSize: theme("fontSize.sm[0]"),
+            },
+          },
         },
         dark: {
           css: {
-            color: theme('colors.gray.100'),
-            'h1, h2, h3, h4, h5, h6': {
-              color: theme('colors.white')
+            color: theme("colors.gray.100"),
+            "h1, h2, h3, h4, h5, h6": {
+              color: theme("colors.white"),
             },
-            'ul > li::before, ol > li::before': {
-              color: theme('colors.gray.400')
+            "ul > li::before, ol > li::before": {
+              color: theme("colors.gray.400"),
             },
             figcaption: {
-              color: theme('colors.gray.400')
+              color: theme("colors.gray.400"),
             },
             p: {
               code: {
-                color: "theme('colors.gray.200')"
-              }
-            }
-          }
-        }
-      })
-    }
+                color: "theme('colors.gray.200')",
+              },
+            },
+          },
+        },
+      }),
+    },
   },
   variants: {
     extend: {
-      backgroundOpacity: ['dark'],
-      translate: ['group-hover'],
-      ringWidth: ['focus-visible'],
-      typography: ['dark'],
-      boxShadow: ['dark'],
-      opacity: ['focus-visible'],
-      zIndex: ['focus-visible']
-    }
+      display: ["group-hover"],
+      backgroundOpacity: ["dark"],
+      translate: ["group-hover"],
+      ringWidth: ["focus-visible"],
+      typography: ["dark"],
+      boxShadow: ["dark"],
+      opacity: ["focus-visible"],
+      zIndex: ["focus-visible"],
+    },
   },
-  plugins: [require('@tailwindcss/typography')]
+  plugins: [require("@tailwindcss/typography")],
 }

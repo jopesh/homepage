@@ -1,8 +1,8 @@
-const fs = require('fs')
-const prettier = require('prettier')
+const fs = require("fs")
+const prettier = require("prettier")
 
 ;(async () => {
-  const query = `*[_type == "post"]{slug,category}`
+  const query = `*[_type == "post"]{slug,category->{slug}}`
   const req = await fetch(
     `https://${
       process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
@@ -24,14 +24,14 @@ const prettier = require('prettier')
           slug: { current: slug },
         } = p
         return `<url>
-                    <loc>${`https://johnschmidt.de/${category}/${slug}`}</loc>
+                    <loc>${`https://johnschmidt.de/${category.slug.current}/${slug}`}</loc>
                 </url>`
       })
-      .join('')}
+      .join("")}
   </urlset>
   `
   const format = prettier.format(sitemap, {
-    parser: 'html',
+    parser: "html",
   })
-  fs.writeFileSync('public/sitemap.xml', format)
+  fs.writeFileSync("public/sitemap.xml", format)
 })()

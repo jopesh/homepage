@@ -1,66 +1,73 @@
-import { createElement } from 'react'
-import { Hash } from 'phosphor-react'
-import slugify from 'slugify'
+import { createElement } from "react"
+import { Link } from "phosphor-react"
+import slugify from "slugify"
 
-import BlockCode from 'components/BlockCode'
-import BlockImage from 'components/BlockImage'
-import BlockStack from 'components/BlockStack'
-import { PortableText } from 'lib/sanity'
+import BlockCode from "components/BlockCode"
+import BlockImage from "components/BlockImage"
+import BlockStack from "components/BlockStack"
+import { PortableText } from "lib/sanity"
 
 const BlockContent = ({ ...args }) => (
   <PortableText
     {...args}
     serializers={{
       types: {
-        block: props => {
+        block: (props) => {
           const regex = /h\d$/ms
           const match = regex.test(props.node.style)
           const slug = slugify(props.children.toString(), {
-            lower: true
+            lower: true,
           })
           if (match) {
             return createElement(props.node.style, {
               id: slug,
               style: {
-                scrollMarginTop: '6rem'
+                scrollMarginTop: "5rem",
               },
               children: [
-                <div className='flex items-start'>
-                  <a
-                    className='px-1 py-2.5 -ml-5 xl:py-3 md:px-2 md:-ml-7'
-                    href={`#${slug}`}
-                    key='anchor'
-                  >
-                    <span className='sr-only'>
-                      Anchor link for: {props.children.toString()}
+                <>
+                  <a href={`#${slug}`} key="anchor" className="group">
+                    <span className="mr-3">{props.children}</span>
+                    <span>
+                      <Link
+                        className="hidden base-link sm:group-hover:inline"
+                        size=".75em"
+                        weight="bold"
+                      />
                     </span>
-                    <Hash className='w-3 h-3' weight='bold' />
                   </a>
-                  {props.children}
-                </div>
-              ]
+                </>,
+              ],
             })
-          } else if (props.node.style === 'blockquote') {
+          } else if (props.node.style === "blockquote") {
             return <blockquote>{props.children}</blockquote>
           } else return <p>{props.children}</p>
         },
-        code: props => (
-          <BlockCode
-            code={props.node.code}
-            language={props.node.language}
-            filename={props.node.filename}
-          />
-        ),
-        image: props => <BlockImage image={props} width={812} />,
-        meta: props => <BlockStack node={props.node} />
+        code: function RenderCode(props) {
+          return (
+            <BlockCode
+              code={props.node.code}
+              language={props.node.language}
+              filename={props.node.filename}
+            />
+          )
+        },
+        image: function RenderImage(props) {
+          return <BlockImage image={props} width={812} />
+        },
+        meta: function RenderMeta(props) {
+          return <BlockStack node={props.node} />
+        },
       },
       marks: {
-        link: props => (
-          <a href={props.mark.href} target='_blank' rel='noopener noreferrer'>
-            {props.children}
-          </a>
-        )
-      }
+        link: function RenderLink(props) {
+          return (
+            <a href={props.mark.href} target="_blank" rel="noopener noreferrer">
+              {props.children}
+            </a>
+          )
+        },
+      },
     }}
   />
 )

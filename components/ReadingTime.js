@@ -1,4 +1,4 @@
-import useReadingTime from 'use-reading-time'
+import useReadingTime from "use-reading-time"
 
 const ReadingTime = ({ text }) => {
   const { readingTime } = useReadingTime(text)

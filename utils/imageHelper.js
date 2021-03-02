@@ -1,5 +1,5 @@
-import { getImageDimensions } from '@sanity/asset-utils'
-import { urlFor } from 'lib/sanity'
+import { getImageDimensions } from "@sanity/asset-utils"
+import { urlFor } from "lib/sanity"
 
 export default function imageHelper(asset, width = 1920) {
   // get original image dimensions from sanity

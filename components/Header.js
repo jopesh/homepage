@@ -1,14 +1,12 @@
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { Transition } from '@headlessui/react'
-import { ArrowLeft, CaretLeft, HouseLine, HouseSimple } from 'phosphor-react'
+import Link from "next/link"
+import { useRouter } from "next/router"
 
-import ThemeSwitch from './ThemeSwitch'
-import Logo from './Logo'
+import ThemeSwitch from "./ThemeSwitch"
+import Logo from "./Logo"
 
 const Header = () => {
   const router = useRouter()
-  const pageName = router.query.category
+  const category = router.query.category
     ? router.query.category
         .charAt(0)
         .toUpperCase()
@@ -18,27 +16,22 @@ const Header = () => {
         .charAt(0)
         .toUpperCase()
         .concat(router.asPath.substr(2))
-  const root = router.asPath === '/'
+  const root = router.asPath === "/"
   return (
-    <header className='sticky top-0 z-40 bg-white bg-opacity-75 blur dark:bg-black dark:bg-opacity-75'>
-      <div className='flex items-center justify-between max-w-screen-lg px-6 mx-auto'>
-        <div className='flex items-center space-x-2'>
-          <Link href='/'>
-            <a className='py-4 pl-4 pr-2 -ml-4'>
-              <Logo className='w-5 text-black dark:text-white' />
-              <span className='sr-only'>Go to the homepage</span>
+    <header className="sticky top-0 z-40 bg-white bg-opacity-75 blur dark:bg-black dark:bg-opacity-75">
+      <div className="flex items-center justify-between max-w-screen-lg px-6 mx-auto">
+        <div className="flex items-center space-x-2">
+          <Link href="/">
+            <a className="py-4 pl-4 pr-1 -ml-4 base-link">
+              <Logo className="w-4 text-black dark:text-white" />
+              <span className="sr-only">Go to the homepage</span>
             </a>
           </Link>
-          {!root ? (
-            <div className='flex items-center space-x-2 font-medium'>
-              <Link href='/'>
-                <a>John Schmidt</a>
-              </Link>
+          {!root && (
+            <div className="flex items-center space-x-2 font-medium">
               <span>/</span>
-              <span>{pageName}</span>
+              <span>{category}</span>
             </div>
-          ) : (
-            <span className='font-medium'>John Schmidt</span>
           )}
         </div>
         <ThemeSwitch />

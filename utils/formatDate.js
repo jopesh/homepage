@@ -1,5 +1,5 @@
-import { format } from 'date-fns'
+import { format } from "date-fns"
 
 export default function formatDate(input = new Date()) {
-  return format(new Date(input), 'PPP')
+  return format(new Date(input), "PPP")
 }

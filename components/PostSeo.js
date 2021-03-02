@@ -1,5 +1,5 @@
-import { ArticleJsonLd, NextSeo } from 'next-seo'
-import { urlFor } from 'lib/sanity'
+import { ArticleJsonLd, NextSeo } from "next-seo"
+import { urlFor } from "lib/sanity"
 
 const PostSeo = ({ data }) => {
   const { mainImage, summary, title, publishedAt, category, slug, tags } = data
@@ -30,7 +30,7 @@ const PostSeo = ({ data }) => {
         canonical={url}
         openGraph={{
           title: `${title} - by John Schmidt`,
-          type: 'article',
+          type: "article",
           description: summary,
           url,
           article: {
@@ -42,13 +42,13 @@ const PostSeo = ({ data }) => {
         }}
       />
       <ArticleJsonLd
-        authorName='John Schmidt'
+        authorName="John Schmidt"
         dateModified={date}
         datePublished={date}
         description={summary}
         images={[seoImages[0]?.url]}
-        publisherLogo='https://johnschmidt.de/android-chrome-192x192.png'
-        publisherName='John Schmidt'
+        publisherLogo="https://johnschmidt.de/android-chrome-192x192.png"
+        publisherName="John Schmidt"
         title={`${title} - by John Schmidt`}
         url={url}
       />
