@@ -21,7 +21,7 @@ const BlockCode = ({ code = "", language = "javascript", filename }) => {
             ))}
           </pre>
           {filename && (
-            <span className="block -mt-4 font-mono text-sm font-semibold text-center md:-mt-6">
+            <span className="block -mt-4 font-mono text-sm font-semibold text-center">
               `{filename}`
             </span>
           )}
