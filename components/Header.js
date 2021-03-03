@@ -6,17 +6,7 @@ import Logo from "./Logo"
 
 const Header = () => {
   const router = useRouter()
-  const category = router.query.category
-    ? router.query.category
-        .charAt(0)
-        .toUpperCase()
-        .concat(router.query.category.substr(1))
-    : router.asPath
-        .substr(1)
-        .charAt(0)
-        .toUpperCase()
-        .concat(router.asPath.substr(2))
-  const root = router.asPath === "/"
+  const category = router.asPath.match(/blog/i) ? "Blog" : router.asPath.match(/work/i) ? "Work" : false
   return (
     <header className="sticky top-0 z-40 bg-white bg-opacity-75 blur dark:bg-black dark:bg-opacity-75">
       <div className="flex items-center justify-between max-w-screen-lg px-6 mx-auto">
@@ -27,7 +17,7 @@ const Header = () => {
               <span className="sr-only">Go to the homepage</span>
             </a>
           </Link>
-          {!root && (
+          {category && (
             <div className="flex items-center space-x-2 font-medium">
               <span>/</span>
               <span>{category}</span>
