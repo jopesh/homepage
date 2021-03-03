@@ -65,7 +65,7 @@ const Intro = () => {
             href="https://twitter.com/jope_sh"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-5 py-3 space-x-3 text-lg font-semibold text-white bg-blue-500 md:px-7 md:py-4 md:text-xl hover:bg-blue-600 ring-blue-500 ring-offset-2 hover:no-underline"
+            className="inline-flex items-center px-5 py-3 space-x-3 text-lg font-semibold text-white bg-blue-600 md:px-7 md:py-4 md:text-xl hover:bg-blue-700 ring-blue-500 ring-offset-2 hover:no-underline"
           >
             <span>Twitter</span>
             <TwitterLogo weight="fill" />

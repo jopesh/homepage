@@ -10,7 +10,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaTwitter aria-label="Twitter" />
+          <FaTwitter focusable="false" />
           <span className="sr-only">Twitter profile</span>
         </a>
         <a
@@ -19,8 +19,8 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaGithub aria-label="GitHub" />
-          <span className="sr-only">Github profile</span>
+          <FaGithub focusable="false" />
+          <span className="sr-only">GitHub profile</span>
         </a>
         <a
           className="p-2 base-link"
@@ -28,7 +28,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaDev aria-label="Dev.to" />
+          <FaDev focusable="false" />
           <span className="sr-only">Dev.to profile</span>
         </a>
       </div>
