@@ -9,7 +9,7 @@ const Error = ({ code }) => {
         <Image src="/images/error.svg" width="200" height="200" />
         <h1 className="mt-6 text-xl font-bold">Something is odd ...</h1>
         <p className="my-3">
-          It might not yet exist or has already faded. I'd rather{" "}
+          It might not yet exist or has already faded. I&apos;d rather{" "}
           <Link href="/">
             <a>go back to the homepage</a>
           </Link>

@@ -26,7 +26,7 @@ const Post = ({ data }) => {
             alt="Portrait of John"
           />
         </div>
-        <div className="flex flex-col leading-snug flex-grow sm:flex-row sm:justify-between text-sm sm:text-base">
+        <div className="flex flex-col flex-grow text-sm leading-snug sm:flex-row sm:justify-between sm:text-base">
           <span>John Schmidt</span>
           <span>
             <ReadingTime text={text} />

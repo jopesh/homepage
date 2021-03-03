@@ -6,7 +6,11 @@ import Logo from "./Logo"
 
 const Header = () => {
   const router = useRouter()
-  const category = router.asPath.match(/blog/i) ? "Blog" : router.asPath.match(/work/i) ? "Work" : false
+  const category = router.asPath.match(/blog/i)
+    ? "Blog"
+    : router.asPath.match(/work/i)
+    ? "Work"
+    : false
   return (
     <header className="sticky top-0 z-40 bg-white bg-opacity-75 blur dark:bg-black dark:bg-opacity-75">
       <div className="flex items-center justify-between max-w-screen-lg px-6 mx-auto">
