@@ -8,7 +8,7 @@ const BlogList = ({ posts }) => {
   return (
     <section id="posts" className="pt-4 md:pr-8">
       <div className="flex items-center justify-between mb-6">
-        <Heading>Thoughts</Heading>
+        <Heading>Blog</Heading>
       </div>
       <ul className="-mt-1 space-y-6">
         {posts.map((p) => {
