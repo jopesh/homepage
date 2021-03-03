@@ -29,7 +29,7 @@ export default async (req, res) => {
     )
     const screenshot = await page.screenshot({ encoding: "binary" })
     res.setHeader("content-type", "image/png")
-    res.setHeader("cache-control", "public, max-age=604800")
+    res.setHeader("cache-control", "public, max-age=31536000, immutable")
     res.status(200).send(screenshot)
   } catch (error) {
     console.log(error)
