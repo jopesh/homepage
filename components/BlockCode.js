@@ -1,4 +1,5 @@
 import Prism from "prismjs"
+Prism.manual = true
 
 const BlockCode = ({ code = "", language = "javascript", filename }) => {
   const html = Prism.highlight(code, Prism.languages[language], language)

@@ -20,7 +20,7 @@
   }
 
   .prose pre {
-    @apply text-gray-900 bg-gray-50 border-gray-200 p-4 border dark:bg-gray-900 dark:border-gray-800 dark:text-gray-100;
+    @apply text-gray-900 bg-gray-50 border-gray-200 p-4 border-t border-b sm:border-r sm:border-l dark:bg-gray-900 dark:border-gray-800 dark:text-gray-100 -mx-6 sm:mx-0;
   }
   .token.comment,
   .token.prolog,
