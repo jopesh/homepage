@@ -1,6 +1,6 @@
 /* global plausible */
 import Image from "next/image"
-import { PaperPlaneTilt, TwitterLogo } from "phosphor-react"
+import { At, TwitterLogo } from "phosphor-react"
 
 const Intro = () => {
   const handleClick = (e) => {
@@ -56,16 +56,16 @@ const Intro = () => {
           <a
             onClick={handleClick}
             href="mailto:mail@johnschmidt.de"
-            className="inline-flex items-center px-5 py-3 space-x-3 text-lg font-semibold text-white bg-indigo-600 md:px-7 md:py-4 md:text-xl hover:bg-indigo-700 ring-indigo-500 ring-offset-2 hover:no-underline"
+            className="inline-flex items-center px-5 py-3 space-x-3 text-lg font-semibold text-indigo-900 bg-indigo-100 md:px-7 md:py-4 md:text-xl hover:bg-indigo-200 ring-indigo-500 ring-offset-2 hover:no-underline"
           >
             <span>E-Mail</span>
-            <PaperPlaneTilt weight="fill" />
+            <At weight="bold" />
           </a>
           <a
             href="https://twitter.com/jope_sh"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-5 py-3 space-x-3 text-lg font-semibold text-white bg-blue-600 md:px-7 md:py-4 md:text-xl hover:bg-blue-700 ring-blue-500 ring-offset-2 hover:no-underline"
+            className="inline-flex items-center px-5 py-3 space-x-3 text-lg font-semibold text-green-900 bg-green-100 md:px-7 md:py-4 md:text-xl hover:bg-green-200 ring-green-500 ring-offset-2 hover:no-underline"
           >
             <span>Twitter</span>
             <TwitterLogo weight="fill" />
