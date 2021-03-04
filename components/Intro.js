@@ -56,7 +56,7 @@ const Intro = () => {
           <a
             onClick={handleClick}
             href="mailto:mail@johnschmidt.de"
-            className="inline-flex items-center px-5 py-3 space-x-3 text-lg font-semibold text-indigo-900 bg-indigo-100 md:px-7 md:py-4 md:text-xl hover:bg-indigo-200 ring-indigo-500 ring-offset-2 hover:no-underline"
+            className="inline-flex items-center px-5 py-3 space-x-3 text-lg font-semibold text-indigo-900 bg-indigo-100 md:px-7 md:py-4 md:text-xl hover:bg-indigo-200 ring-indigo-500 ring-offset-2 hover:no-underline dark:bg-indigo-900 dark:text-indigo-100 dark:hover:bg-indigo-800"
           >
             <span>E-Mail</span>
             <At weight="bold" />
@@ -65,7 +65,7 @@ const Intro = () => {
             href="https://twitter.com/jope_sh"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-5 py-3 space-x-3 text-lg font-semibold text-green-900 bg-green-100 md:px-7 md:py-4 md:text-xl hover:bg-green-200 ring-green-500 ring-offset-2 hover:no-underline"
+            className="inline-flex items-center px-5 py-3 space-x-3 text-lg font-semibold text-green-900 bg-green-100 md:px-7 md:py-4 md:text-xl hover:bg-green-200 ring-green-500 ring-offset-2 hover:no-underline dark:bg-green-900 dark:text-green-100 dark:hover:bg-green-800"
           >
             <span>Twitter</span>
             <TwitterLogo weight="fill" />
