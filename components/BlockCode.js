@@ -1,33 +1,21 @@
-import Highlight, { defaultProps } from "prism-react-renderer"
-import prismTheme from "lib/prismTheme"
+import Prism from "prismjs"
 
 const BlockCode = ({ code = "", language = "javascript", filename }) => {
+  const html = Prism.highlight(code, Prism.languages[language], language)
   return (
-    <Highlight
-      {...defaultProps}
-      theme={prismTheme}
-      language={language}
-      code={code}
-    >
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <>
-          <pre className={className + " -mx-6 sm:mx-0"} style={style}>
-            {tokens.map((line, i) => (
-              <div key={i} {...getLineProps({ line, key: i })}>
-                {line.map((token, key) => (
-                  <span key={key} {...getTokenProps({ token, key })} />
-                ))}
-              </div>
-            ))}
-          </pre>
-          {filename && (
-            <span className="block -mt-4 font-mono text-sm font-semibold text-center">
-              `{filename}`
-            </span>
-          )}
-        </>
+    <div>
+      <pre className={`language-${language}`}>
+        <code
+          className={`language-${language}`}
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      </pre>
+      {filename && (
+        <caption className="flex justify-center -mt-4 font-mono text-sm font-bold">
+          {filename}
+        </caption>
       )}
-    </Highlight>
+    </div>
   )
 }
 
