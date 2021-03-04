@@ -1,11 +1,11 @@
 import { createElement } from "react"
 import { Link } from "phosphor-react"
 import slugify from "slugify"
+import { PortableText } from "lib/sanity"
 
 import BlockCode from "components/BlockCode"
 import BlockImage from "components/BlockImage"
 import BlockStack from "components/BlockStack"
-import { PortableText } from "lib/sanity"
 
 const BlockContent = ({ ...args }) => (
   <PortableText
@@ -53,7 +53,7 @@ const BlockContent = ({ ...args }) => (
           )
         },
         image: function RenderImage(props) {
-          return <BlockImage image={props} width={812} />
+          return <BlockImage image={props} />
         },
         meta: function RenderMeta(props) {
           return <BlockStack node={props.node} />

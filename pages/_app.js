@@ -2,6 +2,7 @@ import Head from "next/head"
 import { DefaultSeo } from "next-seo"
 import { ThemeProvider } from "next-themes"
 
+import "styles/tailwind.css"
 import "styles/globals.css"
 import "focus-visible/dist/focus-visible.min.js"
 

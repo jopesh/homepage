@@ -15,7 +15,6 @@ const BlockImage = ({ image = null }) => {
           className={`relative ${shadow ? "shadow-lg" : ""} ${
             bleed ? "-mx-6 lg:-mx-12" : ""
           }`}
-          
         >
           <Image
             src={imageUrl}
@@ -23,8 +22,9 @@ const BlockImage = ({ image = null }) => {
             height={height}
             alt={alt}
             quality={80}
-            sizes={`(min-width: 1024px) ${bleed ? "828px" : "756px"}, (min-width: 768px) 756px, 100vw`}
-
+            sizes={`(min-width: 1024px) ${
+              bleed ? "828px" : "756px"
+            }, (min-width: 768px) 756px, 100vw`}
           />
         </div>
         {caption && <figcaption>{caption}</figcaption>}

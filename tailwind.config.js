@@ -2,10 +2,21 @@ const defaultTheme = require("tailwindcss/defaultTheme")
 const colors = require("tailwindcss/colors")
 
 module.exports = {
-  purge: ["./components/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}"],
+  purge: {
+    layers: ["components", "utilities"],
+    content: [
+      "./components/**/*.{js,ts,jsx,tsx}",
+      "./pages/**/*.{js,ts,jsx,tsx}",
+    ],
+  },
   darkMode: "class",
   theme: {
     extend: {
+      colors: {
+        gray: colors.blueGray,
+        amber: colors.amber,
+        fuchsia: colors.fuchsia,
+      },
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
       },
