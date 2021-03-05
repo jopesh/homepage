@@ -38,6 +38,13 @@ export default function Home({ blog, work }) {
     <Layout>
       <div className="space-y-16">
         <NextSeo
+          title="John Schmidt - Front-end developer"
+          description="Self-taught front-end developer. Aiming to build fast, simple and accessible experiences for everyone to use and enjoy."
+          canonical="https://johnschmidt.de"
+          twitter={{
+            handle: "@jope_sh",
+            cardType: "summary_large_image",
+          }}
           openGraph={{
             type: "website",
             description:
