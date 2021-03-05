@@ -1,6 +1,5 @@
 import Heading from "./Heading"
 
-import formatDate from "utils/formatDate"
 import Placeholder from "./Placeholder"
 import Link from "next/link"
 
@@ -12,7 +11,6 @@ const BlogList = ({ posts }) => {
       </div>
       <ul className="-mt-1 space-y-6">
         {posts.map((p) => {
-          const date = formatDate(p.publishedAt)
           return (
             <li key={p._id}>
               <Link href={`/blog/${p.slug.current}`}>
@@ -24,7 +22,7 @@ const BlogList = ({ posts }) => {
                 dateTime={p.publishedAt}
                 className="block text-sm text-gray-500 dark:text-gray-400"
               >
-                {date}
+                {p.prettyDate}
               </time>
               <p className="block mt-1.5">{p.summary}</p>
             </li>

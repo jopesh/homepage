@@ -7,6 +7,8 @@ import PostSeo from "components/PostSeo"
 
 import { getClient } from "lib/sanity"
 import { useRouter } from "next/router"
+import { getReadingTime } from "utils/getReadingTime"
+import formatDate from "utils/formatDate"
 
 export async function getStaticPaths() {
   const posts = await getClient().fetch(
@@ -24,15 +26,22 @@ export async function getStaticPaths() {
   }
 }
 
-const query = groq`*[_type == "post" && slug.current == $slug && references(*[_type == "category" && slug.current == $category][0]._id)][0]`
-
 export async function getStaticProps({ params, preview = false }) {
+  const query = groq`*[_type == "post" && slug.current == $slug && references(*[_type == "category" && slug.current == $category][0]._id)][0]`
   const data = await getClient(preview).fetch(query, {
     slug: params.slug,
     category: params.category,
   })
+  const time = getReadingTime(data.body)
+  const date = formatDate(data.publishedAt)
   return {
-    props: { data },
+    props: {
+      data: {
+        ...data,
+        readingTime: time,
+        prettyDate: date,
+      },
+    },
     revalidate: 30,
   }
 }
