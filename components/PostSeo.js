@@ -3,7 +3,7 @@ import { urlFor } from "lib/sanity"
 
 const PostSeo = ({ data }) => {
   const { mainImage, summary, title, publishedAt, category, slug, tags } = data
-  const url = `https://johnschmidt.de/${category}/${slug.current}`
+  const url = `https://johnschmidt.de/${category.slug.current}/${slug.current}`
   const date = new Date(publishedAt).toISOString()
   const seoImages = mainImage?.asset
     ? [

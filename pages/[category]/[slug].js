@@ -27,7 +27,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const query = groq`*[_type == "post" && slug.current == $slug && references(*[_type == "category" && slug.current == $category][0]._id)][0]`
+  const query = groq`*[_type == "post" && slug.current == $slug && references(*[_type == "category" && slug.current == $category][0]._id)][0]{..., category->{slug}}`
   const data = await getClient(preview).fetch(query, {
     slug: params.slug,
     category: params.category,
