@@ -6,7 +6,7 @@ export default function OgImageTemplate() {
   const router = useRouter()
   const { query } = router
   return (
-    <div className="relative w-full h-screen bg-gradient-to-br to-indigo-500 from-purple-900">
+    <div className="relative w-full h-screen bg-gradient-to-br to-green-500 from-indigo-700">
       <NextSeo nofollow noindex />
       <div className="absolute inset-0">
         <Image
@@ -37,7 +37,7 @@ export default function OgImageTemplate() {
                 loading="eager"
               />
             </div>
-            <div className="ml-8 text-4xl text-white">
+            <div className="ml-8 text-5xl text-white">
               <h2 className="font-bold">John Schmidt</h2>
               <p>Front-end developer</p>
             </div>
@@ -54,7 +54,7 @@ export default function OgImageTemplate() {
                 loading="eager"
               />
             </div>
-            <div className="mt-8 text-6xl leading-tight text-center text-white">
+            <div className="mt-8 text-center text-white text-7xl">
               <h1 className="font-bold">John Schmidt</h1>
               <p>Front-end developer</p>
             </div>
