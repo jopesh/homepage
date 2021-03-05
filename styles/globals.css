@@ -18,63 +18,6 @@
   .base-link {
     @apply text-indigo-700 hover:underline hover:text-indigo-500 dark:text-indigo-300 dark:hover:text-indigo-100;
   }
-
-  .prose pre {
-    @apply text-gray-900 bg-gray-50 border-gray-200 p-4 border-t border-b sm:border-r sm:border-l dark:bg-gray-900 dark:border-gray-800 dark:text-gray-100 -mx-6 sm:mx-0;
-  }
-  .token.comment,
-  .token.prolog,
-  .token.doctype,
-  .token.punctuation,
-  .token.cdata {
-    @apply text-gray-500 dark:text-gray-400;
-  }
-  .token.property,
-  .token.url,
-  .token.keyword,
-  .token.tag {
-    @apply text-blue-600 dark:text-blue-300;
-  }
-  .token.entity,
-  .token.class-name,
-  .token.important {
-    @apply text-pink-700 dark:text-pink-300;
-  }
-  .token.boolean,
-  .token.constant,
-  .token.selector,
-  .token.attr-name,
-  .token.string,
-  .token.char,
-  .token.builtin,
-  .token.inserted {
-    @apply text-green-700 dark:text-green-300;
-  }
-  .token.symbol,
-  .token.deleted {
-    @apply text-red-700 dark:text-red-400;
-  }
-  .token.operator,
-  .token.number {
-    @apply text-indigo-700 dark:text-indigo-300;
-  }
-  .token.variable,
-  .token.parameter {
-    @apply text-fuchsia-600 dark:text-fuchsia-400;
-  }
-  .token.atrule,
-  .token.attr-value,
-  .token.function,
-  .token.regex {
-    @apply text-amber-700 dark:text-amber-300;
-  }
-  .token.important,
-  .token.bold {
-    @apply font-bold;
-  }
-  .token.italic {
-    font-style: "italic";
-  }
 }
 
 @layer utilities {
@@ -87,4 +30,61 @@
       @apply bg-opacity-100;
     }
   }
+}
+
+.prose pre {
+  @apply text-gray-900 bg-gray-50 border-gray-200 p-4 border-t border-b sm:border-r sm:border-l dark:bg-gray-900 dark:border-gray-800 dark:text-gray-100 -mx-6 sm:mx-0;
+}
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.punctuation,
+.token.cdata {
+  @apply text-gray-500 dark:text-gray-400;
+}
+.token.property,
+.token.url,
+.token.keyword,
+.token.tag {
+  @apply text-blue-600 dark:text-blue-300;
+}
+.token.entity,
+.token.class-name,
+.token.important {
+  @apply text-pink-700 dark:text-pink-300;
+}
+.token.boolean,
+.token.constant,
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  @apply text-green-700 dark:text-green-300;
+}
+.token.symbol,
+.token.deleted {
+  @apply text-red-700 dark:text-red-400;
+}
+.token.operator,
+.token.number {
+  @apply text-indigo-700 dark:text-indigo-300;
+}
+.token.variable,
+.token.parameter {
+  @apply text-fuchsia-600 dark:text-fuchsia-400;
+}
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.regex {
+  @apply text-amber-700 dark:text-amber-300;
+}
+.token.important,
+.token.bold {
+  @apply font-bold;
+}
+.token.italic {
+  font-style: "italic";
 }
