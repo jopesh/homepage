@@ -16,8 +16,8 @@ export async function getStaticPaths() {
   )
   const paths = posts?.map((p) => ({
     params: {
-      slug: p.slug.current,
-      category: p.category.slug.current,
+      slug: p.slug?.current,
+      category: p.category?.slug.current,
     },
   }))
   return {
@@ -32,8 +32,8 @@ export async function getStaticProps({ params, preview = false }) {
     slug: params.slug,
     category: params.category,
   })
-  const time = getReadingTime(data.body)
-  const date = formatDate(data.publishedAt)
+  const time = getReadingTime(data?.body)
+  const date = formatDate(data?.publishedAt)
   return {
     props: {
       data: {
@@ -45,17 +45,15 @@ export async function getStaticProps({ params, preview = false }) {
     revalidate: 30,
   }
 }
-
 export default function BlogPost({ data }) {
   const router = useRouter()
-  if (router.isFallback || !data) {
-    return <Error />
-  } else {
-    return (
-      <Layout>
-        <PostSeo data={data} />
-        <Post data={data} />
-      </Layout>
-    )
+  if (!data?.slug || router.isFallback) {
+    return <Error code="404" />
   }
+  return (
+    <Layout>
+      <PostSeo data={data} />
+      <Post data={data} />
+    </Layout>
+  )
 }
