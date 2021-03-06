@@ -40,6 +40,10 @@ const PostSeo = ({ data }) => {
           },
           images: seoImages,
         }}
+        twitter={{
+          handle: "@jope_sh",
+          cardType: "summary_large_image",
+        }}
       />
       <ArticleJsonLd
         authorName="John Schmidt"
