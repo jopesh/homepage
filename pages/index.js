@@ -13,8 +13,8 @@ export async function getStaticProps({ preview }) {
   const client = getClient(preview)
   let { blog, work } = await client.fetch(
     groq`{
-      "blog": *[_type == "post" && references(*[_type == "category" && slug.current == "blog"][0]._id)] | order(publishedAt desc),
-      "work": *[_type == "post" && references(*[_type == "category" && slug.current == "work"][0]._id)] | order(publishedAt desc)
+      "blog": *[_type == "post" && references(*[_type == "category" && slug.current == "blog"][0]._id) && publishedAt < now()] | order(publishedAt desc),
+      "work": *[_type == "post" && references(*[_type == "category" && slug.current == "work"][0]._id) && publishedAt < now()] | order(publishedAt desc)
     }`
   )
   blog = blog.map((post) => {
