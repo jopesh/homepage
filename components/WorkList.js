@@ -18,15 +18,17 @@ const WorkList = ({ projects }) => {
           return (
             <li key={p._id}>
               {p.mainImage && (
-                <div>
-                  <Image
-                    src={imageUrl}
-                    width={1440}
-                    height={900}
-                    sizes="(min-width: 768px) 455px"
-                    alt={p.mainImage.alt}
-                  />
-                </div>
+                <Link href={`/work/${p.slug.current}`}>
+                  <a tabIndex={-1} className="base-link">
+                    <Image
+                      src={imageUrl}
+                      width={1440}
+                      height={900}
+                      sizes="(min-width: 768px) 455px"
+                      alt={p.mainImage.alt}
+                    />
+                  </a>
+                </Link>
               )}
               <Link href={`/work/${p.slug.current}`}>
                 <a className="block py-1 mt-2 mb-0.5 base-link">
