@@ -87,17 +87,5 @@ module.exports = {
       }),
     },
   },
-  variants: {
-    extend: {
-      display: ["group-hover"],
-      backgroundOpacity: ["dark"],
-      translate: ["group-hover"],
-      ringWidth: ["focus-visible"],
-      typography: ["dark"],
-      boxShadow: ["dark"],
-      opacity: ["focus-visible"],
-      zIndex: ["focus-visible"],
-    },
-  },
   plugins: [require("@tailwindcss/typography")],
 }
