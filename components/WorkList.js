@@ -32,7 +32,9 @@ const WorkList = ({ projects }) => {
               )}
               <Link href={`/work/${p.slug.current}`}>
                 <a className="block py-1 mt-2 mb-0.5 base-link">
-                  <h3 className="font-bold leading-snug">{p.title}</h3>
+                  <h3 className="font-bold leading-snug md:text-lg">
+                    {p.title}
+                  </h3>
                 </a>
               </Link>
               <p className="block">{p.summary}</p>

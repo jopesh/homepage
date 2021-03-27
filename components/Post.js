@@ -10,15 +10,15 @@ const Post = ({ data }) => {
         <div className="flex flex-grow-0 flex-shrink-0 overflow-hidden rounded-full">
           <Image
             src="/images/portrait.jpg"
-            height="48"
-            width="48"
+            height="32"
+            width="32"
             layout="fixed"
             priority
             alt="Portrait of John"
           />
         </div>
-        <div className="flex flex-col flex-grow text-sm leading-snug sm:flex-row sm:justify-between sm:text-base">
-          <span>John Schmidt</span>
+        <div className="flex flex-col flex-grow text-sm leading-snug sm:flex-row sm:justify-between">
+          <span className="font-medium">John Schmidt</span>
           <span>
             <span>{readingTime.text}</span>
             <span className="mx-2">–</span>
