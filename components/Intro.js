@@ -22,15 +22,15 @@ const Intro = () => {
           />
         </div>
         <h1 className="text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-          Hey, I&apos;m John.
+          Hey, I&apos;m John
         </h1>
         <div className="space-y-3 text-gray-700 dark:text-gray-200 max-w-prose sm:text-lg md:text-xl lg:text-2xl">
           <p>
-            at daytime I am a full-time paramedic and educator with a passion
-            for web development and computer sciences living in Hamburg.
+            a full-time paramedic and educator with a passion for web
+            development and computer sciences living in Hamburg.
           </p>
           <p>
-            My goal is creating fast, simple and accessible web experiences for
+            My goal is to create fast, simple and accessible web experiences for
             everyone to use and enjoy. I currently focus on{" "}
             <span className="line-through">WordPress</span>{" "}
             <a
@@ -50,6 +50,7 @@ const Intro = () => {
             </a>
             .
           </p>
+          <p>I am currently available for freelance and contract work.</p>
         </div>
 
         <div className="flex space-x-4 md:space-x-6">
@@ -71,7 +72,7 @@ const Intro = () => {
             <TwitterLogo weight="fill" />
           </a>
         </div>
-        <p className="sr-only">Scroll down</p>
+        <p className="sr-only">Scroll down to view more</p>
       </div>
     </section>
   )
