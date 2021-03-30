@@ -3,6 +3,9 @@ module.exports = {
     domains: ["cdn.sanity.io"],
     deviceSizes: [325, 439, 632, 756, 828, 1080, 1512],
   },
+  future: {
+    webpack5: true,
+  },
   webpack: (config, { dev, isServer }) => {
     if (isServer) {
       require("./utils/generateSitemap")
