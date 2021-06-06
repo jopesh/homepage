@@ -22,12 +22,12 @@ const Intro = () => {
           />
         </div>
         <h1 className="text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-          Hey, I&apos;m John
+          Hey, I&apos;m John.
         </h1>
         <div className="space-y-3 text-gray-700 dark:text-gray-200 max-w-prose sm:text-lg md:text-xl lg:text-2xl">
           <p>
-            a full-time paramedic and educator with a passion for web
-            development and computer sciences living in Hamburg.
+            Health Professionals Educator, Paramedic and Front-end web
+            developer.
           </p>
           <p>
             My goal is to create fast, simple and accessible web experiences for

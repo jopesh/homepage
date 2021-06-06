@@ -29,7 +29,7 @@ export default function OgImageTemplate() {
             </h1>
           </div>
           <div className="absolute z-50 flex items-center bottom-12 left-12">
-            <div className="flex overflow-hidden rounded-full ring-4 ring-white border-6">
+            <div className="flex overflow-hidden rounded-full shadow-xl ring-4 ring-white border-6">
               <Image
                 src="/images/portrait.jpg"
                 width={100}
@@ -37,26 +37,25 @@ export default function OgImageTemplate() {
                 loading="eager"
               />
             </div>
-            <div className="ml-8 text-5xl text-white">
-              <h2 className="font-bold">John Schmidt</h2>
-              <p>Front-end developer</p>
+            <div className="ml-10 text-5xl text-white">
+              <h2 className="font-semibold">John Schmidt</h2>
             </div>
           </div>
         </>
       ) : (
         <>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <div className="flex overflow-hidden rounded-full ring-4 ring-white">
+            <div className="flex overflow-hidden rounded-full shadow-xl ring-4 ring-white">
               <Image
                 src="/images/portrait.jpg"
-                width={200}
-                height={200}
+                width={196}
+                height={196}
                 loading="eager"
               />
             </div>
             <div className="mt-8 text-center text-white text-7xl">
-              <h1 className="font-bold">John Schmidt</h1>
-              <p>Front-end developer</p>
+              <h1 className="font-bold text-">John Schmidt</h1>
+              <p className="mt-4 text-5xl">Front-end web developer</p>
             </div>
           </div>
         </>
