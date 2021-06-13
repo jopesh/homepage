@@ -10,10 +10,10 @@ const Intro = () => {
   }
   return (
     <section id="author" className="relative">
-      <div className="opacity-[12%] dark:opacity-[17%]">
-        <div className="absolute w-64 h-64 bg-indigo-500 rounded-full sm:w-96 sm:h-96 -top-16 right-10 filter mix-blend-multiply animate-blob blur-2xl dark:blur-3xl" />
-        <div className="absolute top-0 w-64 h-64 bg-yellow-500 rounded-full sm:w-96 sm:h-96 right-40 filter mix-blend-multiply animate-blob blur-2xl dark:blur-3xl animation-delay-4000" />
-        <div className="absolute w-64 h-64 rounded-full sm:w-96 sm:h-96 bg-fuchsia-500 right-10 top-48 filter mix-blend-multiply animate-blob blur-2xl dark:blur-3xl animation-delay-2000" />
+      <div className="opacity-10 dark:opacity-[13%]">
+        <div className="absolute w-64 h-64 bg-indigo-500 rounded-full sm:w-96 sm:h-96 -top-16 right-10 filter mix-blend-multiply animate-blob blur-2xl" />
+        <div className="absolute top-0 w-64 h-64 bg-yellow-500 rounded-full sm:w-96 sm:h-96 right-40 filter mix-blend-multiply animate-blob blur-2xl animation-delay-4000" />
+        <div className="absolute w-64 h-64 rounded-full sm:w-96 sm:h-96 bg-fuchsia-500 right-10 top-48 filter mix-blend-multiply animate-blob blur-2xl animation-delay-2000" />
       </div>
       <div className="relative space-y-6">
         <div className="inline-flex overflow-hidden rounded-full">
