@@ -8,9 +8,32 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        gray: colors.blueGray,
+        gray: colors.trueGray,
         amber: colors.amber,
+        green: colors.emerald,
         fuchsia: colors.fuchsia,
+      },
+      keyframes: {
+        blob: {
+          "0%": {
+            transform: "scale(1) translate(0%, 0%)",
+          },
+          "33%": {
+            transform: "scale(1.1) translate(-10%, 10%)",
+          },
+          "66%": {
+            transform: "scale(0.8) translate(10%, 10%)",
+          },
+          "100%": {
+            transform: "scale(1) translate(0%, 0%)",
+          },
+        },
+      },
+      transitionTimingFunction: {
+        nature: "cubic-bezier(0.77, 0, 0.175, 1)",
+      },
+      animation: {
+        blob: "blob 9s cubic-bezier(0.77, 0, 0.175, 1) infinite",
       },
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],

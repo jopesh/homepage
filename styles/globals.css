@@ -17,11 +17,6 @@ a {
   @apply focus-visible:ring ring-offset-2 ring-current dark:ring-offset-black focus:outline-none;
 }
 
-p > a,
-.base-link {
-  @apply text-indigo-700 hover:underline hover:text-indigo-500 dark:text-indigo-300 dark:hover:text-indigo-100;
-}
-
 .prose pre {
   @apply text-gray-900 bg-gray-50 border-gray-200 p-4 border-t border-b sm:border-r sm:border-l dark:bg-gray-900 dark:border-gray-800 dark:text-gray-100 -mx-6 sm:mx-0;
 }
@@ -77,4 +72,13 @@ p > a,
 }
 .token.italic {
   font-style: "italic";
+}
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
 }

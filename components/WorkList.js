@@ -31,7 +31,7 @@ const WorkList = ({ projects }) => {
                 </Link>
               )}
               <Link href={`/work/${p.slug.current}`}>
-                <a className="block py-1 mt-2 mb-0.5 base-link">
+                <a className="block py-1 mt-2 mb-0.5 text-indigo-600 hover:underline dark:text-indigo-300">
                   <h3 className="font-bold leading-snug md:text-lg">
                     {p.title}
                   </h3>

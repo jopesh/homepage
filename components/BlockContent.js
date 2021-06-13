@@ -60,7 +60,12 @@ const BlockContent = ({ ...args }) => (
       marks: {
         link: function RenderLink(props) {
           return (
-            <a href={props.mark.href} target="_blank" rel="noopener noreferrer">
+            <a
+              href={props.mark.href}
+              className="text-indigo-700 hover:underline dark:text-indigo-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {props.children}
             </a>
           )
