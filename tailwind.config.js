@@ -19,10 +19,10 @@ module.exports = {
             transform: "scale(1) translate(0%, 0%)",
           },
           "33%": {
-            transform: "scale(1.1) translate(-10%, 10%)",
+            transform: "scale(1.2) translate(15%, 10%)",
           },
           "66%": {
-            transform: "scale(0.8) translate(10%, 10%)",
+            transform: "scale(0.8) translate(-10%, -15%)",
           },
           "100%": {
             transform: "scale(1) translate(0%, 0%)",
@@ -33,7 +33,7 @@ module.exports = {
         nature: "cubic-bezier(0.77, 0, 0.175, 1)",
       },
       animation: {
-        blob: "blob 9s cubic-bezier(0.77, 0, 0.175, 1) infinite",
+        blob: "blob 8s cubic-bezier(0.77, 0, 0.175, 1) infinite",
       },
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
