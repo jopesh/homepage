@@ -12,7 +12,7 @@ const Header = () => {
     ? "Work"
     : false
   return (
-    <header className="sticky top-0 z-40 bg-white bg-opacity-60 backdrop-filter backdrop-blur-xl dark:bg-black dark:bg-opacity-60 backdrop-saturate-100">
+    <header className="sticky top-0 z-40 bg-white bg-opacity-75 backdrop-filter backdrop-blur-xl dark:bg-black backdrop-saturate-50">
       <div className="flex items-center justify-between max-w-screen-lg px-6 mx-auto">
         <div className="flex items-center space-x-2">
           <Link href="/">

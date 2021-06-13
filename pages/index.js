@@ -64,7 +64,7 @@ export default function Home({ blog, work }) {
         />
 
         <Intro />
-        <div className="space-y-8 divide-gray-300 dark:divide-gray-700 md:divide-x md:grid md:grid-cols-2 md:space-y-0">
+        <div className="space-y-8 md:grid md:grid-cols-2 md:space-y-0">
           <BlogList posts={blog} />
           <WorkList projects={work} />
         </div>

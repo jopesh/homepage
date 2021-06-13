@@ -27,7 +27,7 @@ const BlockStack = ({ node }) => {
               href={i.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 base-link"
+              className="inline-flex items-center space-x-2 text-indigo-700 hover:underline dark:text-indigo-300"
             >
               <Link />
               <span>{i.title}</span>

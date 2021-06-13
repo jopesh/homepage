@@ -14,8 +14,8 @@ const BlogList = ({ posts }) => {
           return (
             <li key={p._id}>
               <Link href={`/blog/${p.slug.current}`}>
-                <a className="block pb-1 base-link">
-                  <h3 className="font-bold leading-snug md:text-lg">
+                <a className="block pb-1 text-indigo-600 hover:underline dark:text-indigo-300">
+                  <h3 className="font-semibold leading-snug md:text-lg">
                     {p.title}
                   </h3>
                 </a>
