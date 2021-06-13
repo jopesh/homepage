@@ -58,7 +58,7 @@ const Intro = () => {
           </p>
           <p>
             I am currently{" "}
-            <span className="bg-green-50 dark:bg-opacity-20 dark:bg-green-500">
+            <span className="bg-green-400 bg-opacity-10 dark:bg-opacity-20">
               available
             </span>{" "}
             for freelance and contract work.
