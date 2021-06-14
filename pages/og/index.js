@@ -78,7 +78,7 @@ export default function OgImageTemplate() {
                 </div>
                 <div className="flex items-center justify-center space-x-4 text-3xl">
                   <FaGithub />
-                  <span>jopesch</span>
+                  <span>jopesh</span>
                 </div>
               </div>
               <p className="mt-12 text-4xl font-semibold ">johnschmidt.de</p>
