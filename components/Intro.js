@@ -30,10 +30,7 @@ const Intro = () => {
           Hey, I&apos;m John.
         </h1>
         <div className="space-y-4 text-gray-700 dark:text-gray-200 max-w-prose sm:text-lg md:text-xl">
-          <p>
-            Health Professionals Educator, Paramedic and front-end web
-            developer.
-          </p>
+          <p>Health Professionals Educator, paramedic and web developer.</p>
           <p>
             My goal is to create fast, simple and accessible web experiences for
             everyone to use and enjoy. I currently focus on{" "}
