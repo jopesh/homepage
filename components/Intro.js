@@ -10,9 +10,9 @@ const Intro = () => {
   }
   return (
     <section id="author" className="relative isolate">
-      <div className="opacity-10 dark:opacity-[15%]">
+      <div className="opacity-10 dark:opacity-[17%]">
         <div className="absolute right-0 w-64 h-64 bg-indigo-500 rounded-full sm:w-96 sm:h-96 -top-16 filter mix-blend-multiply animate-blob blur-3xl" />
-        <div className="absolute top-0 w-64 h-64 bg-yellow-500 rounded-full sm:w-96 sm:h-96 right-64 filter mix-blend-multiply animate-blob blur-3xl animation-delay-4000" />
+        <div className="absolute top-0 w-64 h-64 rounded-full bg-amber-500 sm:w-96 sm:h-96 right-64 filter mix-blend-multiply animate-blob blur-3xl animation-delay-4000" />
         <div className="absolute w-64 h-64 rounded-full bg-fuchsia-500 sm:w-96 sm:h-96 right-10 top-48 filter mix-blend-multiply animate-blob blur-3xl animation-delay-2000" />
       </div>
       <div className="relative space-y-6">
@@ -29,7 +29,7 @@ const Intro = () => {
         <h1 className="text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
           Hey, I&apos;m John.
         </h1>
-        <div className="space-y-4 text-gray-700 dark:text-gray-300 max-w-prose sm:text-lg md:text-xl">
+        <div className="space-y-4 text-gray-700 dark:text-gray-200 max-w-prose sm:text-lg md:text-xl">
           <p>
             Health Professionals Educator, Paramedic and front-end web
             developer.
@@ -41,25 +41,30 @@ const Intro = () => {
               href="https://nextjs.org"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline"
+              className="relative group"
             >
-              Next.js
+              <span className="absolute h-3 -bottom-1 inset-x-1 bg-amber-100 dark:bg-amber-500 dark:bg-opacity-20 group-hover:bg-amber-200 dark:group-hover:bg-opacity-25" />
+              <span className="relative">Next.js</span>
             </a>{" "}
             and{" "}
             <a
               href="https://www.bigcommerce.com/articles/headless-commerce/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline"
+              className="relative group whitespace-nowrap"
             >
-              headless e-commerce
+              <span className="absolute h-3 -bottom-1 inset-x-1 bg-amber-100 dark:bg-amber-500 dark:bg-opacity-20 group-hover:bg-amber-200 dark:group-hover:bg-opacity-25" />
+              <span className="relative">headless e-commerce</span>
             </a>
             .
           </p>
           <p>
             I am currently{" "}
-            <span className="bg-green-300 bg-opacity-10">available</span> for
-            freelance and contract work.
+            <span className="relative">
+              <span className="absolute h-3 bg-green-100 -bottom-1 inset-x-1 dark:bg-green-500 dark:bg-opacity-20" />
+              <span className="relative">available</span>
+            </span>{" "}
+            for freelance and contract work.
           </p>
         </div>
 

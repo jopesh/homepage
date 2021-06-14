@@ -11,7 +11,7 @@ const ThemeSwitch = () => {
   return (
     <div>
       <button
-        className="relative flex items-center justify-center w-12 h-12 p-3 -my-4 -ml-4 -mr-2 appearance-none group focus:outline-none focus-visible:ring ring-indigo-500 dark:ring-indigo-300"
+        className="relative flex items-center justify-center w-12 h-12 p-3 -my-4 -ml-4 -mr-2 appearance-none group focus:outline-none focus-visible:ring focus-visible:ring-current"
         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
       >
         <span className="sr-only">
