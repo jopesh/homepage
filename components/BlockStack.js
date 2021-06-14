@@ -1,4 +1,5 @@
 import { Link } from "phosphor-react"
+import LinkPreview from "./LinkPreview"
 
 const BlockStack = ({ node }) => {
   return (
@@ -23,15 +24,14 @@ const BlockStack = ({ node }) => {
         <dt className="block mb-3 text-sm font-bold uppercase">Live preview</dt>
         {node.live?.map((i) => (
           <dd key={i.title}>
-            <a
+            <LinkPreview
               href={i.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 text-indigo-700 hover:underline dark:text-indigo-300"
+              screenshot={i.screenshot}
+              className="inline-flex items-center space-x-2"
             >
               <Link />
               <span>{i.title}</span>
-            </a>
+            </LinkPreview>
           </dd>
         ))}
       </dl>

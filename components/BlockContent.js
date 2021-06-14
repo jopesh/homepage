@@ -6,6 +6,7 @@ import { PortableText } from "lib/sanity"
 import BlockCode from "components/BlockCode"
 import BlockImage from "components/BlockImage"
 import BlockStack from "components/BlockStack"
+import LinkPreview from "components/LinkPreview"
 
 const BlockContent = ({ ...args }) => (
   <PortableText
@@ -60,14 +61,12 @@ const BlockContent = ({ ...args }) => (
       marks: {
         link: function RenderLink(props) {
           return (
-            <a
+            <LinkPreview
               href={props.mark.href}
-              className="text-indigo-700 hover:underline dark:text-indigo-300"
-              target="_blank"
-              rel="noopener noreferrer"
+              screenshot={props.mark.screenshot}
             >
               {props.children}
-            </a>
+            </LinkPreview>
           )
         },
       },

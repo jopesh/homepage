@@ -4,11 +4,11 @@ import Layout from "components/Layout"
 import Post from "components/Post"
 import Error from "components/Error"
 import PostSeo from "components/PostSeo"
-
 import { getClient } from "lib/sanity"
 import { useRouter } from "next/router"
 import { getReadingTime } from "utils/getReadingTime"
 import formatDate from "utils/formatDate"
+import processLinks from "lib/processLinks"
 
 export async function getStaticPaths() {
   const posts = await getClient().fetch(
@@ -32,12 +32,15 @@ export async function getStaticProps({ params, preview = false }) {
     slug: params.slug,
     category: params.category,
   })
+  // Function to append screenshot urls to each markDef link from Sanity and return the updated body data
+  const withMicrocards = await processLinks(data)
   const time = getReadingTime(data?.body)
   const date = formatDate(data?.publishedAt)
   return {
     props: {
       data: {
         ...data,
+        body: withMicrocards,
         readingTime: time,
         prettyDate: date,
       },
