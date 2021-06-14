@@ -15,7 +15,6 @@ const serializers = {
     code: (props) =>
       "```" + props.node.language + "\n" + props.node.code + "\n```",
     image: (props) => {
-      console.log(props)
       return `![${props.node.alt}](${builder.image(props.node.asset).url()})`
     },
     meta: () => "",
