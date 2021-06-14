@@ -40,11 +40,11 @@ export default function LinkPreview({
           show={open[1]}
           appear={true}
           enter="transition ease-nature duration-300"
-          enterFrom="translate-y-5 opacity-0"
-          enterTo="translate-y-0 opacity-100"
+          enterFrom="translate-y-8 opacity-0 scale-50"
+          enterTo="translate-y-0 opacity-100 scale-y-100"
           leave="transition ease-nature duration-300"
-          leaveFrom="translate-y-0 opacity-100"
-          leaveTo="-translate-y-5 opacity-0"
+          leaveFrom="translate-y-0 opacity-100 scale-100"
+          leaveTo="translate-y-5 opacity-0 scale-50"
           className="flex items-center justify-center p-1.5 overflow-hidden leading-none transform bg-gray-50 shadow-lg dark:bg-gray-800 rounded-xl relative"
         >
           <div className="absolute inset-1.5 rounded-lg bg-gray-200 animate-pulse" />
