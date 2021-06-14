@@ -1,21 +1,15 @@
 module.exports = {
   images: {
-    domains: ["cdn.sanity.io"],
+    domains: ["cdn.sanity.io", "iad.microlink.io"],
     deviceSizes: [325, 439, 632, 756, 828, 1080, 1512],
+    imageSizes: [200],
   },
   future: {
     webpack5: true,
   },
-  webpack: (config, { dev, isServer }) => {
+  webpack: (config, { isServer }) => {
     if (isServer) {
       require("./utils/generateSitemap")
-    }
-    if (!dev && !isServer) {
-      Object.assign(config.resolve.alias, {
-        react: "preact/compat",
-        "react-dom/test-utils": "preact/test-utils",
-        "react-dom": "preact/compat",
-      })
     }
     return config
   },

@@ -40,3 +40,5 @@ yarn-error.log*
 .vercel
 
 public/favicon-dev.ico
+
+.vercel
