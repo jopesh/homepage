@@ -27,7 +27,23 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const query = groq`*[_type == "post" && slug.current == $slug && references(*[_type == "category" && slug.current == $category][0]._id)][0]{..., category->{slug}}`
+  const query = groq`*[_type == "post" && slug.current == $slug && references(*[_type == "category" && slug.current == $category][0]._id)][0]
+  {
+    ...,
+    body[] {
+      ...,
+      _type == "image" => {
+        asset->{
+          _id,
+          alt,
+          metadata {
+            lqip
+          }
+        }
+    	}
+    }, 
+    category->{slug}
+  }`
   const data = await getClient(preview).fetch(query, {
     slug: params.slug,
     category: params.category,

@@ -26,6 +26,8 @@ const WorkList = ({ projects }) => {
                       height={900}
                       sizes="(min-width: 768px) 455px"
                       alt={p.mainImage.alt}
+                      blurDataURL={p.mainImage.asset.metadata.lqip}
+                      placeholder="blur"
                     />
                   </a>
                 </Link>

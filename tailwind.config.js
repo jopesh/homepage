@@ -33,7 +33,7 @@ module.exports = {
         nature: "cubic-bezier(0.77, 0, 0.175, 1)",
       },
       animation: {
-        blob: "blob 8s cubic-bezier(0.77, 0, 0.175, 1) infinite",
+        blob: "blob 12s linear infinite",
       },
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],

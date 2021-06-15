@@ -1,7 +1,7 @@
 import groq from "groq"
 import { getClient } from "lib/sanity"
 
-export default async (req, res) => {
+export default async function previewHandler(req, res) {
   if (req.query.secret !== process.env.SANITY_PREVIEW_SECRET) {
     return res.status(401).send("Unauthorized")
   }

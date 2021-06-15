@@ -15,7 +15,7 @@ async function takeScreenshot(url) {
   return data.screenshot
 }
 
-export default async (req, res) => {
+export default async function ogHandler(req, res) {
   const { query } = req
   if (!query.t) {
     const screenshot = await takeScreenshot(`https://johnschmidt.de/og`)

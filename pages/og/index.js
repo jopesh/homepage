@@ -20,6 +20,7 @@ export default function OgImageTemplate() {
           layout="fill"
           objectFit="cover"
           loading="eager"
+          alt="Mockup of webpages made by John"
           priority
         />
       </div>
@@ -43,6 +44,7 @@ export default function OgImageTemplate() {
                   height={84}
                   layout="fixed"
                   loading="eager"
+                  alt="Portrait of John"
                 />
               </div>
               <div className="ml-6 text-4xl">
@@ -64,6 +66,7 @@ export default function OgImageTemplate() {
                 height={126}
                 loading="eager"
                 layout="fixed"
+                alt="Portrait of John"
               />
             </div>
             <div className="mt-8 text-center">

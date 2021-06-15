@@ -25,6 +25,8 @@ const BlockImage = ({ image = null }) => {
             sizes={`(min-width: 1024px) ${
               bleed ? "828px" : "756px"
             }, (min-width: 768px) 756px, 100vw`}
+            blurDataURL={image.node?.asset?.metadata?.lqip}
+            placeholder="blur"
           />
         </div>
         {caption && <figcaption>{caption}</figcaption>}

@@ -14,7 +14,19 @@ export async function getStaticProps({ preview }) {
   let { blog, work } = await client.fetch(
     groq`{
       "blog": *[_type == "post" && references(*[_type == "category" && slug.current == "blog"][0]._id) && publishedAt < now()] | order(publishedAt desc),
-      "work": *[_type == "post" && references(*[_type == "category" && slug.current == "work"][0]._id) && publishedAt < now()] | order(publishedAt desc)
+      "work": *[_type == "post" && references(*[_type == "category" && slug.current == "work"][0]._id) && publishedAt < now()] | order(publishedAt desc) {
+        ...,
+        mainImage {
+          alt,
+          asset->{
+            _id,
+            _type,
+            metadata {
+              lqip
+            }
+          }
+        }
+      }
     }`
   )
   blog = blog.map((post) => {

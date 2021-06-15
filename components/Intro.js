@@ -1,6 +1,7 @@
 /* global plausible */
 import Image from "next/image"
 import { TwitterLogo, PaperPlaneTilt } from "phosphor-react"
+import me from "public/images/portrait.jpg"
 
 const Intro = () => {
   const handleClick = (e) => {
@@ -10,19 +11,20 @@ const Intro = () => {
   }
   return (
     <section id="author" className="relative isolate">
-      <div className="opacity-10 dark:opacity-[17%]">
-        <div className="absolute right-0 w-64 h-64 bg-indigo-500 rounded-full sm:w-96 sm:h-96 -top-16 filter mix-blend-multiply animate-blob blur-3xl" />
-        <div className="absolute top-0 w-64 h-64 rounded-full bg-amber-500 sm:w-96 sm:h-96 right-64 filter mix-blend-multiply animate-blob blur-3xl animation-delay-4000" />
-        <div className="absolute w-64 h-64 rounded-full bg-fuchsia-500 sm:w-96 sm:h-96 right-10 top-48 filter mix-blend-multiply animate-blob blur-3xl animation-delay-2000" />
+      <div className="opacity-10 dark:opacity-[15%]">
+        <div className="absolute right-0 w-64 h-64 bg-indigo-500 rounded-full sm:w-96 sm:h-96 -top-16 filter mix-blend-multiply animate-blob blur-2xl" />
+        <div className="absolute top-0 w-64 h-64 rounded-full bg-amber-500 sm:w-96 sm:h-96 right-64 filter mix-blend-multiply animate-blob blur-2xl animation-delay-4000" />
+        <div className="absolute w-64 h-64 rounded-full bg-fuchsia-500 sm:w-96 sm:h-96 right-10 top-48 filter mix-blend-multiply animate-blob blur-2xl animation-delay-8000" />
       </div>
       <div className="relative space-y-6">
         <div className="inline-flex overflow-hidden rounded-full">
           <Image
-            src="/images/portrait.jpg"
+            src={me}
             width="64"
             height="64"
             layout="fixed"
             alt="Portrait photo of John"
+            placeholder="blur"
             priority
           />
         </div>
