@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="max-w-screen-lg px-6 mx-auto my-24">
       <div className="flex items-center mb-4 space-x-1.5 sm:justify-center -ml-2 sm:ml-0 text-lg md:text-2xl">
         <a
-          className="p-2 hover:text-amber-600 dark:hover:text-amber-300"
+          className="p-2 hover:text-indigo-600 dark:hover:text-indigo-300"
           href="https://twitter.com/jope_sh"
           target="_blank"
           rel="noopener noreferrer"
@@ -14,7 +14,7 @@ const Footer = () => {
           <span className="sr-only">Twitter profile</span>
         </a>
         <a
-          className="p-2 hover:text-amber-600 dark:hover:text-amber-300"
+          className="p-2 hover:text-indigo-600 dark:hover:text-indigo-300"
           href="https://github.com/jopesh"
           target="_blank"
           rel="noopener noreferrer"
@@ -23,7 +23,7 @@ const Footer = () => {
           <span className="sr-only">GitHub profile</span>
         </a>
         <a
-          className="p-2 hover:text-amber-600 dark:hover:text-amber-300"
+          className="p-2 hover:text-indigo-600 dark:hover:text-indigo-300"
           href="https://dev.to/jopesch"
           target="_blank"
           rel="noopener noreferrer"

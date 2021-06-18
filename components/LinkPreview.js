@@ -24,7 +24,7 @@ export default function LinkPreview({
       <HoverCard.Trigger
         href={href}
         className={
-          "text-amber-700 hover:underline dark:text-amber-300 " + className
+          "text-indigo-600 hover:underline dark:text-indigo-300 " + className
         }
         target="_blank"
         rel="noopener noreferrer"

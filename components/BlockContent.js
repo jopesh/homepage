@@ -30,7 +30,7 @@ const BlockContent = ({ ...args }) => (
                   <span className="mr-3">{props.children}</span>
                   <span>
                     <Link
-                      className="hidden base-link sm:group-hover:inline"
+                      className="hidden sm:group-hover:inline"
                       size=".75em"
                       weight="bold"
                     />

@@ -12,7 +12,7 @@ const BlockCode = ({ code = "", language = "javascript", filename }) => {
         />
       </pre>
       {filename && (
-        <span className="flex justify-center -mt-4 font-mono text-sm font-bold">
+        <span className="flex justify-center -mt-4 font-mono text-sm text-gray-500">
           {filename}
         </span>
       )}
