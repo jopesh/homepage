@@ -45,16 +45,16 @@ export default function LinkPreview({
           leave="transition ease-nature duration-300"
           leaveFrom="translate-y-0 opacity-100 scale-100"
           leaveTo="translate-y-5 opacity-0 scale-50"
-          className="flex items-center justify-center p-1.5 overflow-hidden leading-none transform bg-gray-50 shadow-lg dark:bg-gray-800 rounded-xl relative"
+          className="flex items-center justify-center p-1.5 overflow-hidden leading-none transform bg-gray-50 shadow-lg dark:bg-gray-800 rounded-lg relative"
         >
-          <div className="absolute inset-1.5 rounded-lg bg-gray-200 animate-pulse" />
+          <div className="absolute inset-1.5 rounded-md bg-gray-200 animate-pulse" />
           <Image
             src={screenshot.url}
             width="200"
             height="125"
             layout="fixed"
             alt="Screenshot of the link"
-            className="overflow-hidden rounded-lg"
+            className="overflow-hidden rounded-md"
           />
         </Transition>
       </HoverCard.Content>

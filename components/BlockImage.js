@@ -12,8 +12,8 @@ const BlockImage = ({ image = null }) => {
     return (
       <figure>
         <div
-          className={`relative ${shadow ? "shadow-lg" : ""} ${
-            bleed ? "-mx-6 lg:-mx-12" : ""
+          className={`relative overflow-hidden ${shadow ? "shadow-lg" : ""} ${
+            bleed ? "-mx-6 lg:-mx-12 md:rounded-lg" : "rounded-lg"
           }`}
         >
           <Image

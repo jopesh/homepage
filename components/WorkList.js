@@ -19,12 +19,13 @@ const WorkList = ({ projects }) => {
             <li key={p._id}>
               {p.mainImage && (
                 <Link href={`/work/${p.slug.current}`}>
-                  <a tabIndex={-1} className="base-link">
+                  <a tabIndex={-1}>
                     <Image
                       src={imageUrl}
                       width={1440}
                       height={900}
                       sizes="(min-width: 768px) 455px"
+                      className="overflow-hidden rounded-lg"
                       alt={p.mainImage.alt}
                       blurDataURL={p.mainImage.asset.metadata.lqip}
                       placeholder="blur"

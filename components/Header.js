@@ -16,7 +16,7 @@ const Header = () => {
       <div className="flex items-center justify-between max-w-screen-lg px-6 mx-auto">
         <div className="flex items-center space-x-2">
           <Link href="/">
-            <a className="py-4 pl-4 pr-1 -ml-4 base-link">
+            <a className="py-4 pl-4 pr-1 -ml-4">
               <Logo className="w-4 text-black dark:text-white" />
               <span className="sr-only">Go to the homepage</span>
             </a>

@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
     <div>
       <a
         href="#main"
-        className="absolute p-3 bg-white opacity-0 focus-visible:z-50 focus-visible:opacity-100 top-3 left-4 dark:bg-black base-link"
+        className="absolute p-3 bg-white opacity-0 focus-visible:z-50 focus-visible:opacity-100 top-3 left-4 dark:bg-black"
       >
         Skip to main content
       </a>

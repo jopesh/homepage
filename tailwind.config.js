@@ -51,7 +51,6 @@ module.exports = {
             },
             a: null,
             pre: {
-              borderRadius: 0,
               backgroundColor: null,
             },
             strong: {
@@ -80,7 +79,6 @@ module.exports = {
               marginBottom: 0,
             },
             pre: {
-              borderRadius: 0,
               fontSize: theme("fontSize.sm[0]"),
             },
             img: null,

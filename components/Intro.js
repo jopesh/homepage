@@ -71,7 +71,7 @@ const Intro = () => {
           <a
             onClick={handleClick}
             href="mailto:mail@johnschmidt.de"
-            className="inline-flex items-center px-5 py-4 space-x-2 font-semibold text-gray-900 bg-amber-300 sm:text-lg hover:bg-amber-200 active:bg-amber-100 focus-visible:ring focus-visible:ring-amber-500 focus:outline-none"
+            className="inline-flex items-center px-5 py-4 space-x-2 font-semibold text-gray-900 rounded-lg bg-amber-300 sm:text-lg hover:bg-amber-200 active:bg-amber-100 focus-visible:ring focus-visible:ring-amber-100 focus:outline-none"
           >
             <PaperPlaneTilt weight="bold" />
             <span>Get in touch</span>
@@ -80,7 +80,7 @@ const Intro = () => {
             href="https://twitter.com/jope_sh"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-5 py-4 space-x-2 font-semibold text-gray-900 sm:text-lg hover:bg-gray-100 active:bg-gray-200 focus-visible:ring focus-visible:ring-gray-500 focus:outline-none dark:text-gray-200 dark:hover:bg-gray-900 dark:active:bg-gray-800 dark:focus-visible:ring-gray-300"
+            className="inline-flex items-center px-5 py-4 space-x-2 font-semibold text-gray-900 rounded-lg sm:text-lg hover:bg-gray-100 active:bg-gray-200 focus-visible:ring focus-visible:ring-gray-500 focus:outline-none dark:text-gray-200 dark:hover:bg-gray-900 dark:active:bg-gray-800 dark:focus-visible:ring-gray-300"
           >
             <TwitterLogo weight="bold" />
             <span>Follow</span>
