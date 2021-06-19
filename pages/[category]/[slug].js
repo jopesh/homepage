@@ -48,6 +48,11 @@ export async function getStaticProps({ params, preview = false }) {
     slug: params.slug,
     category: params.category,
   })
+  if (!data)
+    return {
+      props: {},
+    }
+
   // Function to append screenshot urls to each markDef link from Sanity and return the updated body data
   const withMicrocards = await processLinks(data)
   const time = getReadingTime(data?.body)
@@ -66,9 +71,10 @@ export async function getStaticProps({ params, preview = false }) {
 }
 export default function BlogPost({ data }) {
   const router = useRouter()
-  if (!data?.slug || router.isFallback) {
+  if (router.isFallback || !data || !data.slug || !data.body || !data._id) {
     return <Error code="404" />
   }
+  console.log(data)
   return (
     <Layout>
       <PostSeo data={data} />

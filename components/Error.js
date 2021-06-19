@@ -17,7 +17,9 @@ const Error = ({ code }) => {
         <p className="my-3">
           It might not yet exist or has already faded. I&apos;d rather{" "}
           <Link href="/">
-            <a>go back to the homepage</a>
+            <a className="text-indigo-600 dark:text-indigo-300 hover:underline">
+              go back to the homepage
+            </a>
           </Link>
           .
         </p>
