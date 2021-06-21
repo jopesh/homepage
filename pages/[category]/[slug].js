@@ -8,7 +8,8 @@ import { getClient } from "lib/sanity"
 import { useRouter } from "next/router"
 import { getReadingTime } from "utils/getReadingTime"
 import formatDate from "utils/formatDate"
-import processLinks from "lib/processLinks"
+import processLinks from "utils/processLinks"
+import digestCode from "utils/digestCode"
 
 export async function getStaticPaths() {
   const posts = await getClient().fetch(
@@ -53,15 +54,16 @@ export async function getStaticProps({ params, preview = false }) {
       props: {},
     }
 
-  // Function to append screenshot urls to each markDef link from Sanity and return the updated body data
-  const withMicrocards = await processLinks(data)
+  // Process the body
+  let updatedBody = await processLinks(data.body)
+  updatedBody = await digestCode(updatedBody)
   const time = getReadingTime(data?.body)
-  const date = formatDate(data?.publishedAt)
+  const date = formatDate(data.publishedAt)
   return {
     props: {
       data: {
         ...data,
-        body: withMicrocards,
+        body: updatedBody,
         readingTime: time,
         prettyDate: date,
       },
@@ -70,11 +72,11 @@ export async function getStaticProps({ params, preview = false }) {
   }
 }
 export default function BlogPost({ data }) {
+  console.log(data)
   const router = useRouter()
   if (router.isFallback || !data || !data.slug || !data.body || !data._id) {
     return <Error code="404" />
   }
-  console.log(data)
   return (
     <Layout>
       <PostSeo data={data} />

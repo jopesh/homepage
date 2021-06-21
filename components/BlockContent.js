@@ -45,7 +45,7 @@ const BlockContent = ({ ...args }) => (
         code: function RenderCode(props) {
           return (
             <BlockCode
-              code={props.node.code}
+              codeHtml={props.node.codeHtml}
               language={props.node.language}
               filename={props.node.filename}
             />

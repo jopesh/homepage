@@ -1,14 +1,10 @@
-import Prism from "prismjs"
-Prism.manual = true
-
-const BlockCode = ({ code = "", language = "javascript", filename }) => {
-  const html = Prism.highlight(code, Prism.languages[language], language)
+const BlockCode = ({ codeHtml = "", language = "javascript", filename }) => {
   return (
     <div>
       <pre className={`language-${language}`}>
         <code
           className={`language-${language}`}
-          dangerouslySetInnerHTML={{ __html: html }}
+          dangerouslySetInnerHTML={{ __html: codeHtml }}
         />
       </pre>
       {filename && (

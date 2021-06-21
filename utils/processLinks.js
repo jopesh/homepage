@@ -9,10 +9,10 @@ async function fullyScreenshot(url, opts) {
   return data.screenshot
 }
 
-export default async function processLinks(data) {
+export default async function processLinks(body) {
   const payload = await Promise.all(
     // First map through each node of the body
-    data.body.map(async (node) => {
+    body.map(async (node) => {
       // If the node has no markDefs or live skip and return the original node
       if (!node.markDefs && !node.live) return node
       // Define empty arrays as placeholders
