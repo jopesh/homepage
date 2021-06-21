@@ -72,7 +72,6 @@ export async function getStaticProps({ params, preview = false }) {
   }
 }
 export default function BlogPost({ data }) {
-  console.log(data)
   const router = useRouter()
   if (router.isFallback || !data || !data.slug || !data.body || !data._id) {
     return <Error code="404" />
