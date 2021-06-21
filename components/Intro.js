@@ -11,11 +11,6 @@ const Intro = () => {
   }
   return (
     <section id="author" className="relative isolate">
-      {/* <div className="opacity-10 dark:opacity-[15%] overflow-hidden">
-        <div className="absolute right-0 bg-indigo-400 rounded-full -left-24 sm:left-2/3 w-52 h-52 sm:w-96 sm:h-96 -top-16 filter mix-blend-multiply animate-blob blur-2xl" />
-        <div className="absolute top-0 w-48 h-48 rounded-full -right-24 bg-amber-400 sm:w-96 sm:h-96 sm:right-52 filter mix-blend-multiply animate-blob blur-2xl animation-delay-3000" />
-        <div className="absolute w-32 h-32 bg-green-400 rounded-full sm:w-80 sm:h-80 sm:right-10 -right-20 top-48 filter mix-blend-multiply animate-blob blur-2xl animation-delay-6000" />
-      </div> */}
       <div className="relative space-y-6">
         <div className="inline-flex overflow-hidden rounded-full">
           <Image
@@ -32,7 +27,10 @@ const Intro = () => {
           Hey, I&apos;m John.
         </h1>
         <div className="space-y-4 text-gray-700 dark:text-gray-200 max-w-prose sm:text-lg md:text-xl">
-          <p>Health Professionals Educator, paramedic and web developer.</p>
+          <p>
+            Health professionals educator, paramedic and freelance web
+            developer.
+          </p>
           <p>
             My goal is to create fast, simple and accessible web experiences for
             everyone to use and enjoy. I currently focus on{" "}
@@ -42,8 +40,18 @@ const Intro = () => {
               rel="noopener noreferrer"
               className="relative group"
             >
-              <span className="absolute bottom-0 h-2 bg-indigo-50 inset-x-1 dark:bg-indigo-500 dark:bg-opacity-30 group-hover:bg-indigo-100 dark:group-hover:bg-opacity-25" />
+              <span className="absolute bottom-0 h-2 bg-indigo-100 group-hover:bg-indigo-200 inset-x-1 dark:bg-indigo-400 dark:bg-opacity-30 dark:group-hover:bg-opacity-50" />
               <span className="relative">Next.js</span>
+            </a>
+            ,{" "}
+            <a
+              href="https://sanity.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative group"
+            >
+              <span className="absolute bottom-0 h-2 bg-indigo-100 group-hover:bg-indigo-200 inset-x-1 dark:bg-indigo-400 dark:bg-opacity-30 dark:group-hover:bg-opacity-50" />
+              <span className="relative">Sanity.io</span>
             </a>{" "}
             and{" "}
             <a
@@ -52,15 +60,25 @@ const Intro = () => {
               rel="noopener noreferrer"
               className="relative group whitespace-nowrap"
             >
-              <span className="absolute bottom-0 h-2 bg-indigo-50 inset-x-1 dark:bg-indigo-500 dark:bg-opacity-30 group-hover:bg-indigo-100 dark:group-hover:bg-opacity-25" />
+              <span className="absolute bottom-0 h-2 bg-indigo-100 group-hover:bg-indigo-200 inset-x-1 dark:bg-indigo-400 dark:bg-opacity-30 dark:group-hover:bg-opacity-50" />
               <span className="relative">headless e-commerce</span>
+            </a>{" "}
+            with{" "}
+            <a
+              href="https://shopify.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative inline-flex group"
+            >
+              <span className="absolute bottom-0 h-2 bg-indigo-100 group-hover:bg-indigo-200 inset-x-1 dark:bg-indigo-400 dark:bg-opacity-30 dark:group-hover:bg-opacity-50" />
+              <span className="relative">Shopify</span>
             </a>
             .
           </p>
           <p>
             I am currently{" "}
             <span className="relative">
-              <span className="absolute bottom-0 h-2 bg-green-100 inset-x-1 dark:bg-green-500 dark:bg-opacity-20" />
+              <span className="absolute bottom-0 h-2 bg-green-100 inset-x-1 dark:bg-green-400 dark:bg-opacity-20" />
               <span className="relative">available</span>
             </span>{" "}
             for freelance and contract work.
