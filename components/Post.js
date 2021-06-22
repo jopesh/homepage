@@ -1,5 +1,6 @@
 import Image from "next/image"
 import BlockContent from "./BlockContent"
+import portrait from "public/images/portrait.jpg"
 
 const Post = ({ data }) => {
   const { title, publishedAt, body, prettyDate, readingTime } = data
@@ -9,7 +10,7 @@ const Post = ({ data }) => {
       <div className="flex items-center my-6 space-x-3">
         <div className="flex flex-grow-0 flex-shrink-0 overflow-hidden rounded-full">
           <Image
-            src="/images/portrait.jpg"
+            src={portrait}
             height="32"
             width="32"
             layout="fixed"
