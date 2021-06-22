@@ -1,6 +1,6 @@
 import mql from "@microlink/mql"
 
-async function fullyScreenshot(url, opts) {
+export async function fullyScreenshot(url, opts) {
   const { data } = await mql(url, {
     meta: false,
     screenshot: true,
