@@ -17,8 +17,12 @@ function HomepageApp({ Component, pageProps }) {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
-        <Script src="https://stats.johnschmidt.cloud/js/plausible.js" />
         <Script
+          src="https://stats.johnschmidt.cloud/js/plausible.js"
+          data-domain="johnschmidt.de"
+        />
+        <Script
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html:
               "window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }",
