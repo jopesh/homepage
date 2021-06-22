@@ -25,23 +25,6 @@ class HomepageDocument extends Document {
                 crossOrigin=""
               />
               <link
-                rel="preconnect"
-                href="https://stats.johnschmidt.cloud"
-                crossOrigin=""
-              />
-              <script
-                async
-                defer
-                data-domain="johnschmidt.de"
-                src="https://stats.johnschmidt.cloud/js/plausible.js"
-              />
-              <script
-                dangerouslySetInnerHTML={{
-                  __html:
-                    "window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }",
-                }}
-              />
-              <link
                 rel="apple-touch-icon"
                 sizes="180x180"
                 href="/apple-touch-icon.png?v=oLnz5kRpkO"

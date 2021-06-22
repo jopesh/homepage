@@ -1,5 +1,6 @@
 import Head from "next/head"
 import { ThemeProvider } from "next-themes"
+import Script from "next/script"
 
 import "styles/globals.css"
 import "focus-visible/dist/focus-visible.min.js"
@@ -16,6 +17,13 @@ function HomepageApp({ Component, pageProps }) {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
+        <Script src="https://stats.johnschmidt.cloud/js/plausible.js" />
+        <Script
+          dangerouslySetInnerHTML={{
+            __html:
+              "window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }",
+          }}
+        />
         <Component {...pageProps} />
       </ThemeProvider>
     </IdProvider>
