@@ -17,6 +17,12 @@ class HomepageDocument extends Document {
             />
           ) : (
             <>
+              <script
+                dangerouslySetInnerHTML={{
+                  __html:
+                    "window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }",
+                }}
+              />
               <link
                 rel="preload"
                 href="/fonts/inter-var-latin.woff2"
