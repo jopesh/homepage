@@ -3,6 +3,18 @@ import Image from "next/image"
 import { TwitterLogo, PaperPlaneTilt } from "phosphor-react"
 import me from "public/images/portrait.jpg"
 
+const IntroLink = ({ href, children }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="relative inline-flex group"
+  >
+    <span className="absolute bottom-0 h-2 bg-indigo-100 group-hover:bg-indigo-200 inset-x-1 dark:bg-indigo-400 dark:bg-opacity-30 dark:group-hover:bg-opacity-50" />
+    <span className="relative">{children}</span>
+  </a>
+)
+
 const Intro = () => {
   const handleClick = (e) => {
     e.preventDefault()
@@ -34,46 +46,12 @@ const Intro = () => {
           <p>
             My goal is to create fast, simple and accessible web experiences for
             everyone to use and enjoy. I currently focus on{" "}
-            <a
-              href="https://nextjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative group"
-            >
-              <span className="absolute bottom-0 h-2 bg-indigo-100 group-hover:bg-indigo-200 inset-x-1 dark:bg-indigo-400 dark:bg-opacity-30 dark:group-hover:bg-opacity-50" />
-              <span className="relative">Next.js</span>
-            </a>
-            ,{" "}
-            <a
-              href="https://sanity.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative group"
-            >
-              <span className="absolute bottom-0 h-2 bg-indigo-100 group-hover:bg-indigo-200 inset-x-1 dark:bg-indigo-400 dark:bg-opacity-30 dark:group-hover:bg-opacity-50" />
-              <span className="relative">Sanity.io</span>
-            </a>{" "}
-            and{" "}
-            <a
-              href="https://www.bigcommerce.com/articles/headless-commerce/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative group whitespace-nowrap"
-            >
-              <span className="absolute bottom-0 h-2 bg-indigo-100 group-hover:bg-indigo-200 inset-x-1 dark:bg-indigo-400 dark:bg-opacity-30 dark:group-hover:bg-opacity-50" />
-              <span className="relative">headless e-commerce</span>
-            </a>{" "}
-            with{" "}
-            <a
-              href="https://shopify.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative inline-flex group"
-            >
-              <span className="absolute bottom-0 h-2 bg-indigo-100 group-hover:bg-indigo-200 inset-x-1 dark:bg-indigo-400 dark:bg-opacity-30 dark:group-hover:bg-opacity-50" />
-              <span className="relative">Shopify</span>
-            </a>
-            .
+            <IntroLink href="https://nextjs.org">Next.js</IntroLink>,{" "}
+            <IntroLink href="https://sanity.io">Sanity</IntroLink> and{" "}
+            <IntroLink href="https://www.bigcommerce.com/articles/headless-commerce/">
+              headless e-commerce
+            </IntroLink>{" "}
+            with <IntroLink href="https://shopify.com">Shopify</IntroLink>.
           </p>
           <p>
             I am currently{" "}

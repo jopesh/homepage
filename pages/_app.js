@@ -1,5 +1,6 @@
 import Head from "next/head"
 import { ThemeProvider } from "next-themes"
+import Script from "next/script"
 
 import "styles/globals.css"
 import "focus-visible/dist/focus-visible.min.js"
@@ -13,6 +14,11 @@ function HomepageApp({ Component, pageProps }) {
         defaultTheme="light"
         enableSystem={false}
       >
+        <Script
+          id="plausible"
+          data-domain="johnschmidt.de"
+          src="https://stats.johnschmidt.cloud/js/plausible.js"
+        />
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>

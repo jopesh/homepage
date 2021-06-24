@@ -17,29 +17,18 @@ class HomepageDocument extends Document {
             />
           ) : (
             <>
+              <script
+                dangerouslySetInnerHTML={{
+                  __html:
+                    "window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }",
+                }}
+              />
               <link
                 rel="preload"
                 href="/fonts/inter-var-latin.woff2"
                 as="font"
                 type="font/woff2"
                 crossOrigin=""
-              />
-              <link
-                rel="preconnect"
-                href="https://stats.johnschmidt.cloud"
-                crossOrigin=""
-              />
-              <script
-                async
-                defer
-                data-domain="johnschmidt.de"
-                src="https://stats.johnschmidt.cloud/js/plausible.js"
-              />
-              <script
-                dangerouslySetInnerHTML={{
-                  __html:
-                    "window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }",
-                }}
               />
               <link
                 rel="apple-touch-icon"

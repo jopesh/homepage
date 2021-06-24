@@ -14,7 +14,9 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "@sanity/code-input",
-    "media-library"
+    "media-library",
+    "vercel-deploy",
+    "@sanity/dashboard"
   ],
   "env": {
     "development": {

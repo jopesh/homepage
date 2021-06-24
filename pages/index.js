@@ -56,7 +56,7 @@ export default function Home({ blog, work }) {
           openGraph={{
             type: "website",
             description:
-              "Self-taught front-end developer. Aiming to build fast, simple and accessible experiences for everyone to use and enjoy.",
+              "Self-taught web developer. Aiming to build fast, simple and accessible experiences for everyone to use and enjoy.",
             locale: "en_GB",
             url: "https://www.johnschmidt.de/",
             site_name: "John Schmidt",
