@@ -1,4 +1,4 @@
 {
   "extends": ["next", "next/core-web-vitals"],
-  "ignorePatterns": "/studio/*/**"
+  "ignorePatterns": "/studio/**/*.*"
 }

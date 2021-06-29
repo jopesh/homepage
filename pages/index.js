@@ -11,41 +11,34 @@ import formatDate from "utils/formatDate"
 
 export async function getStaticProps({ preview }) {
   const client = getClient(preview)
-  let { blog, work } = await client.fetch(
-    groq`{
-      "blog": *[_type == "post" && references(*[_type == "category" && slug.current == "blog"][0]._id) && publishedAt < now()] | order(publishedAt desc),
-      "work": *[_type == "post" && references(*[_type == "category" && slug.current == "work"][0]._id) && publishedAt < now()] | order(publishedAt desc) {
-        ...,
-        mainImage {
-          alt,
-          asset->{
-            _id,
-            _type,
+  const [frontpage] = await client.fetch(groq`
+  *[_type == "frontpage"] {
+    ...,
+    posts[]->,
+    projects[]->{
+      ...,
+      mainImage {
+        alt,
+        asset->{
+          _id,
+          _type,
             metadata {
-              lqip
-            }
+            lqip
           }
         }
       }
-    }`
-  )
-  blog = blog.map((post) => {
-    const date = formatDate(post.publishedAt)
-    return {
-      ...post,
-      prettyDate: date,
     }
-  })
+  }
+  `)
   return {
     props: {
-      blog,
-      work,
+      frontpage,
     },
     revalidate: 60,
   }
 }
 
-export default function Home({ blog, work }) {
+export default function Home({ frontpage }) {
   return (
     <Layout>
       <div className="space-y-16">
@@ -77,8 +70,8 @@ export default function Home({ blog, work }) {
 
         <Intro />
         <div className="space-y-8 md:grid md:grid-cols-2 md:space-y-0">
-          <BlogList posts={blog} />
-          <WorkList projects={work} />
+          <BlogList posts={frontpage.posts} />
+          <WorkList projects={frontpage.projects} />
         </div>
       </div>
     </Layout>
