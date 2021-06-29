@@ -28,7 +28,7 @@
     "next": "^11.0.0",
     "next-sanity": "^0.2.0",
     "next-seo": "^4.20.0",
-    "next-themes": "^0.0.14",
+    "next-themes": "^0.0.15",
     "phosphor-react": "^1.1.2",
     "postcss": "^8.3.3",
     "postcss-focus-visible": "^5.0.0",
