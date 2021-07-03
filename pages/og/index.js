@@ -9,11 +9,11 @@ export default function OgImageTemplate() {
   return (
     <div className="relative w-full h-screen bg-white">
       <NextSeo nofollow noindex />
-      <div className="absolute inset-0 overflow-hidden opacity-25">
+      {/* <div className="absolute inset-0 overflow-hidden opacity-25">
         <div className="absolute transform scale-150 bg-blue-500 rounded-full -top-12 right-5 h-96 w-96 filter blur-2xl mix-blend-multiply" />
         <div className="absolute transform scale-125 rounded-full bg-fuchsia-500 bottom-6 right-1/3 h-96 w-96 filter blur-2xl mix-blend-multiply" />
         <div className="absolute transform scale-150 rounded-full bg-amber-500 -bottom-10 right-12 h-96 w-96 filter blur-2xl mix-blend-multiply" />
-      </div>
+      </div> */}
       <div className="absolute inset-0 opacity-40">
         <Image
           src="/images/meta-bg.png"
@@ -26,16 +26,16 @@ export default function OgImageTemplate() {
       </div>
       {query.title ? (
         <>
-          <div className="absolute z-50 top-12 left-12 right-12">
+          <div className="absolute z-50 top-12 inset-x-16">
             <h1
-              className={`font-bold tracking-tight leading-tight ${
+              className={`font-black tracking-tight leading-tight ${
                 query.title.length > 25 ? "text-8xl" : "text-9xl"
               }`}
             >
               {query.title}
             </h1>
           </div>
-          <div className="absolute z-50 flex items-center justify-between bottom-12 left-12 right-12">
+          <div className="absolute z-50 flex items-center justify-between bottom-12 inset-x-16">
             <div className="flex items-center">
               <div className="flex overflow-hidden rounded-full shadow-lg">
                 <Image
@@ -47,13 +47,12 @@ export default function OgImageTemplate() {
                   alt="Portrait of John"
                 />
               </div>
-              <div className="ml-6 text-4xl">
-                <h2 className="font-medium tracking-tight">John Schmidt</h2>
+              <div className="ml-8 text-4xl">
+                <h2 className="font-semibold tracking-tight">John Schmidt</h2>
+                <p className="text-2xl">@jope_sh</p>
               </div>
             </div>
-            <div>
-              <p className="text-4xl font-medium opacity-50">johnschmidt.de</p>
-            </div>
+            <div></div>
           </div>
         </>
       ) : (
