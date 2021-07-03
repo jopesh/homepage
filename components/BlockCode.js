@@ -1,7 +1,7 @@
 const BlockCode = ({ codeHtml = "", language = "javascript", filename }) => {
   return (
     <div>
-      <pre className={`language-${language}`}>
+      <pre className={`language-${language} !rounded-none sm:!rounded-lg`}>
         <code
           className={`language-${language}`}
           dangerouslySetInnerHTML={{ __html: codeHtml }}
