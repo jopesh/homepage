@@ -18,7 +18,9 @@ const IntroLink = ({ href, children }) => (
 const Intro = () => {
   const handleClick = (e) => {
     e.preventDefault()
-    typeof plausible !== "undefined" && plausible("Lead")
+    if (typeof plausible !== "undefined") {
+      plausible("Lead")
+    }
     window.location.href = "mailto:mail@johnschmidt.de"
   }
   return (
@@ -67,9 +69,9 @@ const Intro = () => {
           <a
             onClick={handleClick}
             href="mailto:mail@johnschmidt.de"
-            className="inline-flex items-center px-5 py-4 space-x-2 font-semibold text-gray-900 rounded-lg bg-amber-300 sm:text-lg hover:bg-amber-200 active:bg-amber-100 focus-visible:ring focus-visible:ring-amber-100 focus:outline-none"
+            className="inline-flex items-center px-5 py-4 space-x-2 font-semibold text-white bg-indigo-600 rounded-lg sm:text-lg hover:bg-indigo-500 active:bg-indigo-400 focus-visible:ring focus-visible:ring-indigo-600 dark:focus-visible:ring-indigo-300 dark:bg-indigo-300 dark:text-black focus:outline-none dark:hover:bg-indigo-200 dark:active:bg-indigo-100"
           >
-            <PaperPlaneTilt weight="bold" />
+            <PaperPlaneTilt weight="fill" />
             <span>Get in touch</span>
           </a>
           <a
@@ -78,7 +80,7 @@ const Intro = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center px-5 py-4 space-x-2 font-semibold text-gray-900 rounded-lg sm:text-lg hover:bg-gray-100 active:bg-gray-200 focus-visible:ring focus-visible:ring-gray-500 focus:outline-none dark:text-gray-200 dark:hover:bg-gray-900 dark:active:bg-gray-800 dark:focus-visible:ring-gray-300"
           >
-            <TwitterLogo weight="bold" />
+            <TwitterLogo weight="fill" />
             <span>Follow</span>
           </a>
         </div>

@@ -15,12 +15,12 @@ const BlogList = ({ posts }) => {
             <li key={p._id}>
               <Link href={`/blog/${p.slug.current}`}>
                 <a className="block pb-1 hover:underline ">
-                  <h3 className="font-semibold leading-snug md:text-lg">
+                  <h3 className="font-bold leading-snug md:text-lg">
                     {p.title}
                   </h3>
                 </a>
               </Link>
-              <p className="block mt-0.5 text-gray-700 dark:text-gray-200">
+              <p className="block mt-0.5 text-gray-800 dark:text-gray-200">
                 {p.summary}
               </p>
             </li>
