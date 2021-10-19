@@ -1,5 +1,5 @@
 import groq from "groq"
-import { getClient } from "lib/sanity"
+import { getClient } from "lib/sanity.server"
 
 export default async function previewHandler(req, res) {
   if (req.query.secret !== process.env.SANITY_PREVIEW_SECRET) {

@@ -5,7 +5,7 @@ import Intro from "components/Intro"
 import BlogList from "components/BlogList"
 import WorkList from "components/WorkList"
 
-import { getClient } from "lib/sanity"
+import { getClient } from "lib/sanity.server"
 import Layout from "components/Layout"
 import formatDate from "utils/formatDate"
 
