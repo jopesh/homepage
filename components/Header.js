@@ -28,7 +28,6 @@ const Header = () => {
             </div>
           )}
         </div>
-        <ThemeSwitch />
       </div>
     </header>
   )
