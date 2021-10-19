@@ -20,24 +20,25 @@ const BlockContent = ({ ...args }) => (
             lower: true,
           })
           if (match) {
-            return createElement(props.node.style, {
-              id: slug,
-              style: {
-                scrollMarginTop: "5rem",
+            return createElement(
+              props.node.style,
+              {
+                id: slug,
+                style: {
+                  scrollMarginTop: "5rem",
+                },
               },
-              children: [
-                <a href={`#${slug}`} key="anchor" className="group">
-                  <span className="mr-3">{props.children}</span>
-                  <span>
-                    <Link
-                      className="hidden sm:group-hover:inline"
-                      size=".75em"
-                      weight="bold"
-                    />
-                  </span>
-                </a>,
-              ],
-            })
+              <a href={`#${slug}`} key="anchor" className="group">
+                <span className="mr-3">{props.children}</span>
+                <span>
+                  <Link
+                    className="hidden sm:group-hover:inline"
+                    size=".75em"
+                    weight="bold"
+                  />
+                </span>
+              </a>
+            )
           } else if (props.node.style === "blockquote") {
             return <blockquote>{props.children}</blockquote>
           } else return <p>{props.children}</p>
