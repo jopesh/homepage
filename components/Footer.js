@@ -36,7 +36,7 @@ const Footer = () => {
         <p className="inline-flex items-center space-x-1">
           <span>Made by John Schmidt in {new Date().getFullYear()}</span>
         </p>
-        <p>in Hamburg (soon Berlin)</p>
+        <p>in Berlin</p>
       </div>
     </footer>
   )
