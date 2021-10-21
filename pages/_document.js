@@ -7,7 +7,10 @@ class HomepageDocument extends Document {
   }
   render() {
     return (
-      <Html lang="en">
+      <Html
+        lang="en"
+        className="antialiased text-black bg-white dark:bg-black dark:text-white"
+      >
         <Head>
           {process.env.NODE_ENV !== "production" ? (
             <link
@@ -58,7 +61,7 @@ class HomepageDocument extends Document {
             </>
           )}
         </Head>
-        <body className="antialiased text-black bg-white dark:bg-black dark:text-white">
+        <body>
           <Main />
           <NextScript />
         </body>
