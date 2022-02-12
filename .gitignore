@@ -15,10 +15,6 @@
 # production
 /build
 
-#studio
-public/studio
-sanity.json
-
 # misc
 .DS_Store
 *.pem
@@ -37,8 +33,5 @@ yarn-error.log*
 # vercel
 .vercel
 
-.vercel
-
-public/favicon-dev.ico
-
-.vercel
+# typescript
+*.tsbuildinfo
