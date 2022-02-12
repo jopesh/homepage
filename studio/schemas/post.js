@@ -44,12 +44,20 @@ export default {
         { type: "block" },
         {
           type: "image",
+          options: {
+            hotspot: true,
+          },
           fields: [
             {
               name: "alt",
-              title: "Alt",
+              title: "Alt text",
               type: "string",
-              options: { isHighlighted: true },
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: "bleed",
+              title: "Bleed",
+              type: "boolean",
             },
           ],
         },
@@ -64,6 +72,14 @@ export default {
       options: {
         hotspot: true,
       },
+      fields: [
+        {
+          name: "alt",
+          title: "Alt text",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
+      ],
     },
   ],
 }
