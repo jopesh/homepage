@@ -1,10 +1,12 @@
 import Image from "next/image"
+import clsx from "clsx"
 import { urlFor } from "lib/sanity.client"
 
 type Props = {
   data: {
     alt: string
     asset: any
+    bleed?: boolean
     lqip: string
     dimensions: {
       aspectRatio: number
@@ -16,9 +18,11 @@ type Props = {
 
 const BlockImage: React.FC<Props> = ({ data }) => {
   return (
-    <div className="overflow-hidden flex md:-mx-4 rounded">
+    <div
+      className={clsx("flex overflow-hidden rounded", data.bleed && "md:-mx-8")}
+    >
       <Image
-        src={urlFor(data.asset)
+        src={urlFor(data)
           .width(data.dimensions.width)
           .height(data.dimensions.height)
           .url()}

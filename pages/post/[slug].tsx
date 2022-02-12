@@ -48,7 +48,7 @@ type Props = {
 const PostPage: NextPage<Props> = ({ data }) => {
   return (
     <Container>
-      <article className="prose prose-zinc dark:prose-invert prose-pre:text-zinc-900 dark:prose-pre:text-zinc-100 prose-pre:bg-zinc-100 dark:prose-pre:bg-zinc-800 prose-pre:text-sm prose-pre:rounded md:prose-pre:-mx-4 md:prose-lg lg:prose-pre:text-base xl:prose-xl xl:prose-pre:text-base">
+      <article className="prose prose-zinc prose-pre:rounded prose-pre:bg-zinc-100 prose-pre:text-sm prose-pre:text-zinc-900 dark:prose-invert dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-100 md:prose-pre:-mx-8">
         <h1>{data.title}</h1>
         <PortableText
           value={data.body}

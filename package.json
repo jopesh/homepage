@@ -15,7 +15,9 @@
   "dependencies": {
     "@portabletext/react": "^1.0.3",
     "@sanity/image-url": "^1.0.1",
+    "clsx": "^1.1.1",
     "next": "12.0.10",
+    "phosphor-react": "^1.4.0",
     "picosanity": "^3.0.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -30,6 +32,8 @@
     "eslint": "8.9.0",
     "eslint-config-next": "12.0.10",
     "postcss": "^8.4.6",
+    "prettier": "^2.5.1",
+    "prettier-plugin-tailwindcss": "^0.1.7",
     "sanity-codegen": "^0.9.8",
     "tailwindcss": "^3.0.22",
     "typescript": "4.5.5"
