@@ -1,5 +1,6 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next"
 
+import { ArrowSquareOut } from "phosphor-react"
 import BlockCode from "components/block-code"
 import BlockImage from "components/block-image"
 import Container from "components/container"
@@ -63,6 +64,19 @@ const PostPage: NextPage<Props> = ({ data }) => {
                   />
                 ),
                 image: (props) => <BlockImage data={props.value} />,
+              },
+              marks: {
+                link: (props) => (
+                  <a
+                    href={props.value.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-0.5"
+                  >
+                    <span>{props.children}</span>
+                    <ArrowSquareOut />
+                  </a>
+                ),
               },
             }}
           />
