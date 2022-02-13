@@ -15,7 +15,7 @@ const DisplayViews: React.FC<Props> = ({ slug }) => {
       </div>
     )
   return (
-    <div className="flex cursor-all-scroll items-center">
+    <div className="flex items-center">
       <Eye className="mr-1.5" />
       <span className="tabular-nums">{data?.views} views</span>
     </div>
