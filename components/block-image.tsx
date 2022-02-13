@@ -1,40 +1,32 @@
 import Image from "next/image"
+import { PortableTextTypeComponentProps } from "@portabletext/react"
+import { PropsWithChildren } from "react"
 import clsx from "clsx"
 import { urlFor } from "lib/sanity.client"
 
-type Props = {
-  data: {
-    alt: string
-    asset: any
-    bleed?: boolean
-    lqip: string
-    dimensions: {
-      aspectRatio: number
-      height: number
-      width: number
-    }
-  }
-}
-
-const BlockImage: React.FC<Props> = ({ data }) => {
+const BlockImage: React.FC<
+  PropsWithChildren<PortableTextTypeComponentProps<any>>
+> = (props) => {
+  const { alt, bleed, dimensions, lqip, hasBorder } = props.value
   return (
     <div
       className={clsx(
         "overflow-hidden leading-none",
-        data.bleed && "-mx-4 sm:mx-0 sm:rounded md:-mx-8",
-        !data.bleed && "rounded",
+        bleed && "-mx-4 sm:mx-0 sm:rounded md:-mx-8",
+        !bleed && "rounded",
+        hasBorder && "border border-zinc-100 dark:border-zinc-800",
       )}
     >
       <Image
-        src={urlFor(data)
-          .width(data.dimensions.width)
-          .height(data.dimensions.height)
+        src={urlFor(props.value)
+          .width(dimensions.width)
+          .height(dimensions.height)
           .url()}
-        alt={data.alt}
-        width={data.dimensions.width}
-        height={data.dimensions.height}
+        alt={alt}
+        width={dimensions.width}
+        height={dimensions.height}
         placeholder="blur"
-        blurDataURL={data.lqip}
+        blurDataURL={lqip}
         sizes="(min-width: 640px) 640px, 100vw"
       />
     </div>
