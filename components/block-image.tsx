@@ -19,7 +19,11 @@ type Props = {
 const BlockImage: React.FC<Props> = ({ data }) => {
   return (
     <div
-      className={clsx("flex overflow-hidden rounded", data.bleed && "md:-mx-8")}
+      className={clsx(
+        "overflow-hidden leading-none",
+        data.bleed && "-mx-4 sm:mx-0 sm:rounded md:-mx-8",
+        !data.bleed && "rounded",
+      )}
     >
       <Image
         src={urlFor(data)
@@ -31,6 +35,7 @@ const BlockImage: React.FC<Props> = ({ data }) => {
         height={data.dimensions.height}
         placeholder="blur"
         blurDataURL={data.lqip}
+        sizes="(min-width: 640px) 640px, 100vw"
       />
     </div>
   )
