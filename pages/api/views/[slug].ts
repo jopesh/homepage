@@ -14,12 +14,16 @@ async function getPlausibleViews(slug: string) {
 
 const viewsHandler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { query } = req
-  const data = await getPlausibleViews(query.slug as string)
-  await new Promise((res) => setTimeout(res, 2000))
-  return res.status(200).json({
-    slug: query.slug,
-    views: data.results.visitors.value,
-  })
+  try {
+    const data = await getPlausibleViews(query.slug as string)
+    return res.status(200).json({
+      slug: query.slug,
+      views: data.results.visitors.value,
+    })
+  } catch (error) {
+    console.error(error)
+    return res.status(500).json({ error })
+  }
 }
 
 export default viewsHandler
