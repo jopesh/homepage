@@ -29,6 +29,7 @@
     "styled-components": "^5.2.0"
   },
   "devDependencies": {
+    "@sanity/cli": "^2.27.0",
     "prettier": "^2.5.1",
     "sanity-codegen": "^0.9.8"
   },

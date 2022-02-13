@@ -2,3 +2,5 @@
 /node_modules
 wrangler.toml
 workers-site
+
+.vercel
