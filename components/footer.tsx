@@ -3,7 +3,7 @@ import { Heart } from "phosphor-react"
 
 const Footer: React.FC = () => {
   return (
-    <footer className="mt-16 mb-10 text-center font-mono text-sm">
+    <footer className="mt-10 mb-10 text-center font-mono text-sm lg:mt-16">
       <Container>
         <div className="items-center">
           <p className="inline-flex items-center">
