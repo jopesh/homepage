@@ -1,13 +1,12 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next"
+import type { Post, Tag } from "lib/sanity.models"
 
-import { ArrowSquareOut } from "phosphor-react"
-import BlockCode from "components/block-code"
-import BlockImage from "components/block-image"
 import Container from "components/container"
 import Layout from "components/layout"
+import Link from "next/link"
 import { NextSeo } from "next-seo"
-import { PortableText } from "@portabletext/react"
-import type { Post } from "lib/sanity.models"
+import PortableText from "components/portable-text"
+import TagList from "components/tag-list"
 import { sanityClient } from "lib/sanity.server"
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -33,6 +32,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           "dimensions": asset->metadata.dimensions,
         },
       },
+      tags[]->{title, slug}
     }`,
     { slug: params?.slug },
   )
@@ -59,34 +59,11 @@ const PostPage: NextPage<Props> = ({ data }) => {
       />
       <Container>
         <article className="prose prose-zinc prose-a:text-indigo-700 prose-pre:-mx-4 prose-pre:rounded-none prose-pre:border prose-pre:border-zinc-100 prose-pre:bg-zinc-50 prose-pre:text-sm prose-pre:text-zinc-900 dark:prose-invert dark:prose-a:text-indigo-300 dark:prose-pre:border-zinc-800 dark:prose-pre:bg-zinc-800/30 dark:prose-pre:text-zinc-100 sm:prose-pre:mx-0 sm:prose-pre:rounded md:prose-pre:-mx-8">
-          <h1>{data.title}</h1>
-          <PortableText
-            value={data.body}
-            components={{
-              types: {
-                code: (props) => (
-                  <BlockCode
-                    language={props.value.language}
-                    code={props.value.code}
-                  />
-                ),
-                image: (props) => <BlockImage data={props.value} />,
-              },
-              marks: {
-                link: (props) => (
-                  <a
-                    href={props.value.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-0.5"
-                  >
-                    <span>{props.children}</span>
-                    <ArrowSquareOut />
-                  </a>
-                ),
-              },
-            }}
-          />
+          <h1 className="mb-4 font-black">{data.title}</h1>
+          <div className="not-prose mb-8 text-sm md:text-base">
+            <TagList data={data.tags as unknown as Tag[]} />
+          </div>
+          <PortableText value={data.body} />
         </article>
       </Container>
     </Layout>
