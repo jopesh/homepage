@@ -34,9 +34,6 @@ export default function Document() {
           href="/safari-pinned-tab.svg?v=oLnz5kRpkO"
           color="#000000"
         />
-        <meta name="msapplication-TileColor" content="#8c22d0" />
-        <meta name="theme-color" content="#ffffff" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <body className="bg-white text-black antialiased dark:bg-zinc-900 dark:text-white">
         <Main />

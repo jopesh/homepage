@@ -2,11 +2,27 @@ import "styles/globals.css"
 
 import type { AppProps } from "next/app"
 import { DefaultSeo } from "next-seo"
+import Head from "next/head"
 import Script from "next/script"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
+      <Head>
+        <meta name="msapplication-TileColor" content="#8c22d0" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="theme-color"
+          content="#ffffff"
+          media="(prefers-color-scheme: light)"
+        />
+        <meta
+          name="theme-color"
+          content="#000000"
+          media="(prefers-color-scheme: dark)"
+        />
+      </Head>
       <Script
         id="plausible"
         data-domain="johnschmidt.de"
