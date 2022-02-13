@@ -2,6 +2,7 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from "next"
 import type { Post, Tag } from "lib/sanity.models"
 
 import Container from "components/container"
+import DisplayViews from "components/display-views"
 import Layout from "components/layout"
 import Link from "next/link"
 import { NextSeo } from "next-seo"
@@ -58,9 +59,12 @@ const PostPage: NextPage<Props> = ({ data }) => {
         canonical={`https://johnschmidt.de/post/${data.slug?.current}`}
       />
       <Container>
-        <article className="prose prose-zinc prose-a:text-indigo-700 prose-pre:-mx-4 prose-pre:rounded-none prose-pre:border prose-pre:border-zinc-100 prose-pre:bg-zinc-50 prose-pre:text-sm prose-pre:text-zinc-900 dark:prose-invert dark:prose-a:text-indigo-300 dark:prose-pre:border-zinc-800 dark:prose-pre:bg-zinc-800/30 dark:prose-pre:text-zinc-100 sm:prose-pre:mx-0 sm:prose-pre:rounded md:prose-pre:-mx-8">
+        <article className="prose prose-sm prose-zinc prose-a:text-indigo-700 prose-pre:-mx-4 prose-pre:rounded-none prose-pre:border prose-pre:border-zinc-100 prose-pre:bg-zinc-50 prose-pre:text-sm prose-pre:text-zinc-900 dark:prose-invert dark:prose-a:text-indigo-300 dark:prose-pre:border-zinc-800 dark:prose-pre:bg-zinc-800/30 dark:prose-pre:text-zinc-100 sm:prose-base sm:prose-pre:mx-0 sm:prose-pre:rounded md:prose-pre:-mx-8">
+          <div className="not-prose mb-2 text-xs md:text-sm">
+            <DisplayViews slug={data.slug?.current || ""} />
+          </div>
           <h1 className="mb-4 font-black">{data.title}</h1>
-          <div className="not-prose mb-8 text-sm md:text-base">
+          <div className="not-prose mb-8 text-xs md:text-sm">
             <TagList data={data.tags as unknown as Tag[]} />
           </div>
           <PortableText value={data.body} />
