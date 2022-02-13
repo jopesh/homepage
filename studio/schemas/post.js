@@ -52,6 +52,13 @@ export default {
       type: "array",
       of: [{ type: "reference", to: { type: "tag" } }],
     },
+    // Project
+    {
+      name: "isProject",
+      title: "Project",
+      description: "Check if this post is a project",
+      type: "boolean",
+    },
     // Body
     {
       name: "body",
@@ -69,6 +76,9 @@ export default {
               name: "alt",
               title: "Alt text",
               type: "string",
+              options: {
+                isHighlighted: true,
+              },
               validation: (Rule) =>
                 Rule.required().warning("No alt text provided"),
             },
@@ -76,6 +86,19 @@ export default {
               name: "bleed",
               title: "Bleed",
               type: "boolean",
+              initialValue: false,
+              options: {
+                isHighlighted: true,
+              },
+            },
+            {
+              name: "hasBorder",
+              title: "Border",
+              type: "boolean",
+              initialValue: false,
+              options: {
+                isHighlighted: true,
+              },
             },
           ],
         },
@@ -100,4 +123,7 @@ export default {
       ],
     },
   ],
+  initialValue: {
+    isProject: false,
+  },
 }
