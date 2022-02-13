@@ -22,10 +22,13 @@ const PostList: React.FC<Props> = ({ data }) => {
               </a>
             </Link>
           </h3>
-          <p className="text-sm leading-relaxed sm:text-base sm:leading-relaxed">
+          <p className="mb-2 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 sm:text-base sm:leading-relaxed">
             {post.description}
           </p>
-          <TagList data={post.tags as unknown as Tag[]} />
+          <TagList
+            data={post.tags as unknown as Tag[]}
+            className="text-xs md:text-sm"
+          />
         </li>
       ))}
     </ul>
