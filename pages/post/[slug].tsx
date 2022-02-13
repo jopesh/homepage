@@ -50,7 +50,7 @@ const PostPage: NextPage<Props> = ({ data }) => {
   return (
     <Layout>
       <Container>
-        <article className="prose prose-zinc prose-indigo prose-pre:-mx-4 prose-pre:rounded-none prose-pre:border prose-pre:border-zinc-100 prose-pre:bg-zinc-50 prose-pre:text-sm prose-pre:text-zinc-900 dark:prose-invert dark:prose-pre:border-zinc-800 dark:prose-pre:bg-zinc-800/30 dark:prose-pre:text-zinc-100 sm:prose-pre:mx-0 sm:prose-pre:rounded md:prose-pre:-mx-8">
+        <article className="prose prose-zinc prose-a:text-indigo-700 prose-pre:-mx-4 prose-pre:rounded-none prose-pre:border prose-pre:border-zinc-100 prose-pre:bg-zinc-50 prose-pre:text-sm prose-pre:text-zinc-900 dark:prose-invert dark:prose-a:text-indigo-300 dark:prose-pre:border-zinc-800 dark:prose-pre:bg-zinc-800/30 dark:prose-pre:text-zinc-100 sm:prose-pre:mx-0 sm:prose-pre:rounded md:prose-pre:-mx-8">
           <h1>{data.title}</h1>
           <PortableText
             value={data.body}
