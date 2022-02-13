@@ -35,8 +35,9 @@ const Home: NextPage<HomeProps> = ({ data }) => {
               John Schmidt
             </h1>
             <p className="text-zinc-700 dark:text-zinc-300 sm:text-base md:text-lg">
-              Freelance web developer, educator and paramedic. Thriving to make
-              the web a more accessible, enjoyable place. Based in Berlin.
+              Freelance web developer, educator, and paramedic. Thriving to make
+              the web a more accessible, enjoyable place. Currently based in
+              Berlin.
             </p>
             <a
               href="mailto:mail@johnschmidt.de"
