@@ -1,21 +1,21 @@
 import type {
-  SanityReference,
-  SanityKeyedReference,
   SanityAsset,
-  SanityImage,
-  SanityFile,
-  SanityGeoPoint,
   SanityBlock,
   SanityDocument,
-  SanityImageCrop,
-  SanityImageHotspot,
-  SanityKeyed,
+  SanityFile,
+  SanityGeoPoint,
+  SanityImage,
   SanityImageAsset,
-  SanityImageMetadata,
+  SanityImageCrop,
   SanityImageDimensions,
+  SanityImageHotspot,
+  SanityImageMetadata,
   SanityImagePalette,
   SanityImagePaletteSwatch,
-} from "sanity-codegen";
+  SanityKeyed,
+  SanityKeyedReference,
+  SanityReference,
+} from "sanity-codegen"
 
 export type {
   SanityReference,
@@ -34,7 +34,7 @@ export type {
   SanityImageDimensions,
   SanityImagePalette,
   SanityImagePaletteSwatch,
-};
+}
 
 /**
  * Post
@@ -42,35 +42,35 @@ export type {
  *
  */
 export interface Post extends SanityDocument {
-  _type: "post";
+  _type: "post"
 
   /**
    * Title — `string`
    *
    *
    */
-  title?: string;
+  title?: string
 
   /**
    * Slug — `slug`
    *
    *
    */
-  slug?: { _type: "slug"; current: string };
+  slug?: { _type: "slug"; current: string }
 
   /**
    * Description — `text`
    *
    *
    */
-  description?: string;
+  description?: string
 
   /**
    * Tags — `array`
    *
    *
    */
-  tags?: Array<SanityKeyedReference<Tag>>;
+  tags?: Array<SanityKeyedReference<Tag>>
 
   /**
    * Body — `array`
@@ -80,13 +80,13 @@ export interface Post extends SanityDocument {
   body?: Array<
     | SanityKeyed<SanityBlock>
     | SanityKeyed<{
-        _type: "image";
-        asset: SanityReference<SanityImageAsset>;
-        crop?: SanityImageCrop;
-        hotspot?: SanityImageHotspot;
+        _type: "image"
+        asset: SanityReference<SanityImageAsset>
+        crop?: SanityImageCrop
+        hotspot?: SanityImageHotspot
       }>
     | SanityKeyed<Code>
-  >;
+  >
 
   /**
    * Image — `image`
@@ -94,11 +94,11 @@ export interface Post extends SanityDocument {
    *
    */
   image?: {
-    _type: "image";
-    asset: SanityReference<SanityImageAsset>;
-    crop?: SanityImageCrop;
-    hotspot?: SanityImageHotspot;
-  };
+    _type: "image"
+    asset: SanityReference<SanityImageAsset>
+    crop?: SanityImageCrop
+    hotspot?: SanityImageHotspot
+  }
 }
 
 /**
@@ -107,35 +107,35 @@ export interface Post extends SanityDocument {
  *
  */
 export interface Tag extends SanityDocument {
-  _type: "tag";
+  _type: "tag"
 
   /**
    * Title — `string`
    *
    *
    */
-  title?: string;
+  title?: string
 
   /**
    * Slug — `slug`
    *
    *
    */
-  slug?: { _type: "slug"; current: string };
+  slug?: { _type: "slug"; current: string }
 
   /**
    * Description — `array`
    *
    *
    */
-  description?: Array<SanityKeyed<SanityBlock>>;
+  description?: Array<SanityKeyed<SanityBlock>>
 }
 
-export type Documents = Post | Tag;
+export type Documents = Post | Tag
 
 /**
  * This interface is a stub. It was referenced in your sanity schema but
  * the definition was not actually found. Future versions of
  * sanity-codegen will let you type this explicity.
  */
-type Code = any;
+type Code = any
