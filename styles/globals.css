@@ -29,7 +29,7 @@
 .token.constant,
 .token.symbol,
 .token.deleted {
-  @apply text-pink-700 dark:text-pink-300;
+  @apply text-fuchsia-700 dark:text-fuchsia-300;
 }
 
 .token.boolean,
@@ -43,7 +43,7 @@
 .token.char,
 .token.builtin,
 .token.inserted {
-  @apply text-lime-700 dark:text-lime-300;
+  @apply text-green-700 dark:text-green-300;
 }
 
 .token.operator,
@@ -59,11 +59,11 @@
 .token.attr-value,
 .token.function,
 .token.class-name {
-  @apply text-yellow-700 dark:text-yellow-300;
+  @apply text-amber-700 dark:text-amber-300;
 }
 
 .token.keyword {
-  @apply text-sky-700 dark:text-sky-300;
+  @apply text-indigo-700 dark:text-indigo-300;
 }
 
 .token.regex,
