@@ -10,7 +10,7 @@ type Props = {
 
 const TagList: React.FC<Props> = ({ data, className }) => {
   return (
-    <ul className={clsx("relative z-10 flex flex-wrap", className)}>
+    <ul className={clsx("relative z-10 -mb-[0.5em] flex flex-wrap", className)}>
       {data.map((tag) => (
         <li
           key={(tag as any).title}
