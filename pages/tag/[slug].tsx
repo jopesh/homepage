@@ -3,6 +3,7 @@ import type { Post, Tag } from "lib/sanity.models"
 
 import Container from "components/container"
 import Layout from "components/layout"
+import { NextSeo } from "next-seo"
 import PortableText from "components/portable-text"
 import PostList from "components/post-list"
 import { Tag as TagIcon } from "phosphor-react"
@@ -23,6 +24,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const data = await sanityClient.fetch(
     /* groq */ `*[_type == "tag" && slug.current == $slug][0] {
       ...,
+      "seoDescription": pt::text(description),
       "posts": *[_type == "post" && references(^._id)] { title, description, slug, tags[]->{title, slug} }
     }`,
     { slug: params?.slug },
@@ -36,12 +38,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 type TagPageProps = {
-  data: Tag & { posts: Post[] }
+  data: Tag & { posts: Post[]; seoDescription: string }
 }
 
 const TagPage: NextPage<TagPageProps> = ({ data }) => {
   return (
     <Layout>
+      <NextSeo
+        titleTemplate="Posts about %s - John Schmidt"
+        title={data.title}
+        description={data.seoDescription}
+      />
       <Container>
         <section className="mb-8">
           <div className="mb-4 flex items-center space-x-2 text-2xl font-bold">
