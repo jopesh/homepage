@@ -134,6 +134,13 @@ export interface Post extends SanityDocument {
      */
     alt?: string;
   };
+
+  /**
+   * SEO attributes — `seo`
+   *
+   *
+   */
+  seo?: Seo;
 }
 
 /**
@@ -165,6 +172,35 @@ export interface Tag extends SanityDocument {
    */
   description?: Array<SanityKeyed<SanityBlock>>;
 }
+
+export type Seo = {
+  _type: "seo";
+  /**
+   * SEO Title — `string`
+   *
+   *
+   */
+  title?: string;
+
+  /**
+   * SEO description — `text`
+   *
+   *
+   */
+  description?: string;
+
+  /**
+   * SEO image — `image`
+   *
+   *
+   */
+  image?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+};
 
 export type Documents = Post | Tag;
 
