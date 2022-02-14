@@ -5,9 +5,9 @@ const Header: React.FC = () => {
   return (
     <header className="mb-10 mt-10 lg:mb-16">
       <Container>
-        <nav>
+        <nav className="flex items-center justify-between">
           <Link href="/">
-            <a className="inline-block rounded focus:outline-none focus-visible:ring">
+            <a className="flex rounded focus:outline-none focus-visible:ring">
               <span className="sr-only">To homepage</span>
               <svg
                 width="222"
