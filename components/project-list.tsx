@@ -35,10 +35,13 @@ const ProjectList: React.FC<Props> = ({ data }) => {
               sizes="(min-width: 640px) 640px, 100vw"
             />
             <div className="absolute inset-0 flex flex-col items-end justify-between p-4">
+              {/* View Counter */}
               <div className="rounded border border-zinc-200 bg-white p-2 text-xs dark:border-zinc-800 dark:bg-zinc-900 dark:text-white">
                 <DisplayViews slug={project.slug?.current} />
               </div>
+              {/* Info Container */}
               <div className="w-full rounded border border-zinc-200 bg-white p-2.5 dark:border-zinc-800 dark:bg-zinc-900 dark:text-white sm:p-4">
+                {/* Title */}
                 <h3 className="mb-2 text-sm font-semibold sm:text-base">
                   <Link href={`/post/${project.slug?.current}`}>
                     <a className="inline-block rounded after:absolute after:inset-0 after:block after:content-[''] focus:outline-none focus-visible:ring">
@@ -46,14 +49,13 @@ const ProjectList: React.FC<Props> = ({ data }) => {
                     </a>
                   </Link>
                 </h3>
+                {/* Description */}
                 <p className="mb-2 hidden text-xs text-zinc-700 dark:text-zinc-300 sm:block sm:text-sm">
                   {project.description}
                 </p>
-                <div>
-                  <TagList
-                    data={project.tags as unknown as Tag[]}
-                    className="text-xs"
-                  />
+                {/* Tags */}
+                <div className="text-xs md:text-sm">
+                  <TagList data={project.tags as unknown as Tag[]} />
                 </div>
               </div>
             </div>
