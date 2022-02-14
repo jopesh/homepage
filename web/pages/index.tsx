@@ -7,7 +7,7 @@ import { PaperPlaneTilt } from "phosphor-react"
 import type { Post } from "lib/sanity.models"
 import PostList from "components/post-list"
 import ProjectList from "components/project-list"
-import portrait from "public/img/portrait.jpeg"
+import portrait from "public/img/portrait.jpg"
 import { sanityClient } from "lib/sanity.server"
 
 export interface Project extends Post {
@@ -83,8 +83,8 @@ const Home: NextPage<HomeProps> = ({ data }) => {
               src={portrait}
               alt="Portrait"
               placeholder="blur"
-              width="96"
-              height="96"
+              height={96}
+              width={96}
             />
           </div>
         </section>
