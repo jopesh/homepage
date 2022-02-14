@@ -1,4 +1,4 @@
-import { SiGithub, SiTwitter } from "react-icons/si"
+import { SiDevdotto, SiGithub, SiTwitter } from "react-icons/si"
 
 import Container from "./container"
 import { Heart } from "phosphor-react"
@@ -17,24 +17,33 @@ const Footer: React.FC = () => {
           </p>
           <p>2022</p>
         </div>
-        <div className="flex items-center justify-center space-x-2">
+        <div className="flex items-center justify-center space-x-2 text-xl md:text-2xl">
           <a
-            href="http://github.com/jopesh/"
+            href="https://github.com/jopesh"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex p-2 text-xl text-zinc-400 hover:text-zinc-800 dark:text-zinc-500 dark:hover:text-zinc-100"
+            className="flex p-2 text-zinc-400 hover:text-zinc-800 dark:text-zinc-500 dark:hover:text-zinc-100"
           >
             <span className="sr-only">GitHub Profile</span>
             <SiGithub />
           </a>
           <a
-            href="http://twitter.com/jope_sh/"
+            href="https://twitter.com/jope_sh"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex p-2 text-xl text-zinc-400 hover:text-zinc-800 dark:text-zinc-500 dark:hover:text-zinc-100"
+            className="flex p-2 text-zinc-400 hover:text-zinc-800 dark:text-zinc-500 dark:hover:text-zinc-100"
           >
             <span className="sr-only">Twitter Profile</span>
             <SiTwitter />
+          </a>
+          <a
+            href="https://dev.to/jopesh"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex p-2 text-zinc-400 hover:text-zinc-800 dark:text-zinc-500 dark:hover:text-zinc-100"
+          >
+            <span className="sr-only">Dev.to Profile</span>
+            <SiDevdotto />
           </a>
         </div>
       </Container>
