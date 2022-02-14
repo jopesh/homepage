@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           type: "website",
           images: [
             {
-              url: "/img/default-seo.jpg",
+              url: "https://johnschmidt.de/img/default-seo.jpg",
               alt: "John Schmidt - Freelancer, educator, paramedic",
               width: 1200,
               height: 628,

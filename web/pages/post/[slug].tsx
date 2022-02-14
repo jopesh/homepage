@@ -54,7 +54,7 @@ const PostPage: NextPage<Props> = ({ data }) => {
     ? urlFor(data.seo?.image).url()
     : data.image
     ? urlFor(data.image).width(1200).height(628).url()
-    : "/img/default-seo.jpg"
+    : "https://johnschmidt.de/img/default-seo.jpg"
   return (
     <Layout>
       <NextSeo
