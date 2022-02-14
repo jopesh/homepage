@@ -3,6 +3,7 @@ import createSchema from "part:@sanity/base/schema-creator"
 import post from "./post"
 // Then import schema types from any plugins that might expose them
 import schemaTypes from "all:part:@sanity/base/schema-type"
+import seo from "./seo"
 import tag from "./tag"
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -15,5 +16,6 @@ export default createSchema({
     /* Your types here! */
     post,
     tag,
+    seo,
   ]),
 })
