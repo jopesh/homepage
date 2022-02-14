@@ -1,8 +1,6 @@
-node_modules
-build
-dist
-.DS_Store
-.env.local
-.env
-.env.development
-.env.production
+/dist
+/node_modules
+wrangler.toml
+workers-site
+
+.vercel

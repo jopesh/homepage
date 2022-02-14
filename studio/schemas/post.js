@@ -1,41 +1,97 @@
-import { Pen } from "phosphor-react"
-
 export default {
   name: "post",
   title: "Post",
   type: "document",
-  icon: Pen,
   fields: [
+    // Title
     {
       name: "title",
       title: "Title",
       type: "string",
+      validation: (Rule) => Rule.required(),
     },
+    // Slug
     {
       name: "slug",
       title: "Slug",
       type: "slug",
       options: {
         source: "title",
-        maxLength: 96,
       },
-    },
-    {
-      name: "publishedAt",
-      title: "Publish",
-      type: "datetime",
       validation: (Rule) => Rule.required(),
     },
+    // Description
     {
-      name: "category",
-      title: "Category",
-      type: "reference",
-      to: [{ type: "category" }],
-      validation: (Rule) => Rule.required(),
+      name: "description",
+      title: "Description",
+      type: "text",
+      rows: 3,
+      validation: (Rule) => Rule.required().max(160),
     },
+    // Tags
     {
-      name: "mainImage",
-      title: "Main image",
+      name: "tags",
+      title: "Tags",
+      type: "array",
+      of: [{ type: "reference", to: { type: "tag" } }],
+    },
+    // Project
+    {
+      name: "isProject",
+      title: "Project",
+      description: "Check if this post is a project",
+      type: "boolean",
+    },
+    // Body
+    {
+      name: "body",
+      title: "Body",
+      type: "array",
+      of: [
+        { type: "block" },
+        {
+          type: "image",
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: "alt",
+              title: "Alt text",
+              type: "string",
+              options: {
+                isHighlighted: true,
+              },
+              validation: (Rule) =>
+                Rule.required().warning("No alt text provided"),
+            },
+            {
+              name: "bleed",
+              title: "Bleed",
+              type: "boolean",
+              initialValue: false,
+              options: {
+                isHighlighted: true,
+              },
+            },
+            {
+              name: "hasBorder",
+              title: "Border",
+              type: "boolean",
+              initialValue: false,
+              options: {
+                isHighlighted: true,
+              },
+            },
+          ],
+        },
+        { type: "code", options: { theme: "github", withFilename: true } },
+      ],
+    },
+    // Image
+    {
+      name: "image",
+      title: "Image",
       type: "image",
       options: {
         hotspot: true,
@@ -43,46 +99,19 @@ export default {
       fields: [
         {
           name: "alt",
-          title: "Alternative text",
+          title: "Alt text",
           type: "string",
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) => Rule.required().warning("No alt text provided"),
         },
       ],
     },
     {
-      name: "summary",
-      title: "Summary",
-      type: "text",
-      rows: 3,
-    },
-    {
-      name: "tags",
-      title: "Tags",
-      type: "array",
-      of: [{ type: "string", name: "tag" }],
-      options: {
-        layout: "tags",
-      },
-    },
-    {
-      name: "body",
-      title: "Body",
-      type: "blockContent",
+      name: "seo",
+      title: "SEO attributes",
+      type: "seo",
     },
   ],
-
-  preview: {
-    select: {
-      title: "title",
-      category: "category.title",
-      mainImage: "mainImage",
-    },
-    prepare({ title, category, mainImage }) {
-      return {
-        title: title,
-        subtitle: category,
-        media: mainImage,
-      }
-    },
+  initialValue: {
+    isProject: false,
   },
 }
