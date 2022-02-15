@@ -31,9 +31,11 @@ const PostList: React.FC<Props> = ({ data }) => {
             <p className="mb-2 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 sm:text-base sm:leading-relaxed">
               {post.description}
             </p>
-            <div className="flex justify-between text-xs md:text-sm">
-              <TagList data={post.tags as unknown as Tag[]} />
-            </div>
+            {post.tags && (
+              <div className="flex justify-between text-xs md:text-sm">
+                <TagList data={post.tags?.slice(0, 3) as unknown as Tag[]} />
+              </div>
+            )}
           </li>
         )
       })}
