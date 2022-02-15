@@ -59,8 +59,8 @@ const PostPage: NextPage<Props> = ({ data }) => {
     <Layout>
       <NextSeo
         titleTemplate="%s - John Schmidt"
-        title={data.title}
-        description={data.description}
+        title={data.seo?.title || data.title}
+        description={data.seo?.description || data.description}
         canonical={`https://johnschmidt.de/post/${data.slug?.current}`}
         openGraph={{
           images: [
