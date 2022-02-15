@@ -4,3 +4,4 @@ wrangler.toml
 workers-site
 
 .vercel
+.env.*
