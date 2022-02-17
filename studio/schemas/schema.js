@@ -1,10 +1,11 @@
+import callout from "./objects/callout"
 // First, we must import the schema creator
 import createSchema from "part:@sanity/base/schema-creator"
-import post from "./post"
+import post from "./documents/post"
 // Then import schema types from any plugins that might expose them
 import schemaTypes from "all:part:@sanity/base/schema-type"
-import seo from "./seo"
-import tag from "./tag"
+import seo from "./objects/seo"
+import tag from "./documents/tag"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -17,5 +18,6 @@ export default createSchema({
     post,
     tag,
     seo,
+    callout,
   ]),
 })

@@ -86,6 +86,7 @@ export default {
           ],
         },
         { type: "code", options: { theme: "github", withFilename: true } },
+        { type: "callout" },
       ],
     },
     // Image

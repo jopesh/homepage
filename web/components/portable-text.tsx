@@ -1,4 +1,5 @@
 import { PortableText as BasePortableText } from "@portabletext/react"
+import BlockCallout from "./block-callout"
 import BlockCode from "./block-code"
 import BlockImage from "./block-image"
 import MarkLink from "./mark-link"
@@ -15,6 +16,7 @@ const PortableText: React.FC<Props> = ({ value }) => {
         types: {
           code: (props) => <BlockCode {...props} />,
           image: (props) => <BlockImage {...props} />,
+          callout: (props) => <BlockCallout {...props} />,
         },
         marks: {
           link: (props) => <MarkLink {...props} />,
