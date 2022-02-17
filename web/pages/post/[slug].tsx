@@ -12,7 +12,7 @@ import { urlFor } from "lib/sanity.client"
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const data: Post[] = await sanityClient.fetch(
-    /* groq */ `*[_type == "post"]{slug}`,
+    /* groq */ `*[_type == "post"] { slug }`,
   )
   const paths = data.map((post) => ({ params: { slug: post.slug?.current } }))
   return {
@@ -33,7 +33,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           "dimensions": asset->metadata.dimensions,
         },
       },
-      tags[]->{title, slug}
+      tags[]->{ title, slug }
     }`,
     { slug: params?.slug },
   )
