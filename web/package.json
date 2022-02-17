@@ -36,12 +36,12 @@
     "autoprefixer": "^10.4.2",
     "eslint": "8.9.0",
     "eslint-config-next": "12.0.10",
-    "next-sitemap": "^2.1.14",
+    "next-sitemap": "^2.4.2",
     "postcss": "^8.4.6",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.7",
     "sanity-codegen": "^0.9.8",
-    "tailwindcss": "^3.0.22",
+    "tailwindcss": "^3.0.23",
     "typescript": "4.5.5"
   }
 }
