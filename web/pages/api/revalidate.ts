@@ -12,9 +12,11 @@ const revalidateHandler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (!body) {
     return res.status(400).send("Invalid request")
   }
+
   const { _type, slug } = body
   try {
     await res.unstable_revalidate(`${_type}/${slug}`)
+    console.log(`[API] Revalidated ${_type}/${slug}`)
     return res.status(200).send("OK")
   } catch (err) {
     return res.status(500).send(err)
