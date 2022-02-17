@@ -7,10 +7,10 @@ const revalidateHandler = async (req: NextApiRequest, res: NextApiResponse) => {
   const secret = process.env.SANITY_WEBHOOK_SECRET!
 
   if (!isValidRequest(body, secret)) {
-    res.status(401).send("Unauthorized")
+    return res.status(401).send("Unauthorized")
   }
   if (!body) {
-    res.status(400).send("Invalid request")
+    return res.status(400).send("Invalid request")
   }
   const { _type, slug } = body
   try {
