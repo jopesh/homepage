@@ -21,6 +21,7 @@ const revalidateHandler = async (req: NextApiRequest, res: NextApiResponse) => {
     console.log(`[API] Revalidated: /`)
     return res.status(200).send("OK")
   } catch (err) {
+    console.error(err)
     return res.status(500).send(err)
   }
 }
