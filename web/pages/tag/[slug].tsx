@@ -11,7 +11,7 @@ import { sanityClient } from "lib/sanity.server"
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const data: Tag[] = await sanityClient.fetch(
-    /* groq */ `*[_type == "tag"]{slug}`,
+    /* groq */ `*[_type == "tag"] { slug }`,
   )
   const paths = data.map((tag) => ({ params: { slug: tag.slug?.current } }))
   return {
@@ -33,7 +33,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       data,
     },
-    revalidate: 60,
   }
 }
 
@@ -45,7 +44,7 @@ const TagPage: NextPage<TagPageProps> = ({ data }) => {
   return (
     <Layout>
       <NextSeo
-        titleTemplate="Posts about %s - John Schmidt"
+        titleTemplate="%s - John Schmidt"
         title={data.title}
         description={data.seoDescription}
       />
