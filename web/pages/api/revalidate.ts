@@ -2,11 +2,12 @@ import type { NextApiRequest, NextApiResponse } from "next"
 
 import { isValidRequest } from "@sanity/webhook"
 
+const secret = process.env.SANITY_WEBHOOK_SECRET!
+
 const revalidateHandler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { body } = req
-  const secret = process.env.SANITY_WEBHOOK_SECRET!
 
-  if (!isValidRequest(body, secret)) {
+  if (!isValidRequest(req, secret)) {
     return res.status(401).send("Unauthorized")
   }
   if (!body) {
