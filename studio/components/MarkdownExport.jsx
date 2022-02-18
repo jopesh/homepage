@@ -15,9 +15,10 @@ const serializers = {
     code: (props) =>
       "```" + props.node.language + "\n" + props.node.code + "\n```",
     image: (props) => {
-      console.log(props)
       return `![${props.node.alt}](${builder.image(props.node.asset).url()})`
     },
+    callout: (props) =>
+      `**${props.node.title}**\n${toMarkdown(props.node.body)}`,
   },
 }
 
