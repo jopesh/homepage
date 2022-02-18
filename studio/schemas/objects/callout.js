@@ -3,10 +3,10 @@ import { Card, Heading, Stack, Text } from "@sanity/ui"
 import React from "react"
 
 const Preview = ({ value }) => {
-  const { title, body, tone } = value
+  const { title, body } = value
   console.log("Value: ", value)
   return (
-    <Card tone={String(tone).toLowerCase()} padding={4} radius={2} shadow={1}>
+    <Card tone="caution" padding={4} radius={2} shadow={1}>
       <Stack space={4}>
         <Heading as="h5" size={1}>
           {title}
@@ -24,7 +24,6 @@ export default {
   preview: {
     select: {
       title: "title",
-      tone: "tone",
       body: "body",
     },
     component: Preview,
@@ -34,21 +33,6 @@ export default {
       name: "title",
       title: "Title",
       type: "string",
-    },
-    {
-      name: "tone",
-      title: "Tone",
-      type: "string",
-      initialValue: "default",
-      options: {
-        list: [
-          { title: "Default", value: "default" },
-          { title: "Positive", value: "positive" },
-          { title: "Caution", value: "caution" },
-        ],
-        layout: "radio",
-        direction: "horizontal",
-      },
     },
     {
       name: "body",
