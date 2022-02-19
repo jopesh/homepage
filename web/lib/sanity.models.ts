@@ -114,6 +114,7 @@ export interface Post extends SanityDocument {
         hasBorder?: boolean;
       }>
     | SanityKeyed<Code>
+    | SanityKeyed<Callout>
   >;
 
   /**
@@ -173,6 +174,34 @@ export interface Tag extends SanityDocument {
   description?: Array<SanityKeyed<SanityBlock>>;
 }
 
+/**
+ * Settings
+ *
+ *
+ */
+export interface Settings extends SanityDocument {
+  _type: "settings";
+
+  /**
+   * Image — `image`
+   *
+   *
+   */
+  image?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+
+    /**
+     * Alt text — `string`
+     *
+     *
+     */
+    alt?: string;
+  };
+}
+
 export type Seo = {
   _type: "seo";
   /**
@@ -202,7 +231,24 @@ export type Seo = {
   };
 };
 
-export type Documents = Post | Tag;
+export type Callout = {
+  _type: "callout";
+  /**
+   * Title — `string`
+   *
+   *
+   */
+  title?: string;
+
+  /**
+   * Body — `array`
+   *
+   *
+   */
+  body?: Array<SanityKeyed<SanityBlock>>;
+};
+
+export type Documents = Post | Tag | Settings;
 
 /**
  * This interface is a stub. It was referenced in your sanity schema but

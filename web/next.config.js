@@ -5,6 +5,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ["cdn.sanity.io"],
+    loader: "custom",
     deviceSizes: [320, 430, 640, 1280],
     imageSizes: [96],
   },

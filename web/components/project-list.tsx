@@ -4,34 +4,34 @@ import Link from "next/link"
 import { Project } from "pages/index"
 import type { Tag } from "lib/sanity.models"
 import TagList from "./tag-list"
-import { urlFor } from "lib/sanity.client"
+import { sanityClient } from "lib/sanity.server"
+import { useNextSanityImage } from "next-sanity-image"
 
 type Props = {
   data: Project[]
 }
 
 const ProjectList: React.FC<Props> = ({ data }) => {
+  const imageProps = useNextSanityImage(sanityClient, data[0].image)
   return (
     <ul>
       {data.map((project) => {
         if (!project.slug) return null
-        const { alt, lqip, dimensions } = project.image
+        const { alt, lqip } = project.image
         return (
           <li
             key={project.slug?.current}
             className="group relative aspect-[4/3] w-full overflow-hidden rounded border border-zinc-100 focus-within:border-zinc-900 hover:border-zinc-900 dark:border-zinc-800 dark:focus-within:border-zinc-100 dark:hover:border-zinc-100 sm:aspect-[3/2]"
           >
             <Image
-              src={urlFor(project.image)
-                .height(dimensions.height)
-                .width(dimensions.width)
-                .url()}
+              src={imageProps.src}
+              blurDataURL={lqip}
+              placeholder="blur"
+              loader={imageProps.loader}
+              alt={alt}
               layout="fill"
               objectFit="cover"
               objectPosition="center"
-              placeholder="blur"
-              blurDataURL={lqip}
-              alt={alt}
               sizes="(min-width: 640px) 640px, 100vw"
             />
             <div className="absolute inset-0 flex flex-col items-start justify-between p-4">
