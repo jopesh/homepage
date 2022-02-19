@@ -1,3 +1,4 @@
+import { Gear } from "phosphor-react"
 import MarkdownExport from "./components/MarkdownExport"
 import S from "@sanity/desk-tool/structure-builder"
 
@@ -23,4 +24,13 @@ export default () =>
         .schemaType("tag")
         .child(S.documentTypeList("tag").title("Tags")),
       S.divider(),
+      S.listItem()
+        .title("Settings")
+        .icon(Gear)
+        .child(
+          S.document()
+            .title("Settings")
+            .schemaType("settings")
+            .documentId("settings")
+        ),
     ])

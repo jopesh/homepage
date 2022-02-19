@@ -5,6 +5,7 @@ import post from "./documents/post"
 // Then import schema types from any plugins that might expose them
 import schemaTypes from "all:part:@sanity/base/schema-type"
 import seo from "./objects/seo"
+import settings from "./singletons/settings"
 import tag from "./documents/tag"
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -19,5 +20,6 @@ export default createSchema({
     tag,
     seo,
     callout,
+    settings,
   ]),
 })
