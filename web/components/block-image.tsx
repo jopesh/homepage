@@ -1,13 +1,25 @@
 import Image from "next/image"
 import { PortableTextTypeComponentProps } from "@portabletext/react"
 import { PropsWithChildren } from "react"
+import { SanityImageSource } from "@sanity/image-url/lib/types/types"
 import clsx from "clsx"
-import { urlFor } from "lib/sanity.client"
+import { sanityClient } from "lib/sanity.server"
+import { useNextSanityImage } from "next-sanity-image"
 
 const BlockImage: React.FC<
-  PropsWithChildren<PortableTextTypeComponentProps<any>>
+  PropsWithChildren<
+    PortableTextTypeComponentProps<
+      SanityImageSource & {
+        lqip: string
+        alt: string
+        bleed: boolean
+        hasBorder: boolean
+      }
+    >
+  >
 > = (props) => {
-  const { alt, bleed, dimensions, lqip, hasBorder } = props.value
+  const { alt, bleed, hasBorder, lqip } = props.value
+  const imageProps = useNextSanityImage(sanityClient, props.value)
   return (
     <div
       className={clsx(
@@ -18,15 +30,13 @@ const BlockImage: React.FC<
       )}
     >
       <Image
-        src={urlFor(props.value)
-          .width(dimensions.width)
-          .height(dimensions.height)
-          .url()}
         alt={alt}
-        width={dimensions.width}
-        height={dimensions.height}
-        placeholder="blur"
+        src={imageProps.src}
+        height={imageProps.height}
+        width={imageProps.width}
         blurDataURL={lqip}
+        placeholder="blur"
+        loader={imageProps.loader}
         sizes="(min-width: 640px) 640px, 100vw"
       />
     </div>
