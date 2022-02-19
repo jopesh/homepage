@@ -1,6 +1,6 @@
-import { Box, Button, Card, Code, TextArea } from "@sanity/ui"
+/* eslint-disable react/prop-types */
+import { Card, TextArea } from "@sanity/ui"
 
-import { Clipboard } from "phosphor-react"
 import React from "react"
 import imageUrlBuilder from "@sanity/image-url"
 import toMarkdown from "@sanity/block-content-to-markdown"
@@ -26,7 +26,6 @@ export default function MarkdownExport({ document }) {
   const { displayed } = document
   if (displayed?.category === "project") return null
   const input = toMarkdown(displayed.body, { serializers })
-  const copy = async () => await navigator.clipboard.writeText(input)
   return (
     <Card padding="4" width="2">
       <TextArea
