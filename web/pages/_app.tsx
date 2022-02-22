@@ -28,6 +28,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         data-domain="johnschmidt.de"
         src="https://stats.johnschmidt.cloud/js/plausible.js"
       />
+      <Script
+        id="umami"
+        data-website-id="de798640-0007-400f-8bb3-3d87bce1a0ac"
+        src="https://umami.johnschmidt.cloud/umami.js"
+      />
       <DefaultSeo
         title="John Schmidt - Freelancer, educator, paramedic"
         description="Freelance web developer, educator, and paramedic. Thriving to make the web a more accessible, enjoyable place."
