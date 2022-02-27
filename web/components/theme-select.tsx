@@ -35,7 +35,7 @@ const ThemeSelect = () => {
   const [mounted, setMounted] = useState(false)
   useEffect(() => setMounted(true), [])
   // Return null if not mounted
-  if (!mounted) return null
+  if (!mounted) return <div className="h-9 w-9" />
   // Return component if mounted
   return (
     <Listbox value={theme} onChange={setTheme} className="relative" as="div">
