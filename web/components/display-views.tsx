@@ -7,17 +7,13 @@ type Props = {
 }
 
 const DisplayViews: React.FC<Props> = ({ slug }) => {
-  const { data, error } = useSWR(`/api/views/${slug}`, fetcher)
-  if (!data && !error)
-    return (
-      <div className="inline-block animate-pulse rounded bg-zinc-100 text-transparent dark:bg-zinc-800">
-        Loading views
-      </div>
-    )
+  const { data } = useSWR(`/api/views/${slug}`, fetcher)
   return (
     <div className="flex items-center">
       <Eye className="mr-1.5" />
-      <span className="tabular-nums">{data?.views} views</span>
+      <span className="tabular-nums">
+        {data?.views ? `${data?.views} views` : "–"}
+      </span>
     </div>
   )
 }
