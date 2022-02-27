@@ -1,40 +1,13 @@
 import "styles/globals.css"
 
-import { ThemeProvider } from "next-themes"
-import { DefaultSeo } from "next-seo"
-
 import type { AppProps } from "next/app"
-import Head from "next/head"
+import { DefaultSeo } from "next-seo"
 import Script from "next/script"
+import { ThemeProvider } from "next-themes"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
-      <Head>
-        <meta name="msapplication-TileColor" content="#8c22d0" />
-        <meta name="theme-color" content="#ffffff" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-          name="theme-color"
-          content="#ffffff"
-          media="(prefers-color-scheme: light)"
-        />
-        <meta
-          name="theme-color"
-          content="#18181b"
-          media="(prefers-color-scheme: dark)"
-        />
-      </Head>
-      <Script
-        id="plausible"
-        data-domain="johnschmidt.de"
-        src="https://stats.johnschmidt.cloud/js/plausible.js"
-      />
-      <Script
-        id="umami"
-        data-website-id="de798640-0007-400f-8bb3-3d87bce1a0ac"
-        src="https://umami.johnschmidt.cloud/umami.js"
-      />
       <DefaultSeo
         title="John Schmidt - Freelancer, educator, paramedic"
         description="Freelance web developer, educator, and paramedic. Thriving to make the web a more accessible, enjoyable place."
@@ -53,6 +26,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         twitter={{
           cardType: "summary_large_image",
         }}
+      />
+      <Script
+        id="plausible"
+        data-domain="johnschmidt.de"
+        src="https://stats.johnschmidt.cloud/js/plausible.js"
       />
       <Component {...pageProps} />
     </ThemeProvider>
