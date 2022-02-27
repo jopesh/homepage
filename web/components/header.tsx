@@ -1,5 +1,6 @@
 import Container from "./container"
 import Link from "next/link"
+import ThemeSelect from "./theme-select"
 
 const Header: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const Header: React.FC = () => {
               </svg>
             </a>
           </Link>
+          <ThemeSelect />
         </nav>
       </Container>
     </header>

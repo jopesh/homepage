@@ -1,13 +1,15 @@
 import "styles/globals.css"
 
-import type { AppProps } from "next/app"
+import { ThemeProvider } from "next-themes"
 import { DefaultSeo } from "next-seo"
+
+import type { AppProps } from "next/app"
 import Head from "next/head"
 import Script from "next/script"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <ThemeProvider attribute="class">
       <Head>
         <meta name="msapplication-TileColor" content="#8c22d0" />
         <meta name="theme-color" content="#ffffff" />
@@ -19,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta
           name="theme-color"
-          content="#000000"
+          content="#18181b"
           media="(prefers-color-scheme: dark)"
         />
       </Head>
@@ -53,7 +55,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         }}
       />
       <Component {...pageProps} />
-    </>
+    </ThemeProvider>
   )
 }
 
