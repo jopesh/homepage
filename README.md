@@ -12,8 +12,8 @@ My personal blog and homepage.
 
 - `/web` - Next.js application folder
   - `/web/lib` - API to fetch data from Sanity
-  - `/web/next-sitemap.js` - Configuration for the next-sitemap package to autogenerate sitemaps
-  - `/web/api/views` - API route to return current view counter based on Plausible Analytics data
+  - `/web/next-sitemap.js` - Configuration for the [next-sitemap](https://github.com/iamvishnusankar/next-sitemap) package to autogenerate sitemaps
+  - `/web/api/views` - API route to return current view counter based on [Plausible Analytics](https://plausible.io/) data
 - `/studio` - Sanity Studio folder
 
 ## Running locally
