@@ -25,8 +25,8 @@
     "next-themes": "0.0.15",
     "phosphor-react": "^1.4.1",
     "picosanity": "^4.0.0",
-    "react": "18.0.0",
-    "react-dom": "18.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-refractor": "^2.1.6",
     "refractor": "^4.5.0",
@@ -43,7 +43,7 @@
     "postcss": "^8.4.12",
     "prettier": "^2.6.1",
     "prettier-plugin-tailwindcss": "^0.1.8",
-    "sanity-codegen": "^0.9.8",
+    "sanity-codegen": "^0.6.2",
     "tailwindcss": "^3.0.23",
     "typescript": "4.5.5"
   }
