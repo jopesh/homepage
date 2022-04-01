@@ -24,6 +24,7 @@ const ProjectList: React.FC<Props> = ({ data }) => {
               layout="fill"
               objectFit="cover"
               objectPosition="center"
+              sizes="(min-width: 640px) 640px, 100vw"
             />
             <div className="absolute inset-0 flex flex-col items-start justify-between p-4">
               {/* View Counter */}
