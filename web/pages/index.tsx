@@ -1,23 +1,19 @@
 import type { GetStaticProps, NextPage } from "next"
-import type { Post, Settings } from "lib/sanity.models"
+import { PaperPlaneTilt } from "phosphor-react"
 
 import Container from "components/container"
-import Image from "next/image"
 import Layout from "components/layout"
-import { PaperPlaneTilt } from "phosphor-react"
 import PostList from "components/post-list"
 import ProjectList from "components/project-list"
+import SanityImage from "components/sanity-image"
+
 import { sanityClient } from "lib/sanity.server"
-import { useNextSanityImage } from "next-sanity-image"
+import type { Post, Settings } from "lib/sanity.models"
 
 export interface Project extends Post {
   image: Post["image"] & {
     lqip: string
-    dimensions: {
-      width: number
-      height: number
-      aspectRatio: number
-    }
+    alt: string
   }
 }
 
@@ -63,13 +59,13 @@ type HomeProps = {
     settings: Settings & {
       image: {
         lqip: string
+        alt: string
       }
     }
   }
 }
 
 const Home: NextPage<HomeProps> = ({ data }) => {
-  const avatarProps = useNextSanityImage(sanityClient, data.settings.image!)
   return (
     <Layout>
       <Container>
@@ -90,15 +86,12 @@ const Home: NextPage<HomeProps> = ({ data }) => {
             </a>
           </div>
           <div className="mb-4 flex shrink-0 overflow-hidden rounded sm:mt-2 sm:mb-0">
-            <Image
-              src={avatarProps.src}
-              placeholder="blur"
-              blurDataURL={data.settings.image.lqip}
-              loader={avatarProps.loader}
-              alt="Portrait"
-              layout="fixed"
+            <SanityImage
+              src={data.settings.image}
+              alt="Portrait of John"
               height="96"
               width="96"
+              layout="fixed"
             />
           </div>
         </section>

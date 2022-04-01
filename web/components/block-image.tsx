@@ -1,25 +1,28 @@
-import Image from "next/image"
-import { PortableTextTypeComponentProps } from "@portabletext/react"
 import { PropsWithChildren } from "react"
-import { SanityImageSource } from "@sanity/image-url/lib/types/types"
 import clsx from "clsx"
-import { sanityClient } from "lib/sanity.server"
-import { useNextSanityImage } from "next-sanity-image"
+import { PortableTextTypeComponentProps } from "@portabletext/react"
+
+import SanityImage from "./sanity-image"
+import { SanityImage as SanityImageType } from "sanity-codegen"
 
 const BlockImage: React.FC<
   PropsWithChildren<
     PortableTextTypeComponentProps<
-      SanityImageSource & {
+      SanityImageType & {
         lqip: string
         alt: string
         bleed: boolean
         hasBorder: boolean
+        dimensions: {
+          height: number
+          width: number
+          aspectRatio: number
+        }
       }
     >
   >
 > = (props) => {
-  const { alt, bleed, hasBorder, lqip } = props.value
-  const imageProps = useNextSanityImage(sanityClient, props.value)
+  const { bleed, hasBorder } = props.value
   return (
     <div
       className={clsx(
@@ -29,7 +32,7 @@ const BlockImage: React.FC<
         hasBorder && "border border-zinc-100 dark:border-zinc-800",
       )}
     >
-      <Image
+      {/* <Image
         alt={alt}
         src={imageProps.src}
         height={imageProps.height}
@@ -37,6 +40,12 @@ const BlockImage: React.FC<
         blurDataURL={lqip}
         placeholder="blur"
         loader={imageProps.loader}
+        sizes="(min-width: 640px) 640px, 100vw"
+      /> */}
+      <SanityImage
+        src={props.value}
+        width={props.value.dimensions.width}
+        height={props.value.dimensions.height}
         sizes="(min-width: 640px) 640px, 100vw"
       />
     </div>

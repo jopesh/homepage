@@ -20,7 +20,6 @@
     "@sanity/webhook": "^1.0.2",
     "clsx": "^1.1.1",
     "next": "^12.1.4",
-    "next-sanity-image": "^3.2.1",
     "next-seo": "^5.3.0",
     "next-themes": "0.0.15",
     "phosphor-react": "^1.4.1",

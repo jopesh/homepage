@@ -1,38 +1,29 @@
-import DisplayViews from "./display-views"
-import Image from "next/image"
 import Link from "next/link"
-import { Project } from "pages/index"
-import type { Tag } from "lib/sanity.models"
+import DisplayViews from "./display-views"
+import SanityImage from "./sanity-image"
 import TagList from "./tag-list"
-import { sanityClient } from "lib/sanity.server"
-import { useNextSanityImage } from "next-sanity-image"
+import type { Tag } from "lib/sanity.models"
+import type { Project } from "pages/index"
 
 type Props = {
   data: Project[]
 }
 
 const ProjectList: React.FC<Props> = ({ data }) => {
-  const imageProps = useNextSanityImage(sanityClient, data[0].image)
   return (
     <ul>
       {data.map((project) => {
         if (!project.slug) return null
-        const { alt, lqip } = project.image
         return (
           <li
             key={project.slug?.current}
             className="group relative aspect-[4/3] w-full overflow-hidden rounded border border-zinc-100 focus-within:border-zinc-900 hover:border-zinc-900 dark:border-zinc-800 dark:focus-within:border-zinc-100 dark:hover:border-zinc-100 sm:aspect-[3/2]"
           >
-            <Image
-              src={imageProps.src}
-              blurDataURL={lqip}
-              placeholder="blur"
-              loader={imageProps.loader}
-              alt={alt}
+            <SanityImage
+              src={data[0].image}
               layout="fill"
               objectFit="cover"
               objectPosition="center"
-              sizes="(min-width: 640px) 640px, 100vw"
             />
             <div className="absolute inset-0 flex flex-col items-start justify-between p-4">
               {/* View Counter */}
