@@ -14,6 +14,7 @@ export default async function revalidateHandler(
   }
   try {
     console.log(`[API] Revalidating: /`)
+    await res.unstable_revalidate("/")
     console.log(`[API] Revalidation: /post/${slug}`)
     await res.unstable_revalidate(`/post/${slug}`)
     if (tagsSlugs?.length) {
