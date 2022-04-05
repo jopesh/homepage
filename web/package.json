@@ -40,9 +40,8 @@
     "eslint-config-next": "^12.1.4",
     "next-sitemap": "^2.5.17",
     "postcss": "^8.4.12",
-    "prettier": "^2.6.1",
+    "prettier": "^2.6.2",
     "prettier-plugin-tailwindcss": "^0.1.8",
-    "sanity-codegen": "^0.6.2",
     "tailwindcss": "^3.0.23",
     "typescript": "4.5.5"
   }
