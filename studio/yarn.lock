@@ -1512,17 +1512,17 @@
     prop-types "^15.6.0"
     rxjs "^6.5.3"
 
-"@sanity/desk-tool@^2.29.3":
-  version "2.29.3"
-  resolved "https://registry.npmjs.org/@sanity/desk-tool/-/desk-tool-2.29.3.tgz#4bc49537274cc8f3843931283881e17d2f114687"
-  integrity sha512-D+2E3OWlZ6NY4YgxewyWXEPETQUGE7E2GMBl1FM/O+61ecNGzHTu/6xVkivu3mMwgDcfVIDTNp84hhYWZU65pg==
+"@sanity/desk-tool@^2.29.4":
+  version "2.29.4"
+  resolved "https://registry.npmjs.org/@sanity/desk-tool/-/desk-tool-2.29.4.tgz#4c97d479ab9e30369dd7dc0da9b9aa67e7033406"
+  integrity sha512-vRL/bOYk/J+LKxUODjMe6zjytU9V2XL8QazNoJRp8DiXM4CB0GsCIIRAWppohi77rArKY5SpFKKy43OW8P5+pQ==
   dependencies:
     "@reach/auto-id" "^0.13.2"
     "@sanity/client" "^3.2.0"
     "@sanity/data-aspects" "2.29.3"
     "@sanity/diff" "2.29.3"
     "@sanity/field" "2.29.3"
-    "@sanity/form-builder" "2.29.3"
+    "@sanity/form-builder" "2.29.4"
     "@sanity/generate-help-url" "^3.0.0"
     "@sanity/icons" "^1.2.1"
     "@sanity/react-hooks" "2.29.3"
@@ -1611,10 +1611,10 @@
     lodash "^4.17.15"
     sanity-diff-patch "^1.0.9"
 
-"@sanity/form-builder@2.29.3":
-  version "2.29.3"
-  resolved "https://registry.npmjs.org/@sanity/form-builder/-/form-builder-2.29.3.tgz#3347b70c3eebd8d785150822f4adaa34675285df"
-  integrity sha512-X0b6uWqKEAP3sU96+fAo01IQwRF58VJTYJfkx45DBFUem//fy+YY7aFSV5YR1xF96DP3/gVOX3EE8vpNk3TfcA==
+"@sanity/form-builder@2.29.4":
+  version "2.29.4"
+  resolved "https://registry.npmjs.org/@sanity/form-builder/-/form-builder-2.29.4.tgz#1e440bda871e14da531a4d5672af4745a6f29e04"
+  integrity sha512-3PeV39cdaKUc9eBM/+/27ZgzzZI2enIE6bqhI2N6w+JmQbKSfp/NeFmyQLfxRqlOM+phlRj+T9yiOtvr5Eg8pg==
   dependencies:
     "@reach/auto-id" "^0.13.2"
     "@sanity/base" "2.29.3"
@@ -1627,7 +1627,7 @@
     "@sanity/imagetool" "2.29.3"
     "@sanity/initial-value-templates" "2.29.3"
     "@sanity/mutator" "2.29.3"
-    "@sanity/portable-text-editor" "2.29.3"
+    "@sanity/portable-text-editor" "2.29.4"
     "@sanity/schema" "2.29.3"
     "@sanity/types" "2.29.3"
     "@sanity/ui" "^0.37.2"
@@ -1753,10 +1753,10 @@
     css-modules-require-hook "4.1.0"
     interop-require "^1.0.0"
 
-"@sanity/portable-text-editor@2.29.3":
-  version "2.29.3"
-  resolved "https://registry.npmjs.org/@sanity/portable-text-editor/-/portable-text-editor-2.29.3.tgz#10961c72b1afbd58edcfdaf40a3254c7e2756d95"
-  integrity sha512-NTRRNhIGsmQDWebDyE+wRkSeYdTlX90mAFJRYvTnqf9Bsxg23/F7cG380tCIZbgTpRznk1/zODNlKe/xUM0dlQ==
+"@sanity/portable-text-editor@2.29.4":
+  version "2.29.4"
+  resolved "https://registry.npmjs.org/@sanity/portable-text-editor/-/portable-text-editor-2.29.4.tgz#a337b905da9b8de0898c56c9b3d0d86defa2e11e"
+  integrity sha512-Q7H0HUIMdVZZPpQemxUsTdnsAbupkr3LfcbPBuVmb42rLtb3xd2xZGnt2LTzlZPOT33R/8s5SZaheNS4uRllgA==
   dependencies:
     "@sanity/block-tools" "2.29.3"
     "@sanity/schema" "2.29.3"
