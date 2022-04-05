@@ -8,7 +8,7 @@ import ProjectList from "components/project-list"
 import SanityImage from "components/sanity-image"
 
 import { sanityClient } from "lib/sanity.server"
-import type { Post, Settings } from "lib/sanity.models"
+import type { Post, Settings } from "lib/sanity.types"
 
 export interface Project extends Post {
   image: Post["image"] & {

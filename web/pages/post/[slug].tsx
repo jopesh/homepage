@@ -1,5 +1,5 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next"
-import type { Post, Tag } from "lib/sanity.models"
+import type { Post, Tag } from "lib/sanity.types"
 
 import Container from "components/container"
 import DisplayViews from "components/display-views"
