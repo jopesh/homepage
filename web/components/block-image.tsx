@@ -3,24 +3,10 @@ import clsx from "clsx"
 import { PortableTextTypeComponentProps } from "@portabletext/react"
 
 import SanityImage from "./sanity-image"
-import { SanityImage as SanityImageType } from "sanity-codegen"
+import type { Image } from "lib/sanity.types"
 
 const BlockImage: React.FC<
-  PropsWithChildren<
-    PortableTextTypeComponentProps<
-      SanityImageType & {
-        lqip: string
-        alt: string
-        bleed: boolean
-        hasBorder: boolean
-        dimensions: {
-          height: number
-          width: number
-          aspectRatio: number
-        }
-      }
-    >
-  >
+  PropsWithChildren<PortableTextTypeComponentProps<Image>>
 > = (props) => {
   const { bleed, hasBorder } = props.value
   return (
@@ -44,8 +30,8 @@ const BlockImage: React.FC<
       /> */}
       <SanityImage
         src={props.value}
-        width={props.value.dimensions.width}
-        height={props.value.dimensions.height}
+        width={props.value.dimensions!.width}
+        height={props.value.dimensions!.height}
         sizes="(min-width: 640px) 640px, 100vw"
       />
     </div>

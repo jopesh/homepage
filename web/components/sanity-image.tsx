@@ -4,17 +4,14 @@ import NextImage, {
   ImageLoader,
 } from "next/image"
 import { urlFor } from "lib/sanity.client"
-import type { SanityImage as SanityImageType } from "sanity-codegen"
+import type { Image } from "lib/sanity.types"
 
 // Needed to mostly copy ImageProps from next/image as otherwise Typescript types were all messy
 export type ImageProps = Omit<
   JSX.IntrinsicElements["img"],
   "src" | "srcSet" | "ref" | "width" | "height" | "loading" | "style"
 > & {
-  src: SanityImageType & {
-    alt?: string
-    lqip?: string
-  }
+  src: Image
   quality?: number | string
   priority?: boolean
   loading?: NextImageProps["loading"]

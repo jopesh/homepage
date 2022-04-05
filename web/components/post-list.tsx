@@ -1,4 +1,4 @@
-import type { Post, Tag } from "lib/sanity.models"
+import type { Post, Tag } from "lib/sanity.types"
 
 import DisplayViews from "./display-views"
 import Link from "next/link"

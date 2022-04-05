@@ -1,5 +1,5 @@
 import Link from "next/link"
-import type { Tag } from "lib/sanity.models"
+import type { Tag } from "lib/sanity.types"
 import { Tag as TagIcon } from "phosphor-react"
 import clsx from "clsx"
 

@@ -2,7 +2,7 @@ import Link from "next/link"
 import DisplayViews from "./display-views"
 import SanityImage from "./sanity-image"
 import TagList from "./tag-list"
-import type { Tag } from "lib/sanity.models"
+import type { Tag } from "lib/sanity.types"
 import type { Project } from "pages/index"
 
 type Props = {
