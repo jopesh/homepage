@@ -1,5 +1,5 @@
 import { Monitor, Moon, Sun } from "phosphor-react"
-import { useEffect, useState } from "react"
+import { PropsWithChildren, useEffect, useState } from "react"
 
 import { Listbox } from "@headlessui/react"
 import clsx from "clsx"
@@ -9,7 +9,7 @@ type ThemeSelectItemProps = {
   value: string
 }
 
-const ThemeSelectItem: React.FC<ThemeSelectItemProps> = ({
+const ThemeSelectItem: React.FC<PropsWithChildren<ThemeSelectItemProps>> = ({
   children,
   value,
 }) => (
