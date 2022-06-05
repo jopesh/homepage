@@ -1,14 +1,14 @@
 import type { GetStaticProps, NextPage } from "next"
+import type { Post, Settings } from "lib/sanity.types"
+
 import { PaperPlaneTilt } from "phosphor-react"
+import { sanityClient } from "lib/sanity.server"
 
 import Container from "components/container"
 import Layout from "components/layout"
 import PostList from "components/post-list"
 import ProjectList from "components/project-list"
 import SanityImage from "components/sanity-image"
-
-import { sanityClient } from "lib/sanity.server"
-import type { Post, Settings } from "lib/sanity.types"
 
 export interface Project extends Post {
   image: Post["image"] & {
@@ -21,7 +21,6 @@ export const getStaticProps: GetStaticProps = async () => {
   const data = await sanityClient.fetch(/* groq */ `
     {
       "writing": *[_type == "post" && isProject == false] {
-        _createdAt,
         title,
         description,
         slug,
