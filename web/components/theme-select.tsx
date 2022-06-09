@@ -20,7 +20,7 @@ const ThemeSelectItem: React.FC<PropsWithChildren<ThemeSelectItemProps>> = ({
         "flex w-full cursor-pointer items-center justify-between space-x-4 rounded py-1.5 px-2 font-medium",
         selected && "text-indigo-700 dark:text-indigo-300",
         active &&
-          "bg-indigo-50 text-indigo-700 dark:bg-indigo-400/10 dark:text-indigo-300",
+          "bg-indigo-50 text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-200",
       )
     }
   >
