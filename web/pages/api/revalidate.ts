@@ -14,14 +14,14 @@ export default async function revalidateHandler(
   }
   try {
     console.log(`[API] Revalidating: /`)
-    await res.unstable_revalidate("/")
+    await res.revalidate("/")
     console.log(`[API] Revalidation: /post/${slug}`)
-    await res.unstable_revalidate(`/post/${slug}`)
+    await res.revalidate(`/post/${slug}`)
     if (tagsSlugs?.length) {
       await Promise.all(
         tagsSlugs.map(async (tagSlug: string) => {
           console.log(`[API] Revalidating: /tag/${tagSlug}`)
-          return await res.unstable_revalidate(`/tag/${tagSlug}`)
+          return await res.revalidate(`/tag/${tagSlug}`)
         }),
       )
     }
