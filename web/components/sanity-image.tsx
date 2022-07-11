@@ -3,7 +3,9 @@ import NextImage, { ImageLoader, ImageProps } from "next/future/image"
 import { urlFor } from "lib/sanity.client"
 
 const sanityImageLoader: ImageLoader = ({ src, width, quality = 75 }) => {
-  return `${src}?w=${width}&q=${quality}&auto=format`
+  return `${src}${
+    src.includes("?") ? "&" : "?"
+  }w=${width}&q=${quality}&auto=format`
 }
 
 interface SanityImageProps extends Omit<ImageProps, "src"> {
