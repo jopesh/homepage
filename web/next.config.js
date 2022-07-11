@@ -5,7 +5,7 @@ const nextConfig = {
   images: {
     domains: ["cdn.sanity.io"],
     loader: "custom",
-    deviceSizes: [320, 430, 640, 1280, 1920],
+    deviceSizes: [320, 430, 640, 780, 1280, 1920],
     imageSizes: [96],
   },
   async redirects() {
