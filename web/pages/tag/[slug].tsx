@@ -16,7 +16,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = data.map((tag) => ({ params: { slug: tag.slug?.current } }))
   return {
     paths,
-    fallback: false,
+    fallback: "blocking",
   }
 }
 
@@ -29,6 +29,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }`,
     { slug: params?.slug },
   )
+  if (!data)
+    return {
+      notFound: true,
+    }
   return {
     props: {
       data,
