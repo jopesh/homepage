@@ -54,15 +54,15 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
       </Head>
       <DefaultSeo
-        title="John Schmidt - Freelancer, educator, paramedic"
-        description="Freelance web developer, educator, and paramedic. Thriving to make the web a more accessible, enjoyable place."
+        title="John Schmidt - Developer, educator, paramedic"
+        description="Self-taught web developer, educator, and paramedic. Thriving to make the web a more accessible, enjoyable place."
         canonical="https://johnschmidt.de"
         openGraph={{
           type: "website",
           images: [
             {
               url: "https://johnschmidt.de/img/default-seo.jpg",
-              alt: "John Schmidt - Freelancer, educator, paramedic",
+              alt: "John Schmidt - Developer, educator, paramedic",
               width: 1200,
               height: 628,
             },
