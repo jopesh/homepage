@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     /* groq */ `*[_type == "tag" && slug.current == $slug][0] {
       ...,
       "seoDescription": pt::text(description),
-      "posts": *[_type == "post" && references(^._id)] { title, description, slug, tags[]->{title, slug} }
+      "posts": *[_type == "post" && references(^._id)] { _updatedAt, title, description, slug, tags[]->{title, slug} } | order(_updatedAt desc),
     }`,
     { slug: params?.slug },
   )

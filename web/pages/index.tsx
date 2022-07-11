@@ -21,12 +21,12 @@ export const getStaticProps: GetStaticProps = async () => {
   const data = await sanityClient.fetch(/* groq */ `
     {
       "writing": *[_type == "post" && isProject == false] {
-        _createdAt,
+        _updatedAt,
         title,
         description,
         slug,
         "tags": tags[]->{title, slug},
-      } | order(_createdAt desc),
+      } | order(_updatedAt desc),
       "projects": *[_type == "post" && isProject == true] {
         title,
         slug,
@@ -39,7 +39,7 @@ export const getStaticProps: GetStaticProps = async () => {
             "dimensions": metadata.dimensions,
           })
         }
-      },
+      } | order(_updatedAt desc),
       "settings": *[_type == "settings"][0] {
         image {
           ...,
