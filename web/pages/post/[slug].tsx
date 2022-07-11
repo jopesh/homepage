@@ -29,8 +29,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         ...,
         _type == "image" => {
           ...,
-          "lqip": asset->metadata.lqip,
-          "dimensions": asset->metadata.dimensions,
+          ...(asset -> {
+            "lqip": metadata.lqip,
+            "dimensions": metadata.dimensions,
+          })
         },
       },
       tags[]->{ title, slug }

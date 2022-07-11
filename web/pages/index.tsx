@@ -34,13 +34,19 @@ export const getStaticProps: GetStaticProps = async () => {
         "tags": tags[]->{title, slug},
         image {
           ...,
-          "lqip": asset->metadata.lqip,
+          ...(asset->{
+            "lqip": metadata.lqip,
+            "dimensions": metadata.dimensions,
+          })
         }
       },
       "settings": *[_type == "settings"][0] {
         image {
           ...,
-          "lqip": asset->metadata.lqip,
+          ...(asset->{
+            "lqip": metadata.lqip,
+            "dimensions": metadata.dimensions,
+          })
         }
       }
     }
@@ -73,9 +79,9 @@ const Home: NextPage<HomeProps> = ({ data }) => {
           <div className="sm:pr-8">
             <h1 className="mb-2 text-2xl font-extrabold">John Schmidt</h1>
             <p className="text-zinc-700 dark:text-zinc-300 sm:text-base">
-              Freelance web developer, educator, and paramedic. Thriving to make
-              the web a more accessible, enjoyable place. Currently based in
-              Berlin.
+              Self-taught web developer, educator, and paramedic. Thriving to
+              make the web a more accessible, enjoyable place. Currently based
+              in Berlin.
             </p>
             <a
               href="mailto:mail@johnschmidt.de"
@@ -91,7 +97,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
               alt="Portrait of John"
               height="96"
               width="96"
-              layout="fixed"
+              sizes="96px"
             />
           </div>
         </section>
