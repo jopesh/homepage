@@ -13,7 +13,7 @@ export default async function revalidateHandler(
     return res.status(401).json({ error: "Unauthorized request" })
   }
   const jsonBody = JSON.parse(body)
-  const { slug, tagsSlugs } = req.body
+  const { slug, tagsSlugs } = jsonBody
   if (!slug) {
     return res.status(400).json({ error: "Invalid request" })
   }
