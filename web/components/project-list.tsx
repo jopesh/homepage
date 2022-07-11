@@ -21,10 +21,8 @@ const ProjectList: React.FC<Props> = ({ data }) => {
           >
             <SanityImage
               src={data[0].image}
-              layout="fill"
-              objectFit="cover"
-              objectPosition="center"
               sizes="(min-width: 640px) 640px, 100vw"
+              className="object-cover object-center w-full h-full"
             />
             <div className="absolute inset-0 flex flex-col items-start justify-between p-4">
               {/* View Counter */}
@@ -47,7 +45,7 @@ const ProjectList: React.FC<Props> = ({ data }) => {
                 </p>
                 {/* Tags */}
                 {project.tags && (
-                  <div className="text-xs md:text-sm">
+                  <div className="text-xs">
                     <TagList
                       data={project.tags?.slice(0, 2) as unknown as Tag[]}
                     />

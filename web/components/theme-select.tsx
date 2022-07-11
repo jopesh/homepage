@@ -17,7 +17,7 @@ const ThemeSelectItem: React.FC<PropsWithChildren<ThemeSelectItemProps>> = ({
     value={value}
     className={({ active, selected }) =>
       clsx(
-        "flex w-full cursor-pointer items-center justify-between space-x-4 rounded py-1.5 px-2 font-medium",
+        "flex w-full cursor-pointer items-center space-x-3 rounded py-1.5 px-2 font-medium",
         selected && "text-indigo-700 dark:text-indigo-300",
         active &&
           "bg-indigo-50 text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-200",
@@ -45,16 +45,16 @@ const ThemeSelect = () => {
       </Listbox.Button>
       <Listbox.Options className="absolute right-0 z-10 mt-2 rounded border border-zinc-200 bg-white p-2 text-sm shadow-lg focus:outline-none focus-visible:ring dark:border-zinc-700 dark:bg-zinc-900">
         <ThemeSelectItem value="system">
-          <span>System</span>
           <Monitor weight="bold" />
+          <span>System</span>
         </ThemeSelectItem>
         <ThemeSelectItem value="light">
-          <span>Light</span>
           <Sun weight="bold" />
+          <span>Light</span>
         </ThemeSelectItem>
         <ThemeSelectItem value="dark">
-          <span>Dark</span>
           <Moon weight="bold" />
+          <span>Dark</span>
         </ThemeSelectItem>
       </Listbox.Options>
     </Listbox>
