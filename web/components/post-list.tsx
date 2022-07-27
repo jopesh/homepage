@@ -16,7 +16,7 @@ const PostList: React.FC<Props> = ({ data }) => {
         return (
           <li
             key={post.slug?.current}
-            className="group relative rounded border border-slate-6 bg-slate-1 p-4 focus-within:border-slate-8 hover:border-slate-8 dark:border-slateDark-6 dark:bg-slateDark-2 dark:focus-within:border-slateDark-8 dark:hover:border-slateDark-8"
+            className="group relative rounded border border-slate-6 p-4 focus-within:border-slate-8 hover:border-slate-8 dark:border-slateDark-6 dark:focus-within:border-slateDark-8 dark:hover:border-slateDark-8"
           >
             <div className="mb-2 text-xs text-slate-11 dark:text-slateDark-11">
               <DisplayViews slug={post.slug?.current} />
