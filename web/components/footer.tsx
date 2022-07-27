@@ -16,7 +16,7 @@ const SocialItem: React.FC<SocialItemProps> = ({ icon, href, label }) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex rounded p-2 text-zinc-400 hover:text-zinc-900 focus:outline-none focus-visible:text-zinc-900 focus-visible:ring dark:text-zinc-500 dark:hover:text-zinc-100 dark:focus-visible:text-zinc-100"
+      className="flex rounded p-2 text-slate-11 hover:text-slate-12 focus:outline-none focus-visible:text-slate-12 focus-visible:ring focus-visible:ring-indigo-7 dark:text-slateDark-11 dark:hover:text-slateDark-12 dark:focus-visible:text-slateDark-12 dark:focus-visible:ring-indigoDark-7"
     >
       <span className="sr-only">{label}</span>
       <Icon />
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
           <p className="inline-flex items-center">
             <span>Made in Berlin with</span>
             <Heart
-              className="ml-2 text-red-700 dark:text-red-300"
+              className="ml-2 text-indigo-9 dark:text-indigoDark-9"
               weight="fill"
             />
           </p>

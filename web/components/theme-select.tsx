@@ -18,9 +18,9 @@ const ThemeSelectItem: React.FC<PropsWithChildren<ThemeSelectItemProps>> = ({
     className={({ active, selected }) =>
       clsx(
         "flex w-full cursor-pointer items-center space-x-3 rounded py-1.5 px-2 font-medium",
-        selected && "text-indigo-700 dark:text-indigo-300",
+        selected && "text-indigo-11 dark:text-indigoDark-11",
         active &&
-          "bg-indigo-50 text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-200",
+          "bg-indigo-3 text-indigo-11 dark:bg-indigoDark-3 dark:text-indigoDark-11",
       )
     }
   >
@@ -40,10 +40,18 @@ const ThemeSelect = () => {
   return (
     <Listbox value={theme} onChange={setTheme} className="relative" as="div">
       <Listbox.Label className="sr-only">Select theme</Listbox.Label>
-      <Listbox.Button className="rounded p-2 text-xl hover:bg-indigo-50 hover:text-indigo-800 focus:outline-none focus-visible:ring active:bg-indigo-100 dark:hover:bg-indigo-500/20 dark:hover:text-indigo-100 dark:active:bg-indigo-800">
+      <Listbox.Button
+        className={({ open }) =>
+          clsx(
+            "rounded p-2 text-xl hover:bg-indigo-3 hover:text-indigo-11 focus:outline-none focus-visible:ring focus-visible:ring-indigo-7 active:bg-indigo-4 dark:hover:bg-indigoDark-3 dark:hover:text-indigoDark-11 dark:focus-visible:ring-indigoDark-7 dark:active:bg-indigoDark-4",
+            open &&
+              "bg-slate-4 text-slate-11 dark:bg-slateDark-4 dark:text-slateDark-11",
+          )
+        }
+      >
         {resolvedTheme === "light" ? <Sun /> : <Moon />}
       </Listbox.Button>
-      <Listbox.Options className="absolute right-0 z-10 mt-2 rounded border border-zinc-200 bg-white p-2 text-sm shadow-lg focus:outline-none focus-visible:ring dark:border-zinc-700 dark:bg-zinc-900">
+      <Listbox.Options className="absolute right-0 z-10 mt-2 rounded border border-slate-6 bg-slate-1 p-2 text-sm shadow-lg focus:outline-none focus-visible:ring focus-visible:ring-indigo-7 dark:border-slateDark-6 dark:bg-slateDark-2 dark:focus-visible:ring-indigoDark-7">
         <ThemeSelectItem value="system">
           <Monitor weight="bold" />
           <span>System</span>

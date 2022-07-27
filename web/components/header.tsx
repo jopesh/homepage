@@ -8,7 +8,7 @@ const Header: React.FC = () => {
       <Container>
         <nav className="flex items-center justify-between">
           <Link href="/">
-            <a className="flex rounded focus:outline-none focus-visible:ring">
+            <a className="flex rounded hover:text-indigo-9 focus:outline-none focus-visible:ring focus-visible:ring-indigo-7 dark:hover:text-indigoDark-9 dark:focus-visible:ring-indigoDark-7">
               <span className="sr-only">To homepage</span>
               <svg
                 width="222"

@@ -15,7 +15,7 @@ const BlockImage: React.FC<
         "overflow-hidden",
         bleed && "-mx-4 sm:mx-0 sm:rounded md:-mx-12",
         !bleed && "rounded",
-        hasBorder && "border border-zinc-100 dark:border-zinc-800",
+        hasBorder && "border border-slate-6 dark:border-slateDark-6",
       )}
     >
       <SanityImage src={props.value} sizes="(min-width: 640px) 730px, 100vw" />

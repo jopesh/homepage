@@ -32,7 +32,6 @@ export const getStaticProps: GetStaticProps = async () => {
         title,
         slug,
         description,
-        "tags": tags[]->{title, slug},
         image {
           ...,
           ...(asset->{
@@ -79,14 +78,14 @@ const Home: NextPage<HomeProps> = ({ data }) => {
         <section className="mb-10 flex flex-col-reverse items-start sm:mb-16 sm:flex-row">
           <div className="sm:pr-8">
             <h1 className="mb-2 text-2xl font-extrabold">John Schmidt</h1>
-            <p className="text-zinc-700 dark:text-zinc-300 sm:text-base">
+            <p className="text-slate-11 dark:text-slateDark-11 sm:text-base">
               Self-taught web developer, educator, and paramedic. Thriving to
               make the web a more accessible, enjoyable place. Currently based
               in Berlin.
             </p>
             <a
               href="mailto:mail@johnschmidt.de"
-              className="mt-4 inline-flex items-center space-x-2 rounded bg-indigo-700 px-4 py-3 font-bold text-white ring-offset-2 hover:bg-indigo-800 focus:outline-none focus-visible:ring dark:ring-offset-zinc-900"
+              className="dark:ring-offset-zinc-900 mt-4 inline-flex items-center space-x-2 rounded bg-indigo-9 px-4 py-3 font-bold text-white ring-offset-2 hover:bg-indigo-10 focus:outline-none focus-visible:ring focus-visible:ring-indigo-7 active:translate-y-px active:transform dark:bg-indigoDark-9 dark:hover:bg-indigoDark-10 dark:focus-visible:ring-indigoDark-7"
             >
               <PaperPlaneTilt weight="bold" />
               <span>Get in touch</span>

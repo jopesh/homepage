@@ -16,19 +16,19 @@ const PostList: React.FC<Props> = ({ data }) => {
         return (
           <li
             key={post.slug?.current}
-            className="group relative rounded border border-zinc-100 p-4 focus-within:border-zinc-300 hover:border-zinc-300 dark:border-zinc-800 dark:focus-within:border-zinc-600 dark:hover:border-zinc-600"
+            className="group relative rounded border border-slate-6 bg-slate-1 p-4 focus-within:border-slate-8 hover:border-slate-8 dark:border-slateDark-6 dark:bg-slateDark-2 dark:focus-within:border-slateDark-8 dark:hover:border-slateDark-8"
           >
-            <div className="mb-2 text-xs text-zinc-500 dark:text-zinc-400">
+            <div className="mb-2 text-xs text-slate-11 dark:text-slateDark-11">
               <DisplayViews slug={post.slug?.current} />
             </div>
-            <h3 className="mb-2 font-semibold sm:text-xl">
+            <h3 className="mb-2 font-semibold tracking-tight sm:text-xl">
               <Link href={`/post/${post.slug?.current}`}>
                 <a className="rounded after:absolute after:inset-0 after:block after:content-[''] focus:outline-none focus-visible:ring ">
                   {post.title}
                 </a>
               </Link>
             </h3>
-            <p className="mb-2 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 sm:text-base sm:leading-relaxed">
+            <p className="mb-3 text-sm leading-relaxed text-slate-11 dark:text-slateDark-11 sm:leading-relaxed">
               {post.description}
             </p>
             {post.tags && (

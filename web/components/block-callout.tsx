@@ -8,7 +8,7 @@ const BlockCallout: React.FC<
 > = (props) => {
   const { title, body } = props.value
   return (
-    <div className="not-prose rounded border border-amber-200 bg-amber-50 p-3 text-amber-900 dark:border-amber-900/50 dark:bg-amber-900/20 dark:text-amber-200 sm:p-4">
+    <div className="not-prose rounded border border-crimson-6 bg-crimson-1 p-3 text-crimson-11 dark:border-crimsonDark-6 dark:bg-crimsonDark-1 dark:text-crimsonDark-11 sm:p-4">
       <p className="flex items-center">
         <Warning weight="bold" className="mr-2" />
         <strong>{title}</strong>
