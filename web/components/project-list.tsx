@@ -25,9 +25,9 @@ const ProjectList: React.FC<Props> = ({ data }) => {
             />
             <div className="absolute inset-0 flex flex-col-reverse items-start justify-between p-2 sm:p-4">
               {/* Info Container */}
-              <div className="rounded border border-slate-6 bg-white p-2.5 dark:border-slateDark-6 dark:bg-slateDark-1 dark:text-white sm:px-4 sm:py-3">
+              <div className="rounded border border-slate-6 bg-white p-2.5 dark:border-slateDark-6 dark:bg-slateDark-1 dark:text-white sm:w-full sm:px-4 sm:py-3">
                 {/* Title */}
-                <h3 className="text-sm font-semibold sm:text-base">
+                <h3 className="text-sm font-semibold">
                   <Link href={`/post/${project.slug?.current}`}>
                     <a className="inline-block rounded after:absolute after:inset-0 after:block after:content-[''] focus:outline-none focus-visible:ring">
                       {project.title}
@@ -35,7 +35,7 @@ const ProjectList: React.FC<Props> = ({ data }) => {
                   </Link>
                 </h3>
                 {/* Description */}
-                <p className="mt-1 hidden text-xs text-slate-11 dark:text-slateDark-11 sm:block sm:text-sm">
+                <p className="mt-1 hidden text-xs tracking-tight text-slate-11 dark:text-slateDark-11 sm:block sm:text-sm">
                   {project.description}
                 </p>
               </div>

@@ -6,7 +6,7 @@ import Layout from "components/layout"
 import { NextSeo } from "next-seo"
 import PortableText from "components/portable-text"
 import PostList from "components/post-list"
-import { Tag as TagIcon } from "phosphor-react"
+import { Hash, Tag as TagIcon } from "phosphor-react"
 import { sanityClient } from "lib/sanity.server"
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -55,10 +55,10 @@ const TagPage: NextPage<TagPageProps> = ({ data }) => {
       <Container>
         <section className="mb-8">
           <div className="mb-4 flex items-center space-x-2 text-2xl font-bold">
-            <TagIcon weight="bold" />
+            <Hash weight="bold" />
             <h1>{data.title}</h1>
           </div>
-          <div className="prose prose-a:text-indigo-700 dark:prose-invert dark:prose-a:text-indigo-300 sm:prose-base">
+          <div className="prose-a:text-indigo-700 dark:prose-a:text-indigo-300 prose dark:prose-invert sm:prose-base">
             {data.description && <PortableText value={data.description} />}
             <p>
               I wrote {data.posts.length}{" "}

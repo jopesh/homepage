@@ -78,7 +78,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
         <section className="mb-10 flex flex-col-reverse items-start sm:mb-16 sm:flex-row">
           <div className="sm:pr-8">
             <h1 className="mb-2 text-2xl font-extrabold">John Schmidt</h1>
-            <p className="text-slate-11 dark:text-slateDark-11 sm:text-base">
+            <p className="text-slate-12 dark:text-slateDark-12 sm:text-base">
               Self-taught web developer, educator, and paramedic. Thriving to
               make the web a more accessible, enjoyable place. Currently based
               in Berlin.
